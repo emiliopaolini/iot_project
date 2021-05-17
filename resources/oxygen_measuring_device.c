@@ -15,8 +15,8 @@ float oxygen_level = 22; // normally should be between 19 and 22
 
 extern bool actuator_status;
 
-int randInRange(int min, int max){
-  return min + (int) (rand() / (double) (RAND_MAX + 1) * (max - min + 1));
+float randInRange(int min, int max){
+  return min + (float) (rand() / (double) (RAND_MAX + 1) * (max - min + 1));
 }
 
 
@@ -52,13 +52,8 @@ static void res_event_handler(){
     // associated with the GET methods is called
 
     //randomly change oxygen level
-
-    if(actuator_status ||  oxygen_level >= MAX_OXYGEN_LEVEL){
-        oxygen_level  -= randInRange(0,1);
-    }
-    else{
-        oxygen_level  += randInRange(0,1);
-    }
+    oxygen_level += randInRange(-1,1);
+    //notify coap clients subscribed to this resource
     coap_notify_observers(&oxygen_measuring_device);
 }
 

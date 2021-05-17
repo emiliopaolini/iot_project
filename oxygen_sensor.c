@@ -28,13 +28,9 @@
 // sensor
 extern coap_resource_t oxygen_measuring_device; // sensor for oxygen measurement
 
-
-
 bool registered = false;
 
-bool actuator_status = false;
-bool actuator_found = false;
-char actuator_address[39];
+
 
 
 static coap_endpoint_t actuator_ep;
@@ -53,20 +49,7 @@ void wait_for_ack(coap_message_t *response) {
     	registered =  true;
 }
 
-void wait_for_actuator(coap_message_t *response) {
-    if(response == NULL) { 
-        LOG_DBG("No actuators..."); 
-        return;
-    }
 
-    LOG_DBG("Actuator IP: %s\n", response->payload);
-	
-	strcpy(actuator_address, "coap://[");
-	strcat(actuator_address, (const char *)response->payload);
-	strcat(actuator_address,"]:5683");   
-    actuator_found = true;
-    coap_endpoint_parse(SERVER_EP, strlen(SERVER_EP), &actuator_ep); //initialize server endpoint
-}
 
 void get_actuator_status(coap_message_t *response) {
     if(response == NULL) { 
@@ -96,18 +79,6 @@ void server_registration(){
     COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_ack);
 }
 
-void actuator_discovery(){
-    char *service_url = "/discovery";
-    // Prepare the message
-    coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
-    coap_set_header_uri_path(request, service_url);
-    // Set the payload 
-    const char msg[] = "{\"type\":\"oxygen\"}";
-    coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
-    // Issue the request in a blocking manner
-    // The client will wait for the server to reply (or the transmission to timeout)
-    COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_actuator);
-}
 
 
 void check_actuator_status(){
@@ -136,7 +107,7 @@ PROCESS_THREAD(temperature_sensor, ev, data) {
     
     LOG_INFO("Oxygen sensor: starting.... \n");
     
-    coap_activate_resource(&oxygen_measuring_device, "sensor/oxygen");
+    coap_activate_resource(&oxygen_measuring_device, "oxygen");
     
 	coap_endpoint_parse(SERVER_EP, strlen(SERVER_EP), &server_ep); //initialize server endpoint
 
@@ -146,14 +117,11 @@ PROCESS_THREAD(temperature_sensor, ev, data) {
     }while(!registered);
     // END SERVER REGISTRATION
 
-
 	
 	//initialize the timer
 	static struct etimer timer; //timer to randomly change the oxygen
-	static struct etimer et; 
 	
     etimer_set(&timer, CLOCK_SECOND*TIMER_PERIOD);
-	etimer_set(&et, CLOCK_SECOND*10);
 	
 	printf("Timer inizialized\n");
 
@@ -166,27 +134,7 @@ PROCESS_THREAD(temperature_sensor, ev, data) {
 		   //reset random timer
 		    etimer_set(&timer, CLOCK_SECOND*TIMER_PERIOD);
 		}
-		
-        
-
-		if(etimer_expired(&et)){
-            // discovery of the actuator
-            while(!actuator_found){
-                actuator_discovery();
-            }
-            // getting the current status of the actuator
-            check_actuator_status();
-            // change the oxygen according to the actuator status and notify subscribers
-            
-            // check if the oxygen has become normal
-
-            // if so, turns off the actuator
-
-            // otherwise keep the actuator on/turn on the actuator (PUT/POST REQUEST)
-		}
-			
-		etimer_set(&et, CLOCK_SECOND*3);
-	    
+		    
     }
 
     PROCESS_END();
