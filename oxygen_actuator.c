@@ -28,7 +28,6 @@ static coap_message_t request[1];
 static coap_endpoint_t server_ep;
 
 static coap_observee_t *obs;
-// example commit
 bool sensor_found = false;
 char sensor_address[39];
 
@@ -147,7 +146,6 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
     
     // register the actuator as a coap client to the sensor 
     obs = coap_obs_request_registration(&sensor_address, "/oxygen", oxygen_update_callback, NULL);
-
 
     PROCESS_END();
 }
