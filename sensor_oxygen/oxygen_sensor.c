@@ -21,14 +21,11 @@
 #define REGISTRATION_PERIOD 10
 
 
-
+static char registered = '0';
 
 
 // sensor
 extern coap_resource_t oxygen_measuring_device; // sensor for oxygen measurement
-
-bool registered = false;
-
 
 static void wait_for_ack(coap_message_t *response) {
    
@@ -39,12 +36,10 @@ static void wait_for_ack(coap_message_t *response) {
     }
     
     if(strcmp((const char *)response->payload, "registered") == 0){
-    	//registered =  true;
+    	registered =  '1';
 	printf("registration successful\n"); 
     }
 }
-
-
 
 PROCESS(oxygen_sensor, "Oxygen sensor");
 AUTOSTART_PROCESSES(&oxygen_sensor);
@@ -82,7 +77,7 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
 		// The client will wait for the server to reply (or the transmission to timeout)
 		COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_ack);
 		// if the registration was not successful, we have to do it again
-		printf("register value: %s\n", registered);
+		printf("register value: %d\n", registered);
 		if(!registered)
 			etimer_restart(&registration_timer);//restart timer
 		else{
@@ -92,28 +87,7 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
 		
 	}
 
-/*
-	do{
-		//server_registration();
-		char *service_url = "/registration";
-		// Prepare the message
-		coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
-		coap_set_header_uri_path(request, service_url);
-		// Set the payload 
-		const char msg[] = "{\"Type\":\"sensor\", \"Resource\":\"oxygen\"}";
-		coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
-		// Issue the request in a blocking manner
-		// The client will wait for the server to reply (or the transmission to timeout)
-		COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_ack);
-		// if the registration was not successful, we have to do it again
-		//printf("register value: %s\n", registered);
-
-	}while(!registered);
-*/	
-	
-	
     etimer_set(&timer, CLOCK_SECOND*TIMER_PERIOD);
-    //etimer_set(&registration_timer, CLOCK_SECOND*REGISTRATION_PERIOD);
 	
     while (1) {
        PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
