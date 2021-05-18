@@ -18,15 +18,14 @@ build/cooja/obj/uip-ds6.o: ../../os/net/ipv6/uip-ds6.c \
  ../../os/net/netstack.h ../../os/net/mac/mac.h ../../os/dev/radio.h \
  ../../os/net/mac/framer/framer.h ../../os/net/ipv6/uip-packetqueue.h \
  ../../os/sys/ctimer.h ../../os/net/ipv6/uip-ds6.h \
- ../../os/net/ipv6/uip-ds6-route.h ../../os/lib/list.h \
  ../../os/net/ipv6/multicast/uip-mcast6.h \
  ../../os/net/ipv6/multicast/uip-mcast6-engines.h \
  ../../os/net/ipv6/multicast/uip-mcast6-route.h \
  ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h \
  ../../os/net/ipv6/multicast/roll-tm.h \
  ../../os/net/ipv6/multicast/uip-mcast6-stats.h \
- ../../os/net/ipv6/multicast/mpl.h ../../os/sys/log.h \
- ../../os/sys/log-conf.h
+ ../../os/net/ipv6/multicast/mpl.h ../../os/net/ipv6/uip-ds6-route.h \
+ ../../os/lib/list.h ../../os/sys/log.h ../../os/sys/log-conf.h
 ../../os/net/ipv6/uip-ds6.c :
  ../../os/services/rpl-border-router/module-macros.h :
  ../../os/lib/random.h ../../os/net/ipv6/uip-nd6.h :
@@ -47,12 +46,11 @@ build/cooja/obj/uip-ds6.o: ../../os/net/ipv6/uip-ds6.c \
  ../../os/net/netstack.h ../../os/net/mac/mac.h ../../os/dev/radio.h :
  ../../os/net/mac/framer/framer.h ../../os/net/ipv6/uip-packetqueue.h :
  ../../os/sys/ctimer.h ../../os/net/ipv6/uip-ds6.h :
- ../../os/net/ipv6/uip-ds6-route.h ../../os/lib/list.h :
  ../../os/net/ipv6/multicast/uip-mcast6.h :
  ../../os/net/ipv6/multicast/uip-mcast6-engines.h :
  ../../os/net/ipv6/multicast/uip-mcast6-route.h :
  ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h :
  ../../os/net/ipv6/multicast/roll-tm.h :
  ../../os/net/ipv6/multicast/uip-mcast6-stats.h :
- ../../os/net/ipv6/multicast/mpl.h ../../os/sys/log.h :
- ../../os/sys/log-conf.h :
+ ../../os/net/ipv6/multicast/mpl.h ../../os/net/ipv6/uip-ds6-route.h :
+ ../../os/lib/list.h ../../os/sys/log.h ../../os/sys/log-conf.h :

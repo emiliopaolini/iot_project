@@ -1,6 +1,10 @@
 package project;
 
+import org.eclipse.californium.core.CoapClient;
+import org.eclipse.californium.core.CoapHandler;
+import org.eclipse.californium.core.CoapObserveRelation;
 import org.eclipse.californium.core.CoapResource;
+import org.eclipse.californium.core.CoapResponse;
 import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.coap.MediaTypeRegistry;
 import org.eclipse.californium.core.coap.Response;
@@ -36,11 +40,12 @@ public class ResourceRegistration extends CoapResource {
 
 
 		// a coap client for each registered node to observe the resource
-		CoapClient client = new CoapClient("coap://[" + IP + "]/"+resource);
-		Server.sensors.add(new Sensor(nodeIP,nodeType,nodeResource));
+		CoapClient client = new CoapClient("coap://[" + nodeIP + "]/"+nodeResource);
+		Sensor s = new Sensor(nodeIP,nodeType);
+		Server.sensors.add(s);
 
 		CoapObserveRelation relation = client.observe(new CoapHandler() {
-							@Override public void onLoad(CoapResponse response) {
+							public void onLoad(CoapResponse response) {
 								
 								String content = response.getResponseText(); 
 								System.out.println(content);
@@ -48,10 +53,10 @@ public class ResourceRegistration extends CoapResource {
 									return;
 								JSONObject contentJ = new JSONObject(content);
 								//here we retrieve the data
-								String valueReceived = (String)contentJ.get("value");
-								Server.sensor.get(Server.sensors.indexOf())
+								//String valueReceived = (String)contentJ.get("value");
+								//Server.sensors.get(Server.sensors.indexOf(s))
 							}
-							@Override public void onError() {
+							public void onError() {
 								System.err.println("-Failed--------"); }
 							});
 		

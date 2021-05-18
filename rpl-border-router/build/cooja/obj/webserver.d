@@ -25,8 +25,15 @@ build/cooja/obj/webserver.o: webserver/webserver.c \
  ../../os/net/ipv6/uip-udp-packet.h ../../os/net/ipv6/simple-udp.h \
  ../../os/net/ipv6/uip-nameserver.h ../../os/net/routing/routing.h \
  ../../os/net/ipv6/uip-icmp6.h ../../os/net/ipv6/uip-ds6.h \
- ../../os/net/ipv6/psock.h ../../os/contiki-lib.h ../../os/lib/list.h \
- ../../os/lib/memb.h ../../os/lib/random.h ../../os/net/ipv6/udp-socket.h \
+ ../../os/net/ipv6/multicast/uip-mcast6.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h \
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h \
+ ../../os/net/ipv6/multicast/roll-tm.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h \
+ ../../os/net/ipv6/multicast/mpl.h ../../os/net/ipv6/psock.h \
+ ../../os/contiki-lib.h ../../os/lib/list.h ../../os/lib/memb.h \
+ ../../os/lib/random.h ../../os/net/ipv6/udp-socket.h \
  ../../os/net/ipv6/tcp-socket.h ../../os/net/ipv6/uip.h \
  ../../os/net/netstack.h
 webserver/webserver.c :
@@ -56,7 +63,14 @@ webserver/webserver.c :
  ../../os/net/ipv6/uip-udp-packet.h ../../os/net/ipv6/simple-udp.h :
  ../../os/net/ipv6/uip-nameserver.h ../../os/net/routing/routing.h :
  ../../os/net/ipv6/uip-icmp6.h ../../os/net/ipv6/uip-ds6.h :
- ../../os/net/ipv6/psock.h ../../os/contiki-lib.h ../../os/lib/list.h :
- ../../os/lib/memb.h ../../os/lib/random.h ../../os/net/ipv6/udp-socket.h :
+ ../../os/net/ipv6/multicast/uip-mcast6.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h :
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h :
+ ../../os/net/ipv6/multicast/roll-tm.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h :
+ ../../os/net/ipv6/multicast/mpl.h ../../os/net/ipv6/psock.h :
+ ../../os/contiki-lib.h ../../os/lib/list.h ../../os/lib/memb.h :
+ ../../os/lib/random.h ../../os/net/ipv6/udp-socket.h :
  ../../os/net/ipv6/tcp-socket.h ../../os/net/ipv6/uip.h :
  ../../os/net/netstack.h :

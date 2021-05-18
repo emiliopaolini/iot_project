@@ -17,7 +17,7 @@
 //utility
 #define SERVER_EP "coap://[fd00::1]:5683"
 
-#define TIMER_PERIOD 10
+#define TIMER_PERIOD 20
 #define REGISTRATION_PERIOD 10
 
 
@@ -27,7 +27,7 @@ static char registered = '0';
 // sensor
 extern coap_resource_t oxygen_measuring_device; // sensor for oxygen measurement
 
-static void wait_for_ack(coap_message_t *response) {
+void wait_for_ack(coap_message_t *response) {
    
     if(response == NULL) {
 	printf("no response to registration\n"); 
@@ -53,7 +53,7 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
 	static coap_endpoint_t server_ep;
     	//initialize the timer
 	static struct etimer timer; //timer to randomly change the oxygen
-	static struct etimer registration_timer; //timer to randomly change the oxygen
+
     	//static struct etimer registration_timer; //timer for CoAP registration
     	PROCESS_BEGIN();
     
@@ -62,10 +62,10 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
     	coap_activate_resource(&oxygen_measuring_device, "oxygen");
     
 	coap_endpoint_parse(SERVER_EP, strlen(SERVER_EP), &server_ep); //initialize server endpoint
-    	etimer_set(&registration_timer, CLOCK_SECOND*REGISTRATION_PERIOD);
-	while(1){
-		PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
-		//server_registration();
+    	
+
+	
+	do{
 		char *service_url = "/registration";
 		// Prepare the message
 		coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
@@ -77,28 +77,25 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
 		// The client will wait for the server to reply (or the transmission to timeout)
 		COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_ack);
 		// if the registration was not successful, we have to do it again
-		printf("register value: %d\n", registered);
-		if(!registered)
-			etimer_restart(&registration_timer);//restart timer
-		else{
-			etimer_stop(&registration_timer);//stop timer
-			break;
-		}
-		
-	}
 
-    etimer_set(&timer, CLOCK_SECOND*TIMER_PERIOD);
+	}while(registered=='0');
 	
-    while (1) {
-       PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
-        if (etimer_expired(&timer)){
-            oxygen_measuring_device.trigger(); //this will call the res_event_handler of the resource that will 							randomly change the oxygen level
+	printf("registration completed!");
+
+	etimer_set(&timer, CLOCK_SECOND*TIMER_PERIOD);
+	
+	while (1) {
+
+		PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
+
+		if (etimer_expired(&timer)){
+
+	    		oxygen_measuring_device.trigger(); //this will call the res_event_handler of the resource that will 							randomly change the oxygen level
 		
-            etimer_reset(&timer);//reset timer
-            printf("device is triggered...\n");
-                
-            }	    
-    }
+	    		etimer_reset(&timer);//reset timer
+	    		printf("device is triggered...\n");
+		}	    
+	}
 
     PROCESS_END();
 }
