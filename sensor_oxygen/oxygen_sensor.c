@@ -9,6 +9,7 @@
 #include "coap-engine.h"
 #include "coap-blocking-api.h"
 #include "coap-log.h"
+#include <time.h>
 
 // log 
 #define LOG_MODULE "Oxygen_node"
@@ -55,6 +56,7 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
 	static struct etimer timer; //timer to randomly change the oxygen
 
     	//static struct etimer registration_timer; //timer for CoAP registration
+	srand(time(0));
     	PROCESS_BEGIN();
     
     	LOG_INFO("Oxygen sensor: starting.... \n");
@@ -80,7 +82,6 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
 
 	}while(registered=='0');
 	
-	printf("registration completed!");
 
 	etimer_set(&timer, CLOCK_SECOND*TIMER_PERIOD);
 	

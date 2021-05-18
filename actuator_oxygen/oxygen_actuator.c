@@ -122,7 +122,7 @@ static void oxygen_update_callback(coap_observee_t *obs, void *notification, coa
 PROCESS_THREAD(oxygen_actuator, ev, data) {
 
 
-	static struct etimer discovery_timer;
+    static struct etimer discovery_timer;
     
     PROCESS_BEGIN();
     
@@ -154,7 +154,7 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
 
 
     //DISCOVERY OF THE SENSOR
-    etimer_set(&timer, CLOCK_SECOND * DISCOVERY_PERIOD);
+    etimer_set(&discovery_timer, CLOCK_SECOND * DISCOVERY_PERIOD);
 
     do{
         PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&discovery_timer));
