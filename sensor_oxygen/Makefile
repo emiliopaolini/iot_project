@@ -7,8 +7,6 @@ PLATFORMS_EXCLUDE = sky z1
 # Include CoAP resources
 MODULES_REL += ./resources
 
-PROJECT_SOURCEFILES += cJSON.c
-
 CONTIKI=../..
 
 # Include the CoAP implementation

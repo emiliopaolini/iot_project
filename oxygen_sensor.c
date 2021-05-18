@@ -5,12 +5,13 @@
 #include "sys/log.h"
 
 
-
-
-
-#include “contiki.h”
-#include "coap-engine.h“
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "contiki.h"
+#include "coap-engine.h"
 #include "coap-blocking-api.h"
+#include "coap-log.h"
 
 // log 
 #define LOG_MODULE "Oxygen_node"
@@ -19,7 +20,7 @@
 //utility
 #define SERVER_EP "coap://[fd00::1]:5683"
 
-#define TIMER_PERIOD 60
+#define TIMER_PERIOD 10
 
 
 
@@ -33,13 +34,13 @@ bool registered = false;
 
 
 
-static coap_endpoint_t actuator_ep;
-static coap_message_t request[1];
-static coap_endpoint_t server_ep;
+
     
 
 
 void wait_for_ack(coap_message_t *response) {
+/*
+	LOG_INFO("response is received\n");
     if(response == NULL) { 
         LOG_DBG("No response to registration..."); 
         return;
@@ -47,52 +48,23 @@ void wait_for_ack(coap_message_t *response) {
     
     if(strcmp((const char *)response->payload, "registered") == 0)
     	registered =  true;
+*/
 }
 
 
 
-void get_actuator_status(coap_message_t *response) {
-    if(response == NULL) { 
-        LOG_DBG("No actuators..."); 
-        return;
-    }
-
-    if(strcmp("{\"status\":1}", (const char *)response->payload) == 0 && !actuator_status){
-		actuator_status = true;
-	}
-	else if(strcmp("{\"status\":0}", (const char *)response->payload) == 0 && actuator_status){
-		actuator_status = false;
-	} 
-}
-
-
-void server_registration(){
-    char *service_url = "/registration";
+//void server_registration(){
+   // char *service_url = "/registration";
     // Prepare the message
-    coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
-    coap_set_header_uri_path(request, service_url);
+    //coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
+   // coap_set_header_uri_path(request, service_url);
     // Set the payload 
-    const char msg[] = "{\"Type\":\"sensor\", \"Resource\":\"oxygen\"}";
-    coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
+    //const char msg[] = "{\"Type\":\"sensor\", \"Resource\":\"oxygen\"}";
+    //coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
     // Issue the request in a blocking manner
     // The client will wait for the server to reply (or the transmission to timeout)
-    COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_ack);
-}
-
-
-
-void check_actuator_status(){
-    char *service_url = "/temperature_actuator";
-    // Prepare the message
-    coap_init_message(request, COAP_TYPE_CON, COAP_GET, 0);
-    coap_set_header_uri_path(request, service_url);
-    // Set the payload 
-    const char msg[] = "";
-    coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
-    // Issue the request in a blocking manner
-    // The client will wait for the server to reply (or the transmission to timeout)
-    COAP_BLOCKING_REQUEST(&actuator_ep, request, get_actuator_status);
-}
+    //COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_ack);
+//}
 
 
 PROCESS(oxygen_sensor, "Oxygen sensor");
@@ -100,9 +72,12 @@ AUTOSTART_PROCESSES(&oxygen_sensor);
 
 
 
-PROCESS_THREAD(temperature_sensor, ev, data) {
+PROCESS_THREAD(oxygen_sensor, ev, data) {
 
-	
+	//static coap_endpoint_t actuator_ep;
+	static coap_message_t request[1];
+	static coap_endpoint_t server_ep;
+    static struct etimer timer; //timer to randomly change the oxygen
     PROCESS_BEGIN();
     
     LOG_INFO("Oxygen sensor: starting.... \n");
@@ -112,30 +87,43 @@ PROCESS_THREAD(temperature_sensor, ev, data) {
 	coap_endpoint_parse(SERVER_EP, strlen(SERVER_EP), &server_ep); //initialize server endpoint
 
     // SERVER REGISTRATION 
-    do{
-        server_registration();
-    }while(!registered);
+    //do{
+        //server_registration();
+	    char *service_url = "/registration";
+	    // Prepare the message
+	    coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
+	    coap_set_header_uri_path(request, service_url);
+	    // Set the payload 
+	    const char msg[] = "{\"Type\":\"sensor\", \"Resource\":\"oxygen\"}";
+	    coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
+	    // Issue the request in a blocking manner
+	    // The client will wait for the server to reply (or the transmission to timeout)
+	    COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_ack);
+    //}while(!registered);
     // END SERVER REGISTRATION
 
-	
+	LOG_INFO("Oxygen sensor is registered \n");
 	//initialize the timer
-	static struct etimer timer; //timer to randomly change the oxygen
+	
 	
     etimer_set(&timer, CLOCK_SECOND*TIMER_PERIOD);
 	
 	printf("Timer inizialized\n");
-
+/*
     while (1) {
 
-        PROCESS_YIELD_UNTIL(etimer_expired(&timer) || etimer_expired(&et));
+        PROCESS_WAIT_EVENT();
        	
-        if (etimer_expired(&timer)){
+        if (ev == PROCESS_EVENT_TIMER){
+		//if ( etimer_expired(&timer))
+	LOG_INFO("timer has expired \n");
             oxygen_measuring_device.trigger(); //this will call the res_event_handler of the resource that will randomly change the oxygen level
 		   //reset random timer
+	LOG_INFO("resource has triggered \n");
 		    etimer_set(&timer, CLOCK_SECOND*TIMER_PERIOD);
 		}
 		    
     }
-
+*/
     PROCESS_END();
 }
