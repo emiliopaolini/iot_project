@@ -30,14 +30,30 @@ public class ResourceRegistration extends CoapResource {
 		System.out.println("NodeResource: "+nodeResource);
 		System.out.println("======================================================");
 		Response response = new Response(ResponseCode.CONTENT);
-		//if(exchange.getRequestOptions().getAccept() == MediaTypeRegistry.APPLICATION_JSON) {
-			response.setPayload("registered");
-			//response.getOptions().setContentFormat(MediaTypeRegistry.APPLICATION_JSON);
-		//}
+		
+		response.setPayload("registered");
 		exchange.respond(response);
 
-		// here we have to create the coap client for the resource of the sensor/actuator
 
 		// a coap client for each registered node to observe the resource
+		CoapClient client = new CoapClient("coap://[" + IP + "]/"+resource);
+		Server.sensors.add(new Sensor(nodeIP,nodeType,nodeResource));
 
-}}
+		CoapObserveRelation relation = client.observe(new CoapHandler() {
+							@Override public void onLoad(CoapResponse response) {
+								
+								String content = response.getResponseText(); 
+								System.out.println(content);
+								if(content == null || content.equals(""))
+									return;
+								JSONObject contentJ = new JSONObject(content);
+								//here we retrieve the data
+								String valueReceived = (String)contentJ.get("value");
+								Server.sensor.get(Server.sensors.indexOf())
+							}
+							@Override public void onError() {
+								System.err.println("-Failed--------"); }
+							});
+		
+	}
+}
