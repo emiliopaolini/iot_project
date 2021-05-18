@@ -28,7 +28,7 @@ static coap_message_t request[1];
 static coap_endpoint_t server_ep;
 
 static coap_observee_t *obs;
-
+// example commit
 bool sensor_found = false;
 char sensor_address[39];
 
