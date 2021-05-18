@@ -14,6 +14,7 @@ public class Server extends CoapServer {
 		
 		Server server = new Server(); 
 		server.add(new ResourceRegistration("registration"));
+		server.add(new ResourceDiscovery("discovery"));
 		server.start();
 		System.out.println("Running it!");
 	} 
