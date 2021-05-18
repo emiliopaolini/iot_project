@@ -26,7 +26,8 @@ public class ResourceDiscovery extends CoapResource {
 		String nodeResource = (String) contentJson.get("Resource");
 		System.out.println("It is looking for " + nodeResource);
 
-		response.setPayload(Server.sensors.get(0).getNodeIP(););
+		Response response = new Response(ResponseCode.CONTENT);
+		response.setPayload(Server.sensors.get(0).getNodeIP());
 		exchange.respond(response);
 	}
 	 

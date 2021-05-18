@@ -41,11 +41,11 @@ public class ResourceRegistration extends CoapResource {
 
 		// a coap client for each registered node to observe the resource
 		CoapClient client = new CoapClient("coap://[" + nodeIP + "]/"+nodeResource);
-		if(nodeType.equals("Sensor")){
+		if(nodeType.equalsIgnoreCase("Sensor")){
 			Sensor s = new Sensor(nodeIP,nodeType);
 			Server.sensors.add(s);
 		}
-		if(nodeType.equals("Actuator")){
+		if(nodeType.equalsIgnoreCase("actuator")){
 			//Actuator a = new Actuator(nodeIP,nodeType);
 			//Server.actuators.add(a);
 		}

@@ -14,6 +14,10 @@ public class Sensor{
         this.nodeType = nodeType;
         this.currentValue = "";
     }
+    
+    public String getNodeIP() {
+    	return this.nodeIP;
+    }
 
     
 }

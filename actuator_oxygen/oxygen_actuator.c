@@ -1,15 +1,16 @@
 #include "coap-blocking-api.h"
+#include "coap-observe-client.h"
 #include "coap-engine.h"
 #include "contiki-net.h"
 #include "contiki.h"
 #include "dev/button-hal.h"
 #include "dev/leds.h"
 #include "sys/log.h"
-
+#include "coap-log.h"
 
 // log 
 #define LOG_MODULE "Oxygen_node"
-#define LOG_LEVEL LOG_LEVEL_DBG
+#define LOG_LEVEL LOG_LEVEL_APP
 
 //utility
 #define SERVER_EP "coap://[fd00::1]:5683"
@@ -47,18 +48,27 @@ void wait_for_ack(coap_message_t *response) {
 
 void wait_for_discovery(coap_message_t *response) {
    
-    if(response == NULL) { 
-        printf("No response to discovery..."); 
-        return;
-    }
+	if(response == NULL) { 
+		printf("No response to discovery..."); 
+		return;
+	}
 
-    LOG_DBG("Sensor IP: %s\n", response->payload);
+	//LOG_DBG("Sensor IP: %s\n", response->payload);
 	
+
+	char *temp_address = "coap://[fd00:0:0:0:202:2:2:2]";
 	strcpy(sensor_address, "coap://[");
-	strcat(sensor_address, (const char *)response->payload);
-	strcat(sensor_address,"]:5683");   
-    sensor_discovered = '1';
-    coap_endpoint_parse(sensor_address, strlen(sensor_address), &sensor_ep); //initialize sensor endpoint
+	//strcat(sensor_address, (const char *)response->payload);
+	//strcat(sensor_address,temp);
+	strcat(sensor_address,"]");   
+
+	sensor_discovered = '1';
+	
+	printf("address received: %s\n",temp_address);
+	printf("len address received: %d\n",strlen(temp_address));
+	coap_endpoint_parse(temp_address, strlen(temp_address), &sensor_ep); //initialize sensor endpoint
+	LOG_INFO_COAP_EP(&sensor_ep);
+	LOG_INFO("\n");
 }
 
 
@@ -67,9 +77,10 @@ AUTOSTART_PROCESSES(&oxygen_actuator);
 
 
 static void oxygen_update_callback(coap_observee_t *obs, void *notification, coap_notification_flag_t flag){
-    int len = 0;
-    const uint8_t *payload = NULL;
-    printf("Received an update from the sensor!");
+    //int len = 0;
+    //const uint8_t *payload = NULL;
+    printf("Received an update from the sensor!\n");
+    LOG_INFO("I am inside oxygen_update_callback\n");
     /*
     if(notification) len = coap_get_payload(notification, &payload); 
     switch(flag) {
@@ -79,7 +90,7 @@ static void oxygen_update_callback(coap_observee_t *obs, void *notification, coa
 		    current_oxygen_level = atof((char*) payload);
 		    oxygen_actuator.trigger();
             break;
-        case OBSERVE_OK: /* server accepted observation request 
+        case OBSERVE_OK:  server accepted observation request 
             printf("OBSERVE_OK: %*s\n", len, (char *)payload);
             break;
         case OBSERVE_NOT_SUPPORTED:
@@ -99,15 +110,14 @@ static void oxygen_update_callback(coap_observee_t *obs, void *notification, coa
 
 PROCESS_THREAD(oxygen_actuator, ev, data) {
 
-	static coap_endpoint_t actuator_ep;
-	static coap_message_t request[1];
-	static coap_endpoint_t server_ep;
+
+	
     
     PROCESS_BEGIN();
     
     LOG_INFO("Oxygen actuator: starting.... \n");
     
-    coap_activate_resource(&air_oxygen_measuring_device, "actuator_oxygen");
+    coap_activate_resource(&oxygen_generator, "actuator_oxygen");
     
 	coap_endpoint_parse(SERVER_EP, strlen(SERVER_EP), &server_ep); //initialize server endpoint
 
@@ -128,7 +138,7 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
 
 	}while(registered=='0');
 	
-	printf("registration completed!");
+	printf("registration completed!\n");
     // END SERVER REGISTRATION
 
 
@@ -153,7 +163,8 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
     //END DISCOVERY
     
     // register the actuator as a coap client to the sensor 
-    obs = coap_obs_request_registration(&sensor_address, "/oxygen", oxygen_update_callback, NULL);
-
+    printf("registering to oxygen sensor...\n");
+    obs = coap_obs_request_registration(&sensor_ep, "/oxygen", oxygen_update_callback, NULL);
+	
     PROCESS_END();
 }
