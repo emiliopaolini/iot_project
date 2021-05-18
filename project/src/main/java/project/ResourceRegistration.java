@@ -41,7 +41,7 @@ public class ResourceRegistration extends CoapResource {
 
 		// a coap client for each registered node to observe the resource
 		CoapClient client = new CoapClient("coap://[" + nodeIP + "]/"+nodeResource);
-		Node a = new Node(nodeIP,nodeType,nodeResource);
+		final Node a = new Node(nodeIP,nodeType,nodeResource);
 		Server.nodes.add(a);
 		
 
@@ -54,13 +54,14 @@ public class ResourceRegistration extends CoapResource {
 									return;
 								JSONObject contentJ = new JSONObject(content);
 								//here we retrieve the data
-								if(a.nodeType.equalsIgnoreCase("sensor"){
-									String valueReceived = (String)contentJ.get("value");
+								String valueReceived = ""; 
+								if(a.getNodeType().equalsIgnoreCase("sensor")){
+									valueReceived = ""+contentJ.get("value");
 								}
-								if(a.nodeType.equalsIgnoreCase("actuator"){
-									String valueReceived = (String)contentJ.get("status");
+								if(a.getNodeType().equalsIgnoreCase("actuator")){
+									valueReceived = ""+contentJ.get("status");
 								}
-								Server.nodes.get(Server.nodes.indexOf(a)).setCurrentValue(valueReceived);
+								a.setCurrentValue(valueReceived);
 								printStatus();
 							}
 							public void onError() {

@@ -29,7 +29,7 @@ public class ResourceDiscovery extends CoapResource {
 		Response response = new Response(ResponseCode.CONTENT);
 		boolean found = false;
 		for (Node temp : Server.nodes) {
-			if(temp.getNodeType.equalsIgnoreCase("Sensor") && !temp.isAssigned()){
+			if(temp.getNodeType().equalsIgnoreCase("Sensor") && !temp.isAssigned()){
 				response.setPayload(temp.getNodeIP());
 				found = true;
 			}
