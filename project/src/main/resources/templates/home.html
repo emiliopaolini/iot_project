@@ -10,12 +10,26 @@
 
 </head>
 
-<body onLoad="setInterval(loadData, 3000)">
-	<p th:text="'Hello, ' + ${sensor} + '!'" />
-	<p th:text="'Hello, ' + ${actuator} + '!'" />
+<body id="pageWrapper" onLoad="setInterval(callUpdatePage, 3000)">
+	<table>
+	<tbody>
+		<tr th:each="node: ${sensors}" th:nodeIP="${node.nodeIP}">
+			
+			<td th:utext="${node.nodeIP}"> </td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr th:each="node: ${actuators}" th:nodeIP="${node.nodeIP}">
+			
+			<td th:utext="${node.nodeIP}"> </td>
+		</tr>
+	</tbody>
+	</table>
+	
+	
 	<script type="text/javascript" th:inline="javascript">
-		function loadData() {
-			$('#sensorWrapper').load("/refreshSensors");
+		function callUpdatePage() {
+			$('#pageWrapper').load("/home");
 		}
 
 	</script>

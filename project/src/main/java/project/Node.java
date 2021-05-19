@@ -20,7 +20,7 @@ public class Node{
     }
     
 	public String toString(){
-        String temp = "";
+        String temp = "TOSTRING";
         temp += "Node IP: "+nodeIP+"\n";
         temp += "Node Type: "+nodeType+"\n";
         temp += "Node Resource: "+nodeResource+"\n";

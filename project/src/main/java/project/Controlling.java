@@ -1,4 +1,4 @@
-package spring;
+package project;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
-
-import project.Node;
-import project.Server;
 
 @Controller
 public class Controlling {
@@ -34,11 +31,30 @@ public class Controlling {
 				actuators.add(n);
 			}
 		}
-		model.addAttribute("sensor", sensors);
-		model.addAttribute("actuator", actuators);
+		model.addAttribute("sensors", sensors);
+		model.addAttribute("actuators", actuators);
 
 		return "home";
 	}
+	
+
+	@RequestMapping("/updatePage")
+	public String updatePage(Model model) {
+		ArrayList<Node> sensors = new ArrayList<>();
+		ArrayList<Node> actuators = new ArrayList<>();
+		for (Node n : project.Server.nodes) {
+			if (n.getNodeType().equalsIgnoreCase("sensor")) {
+				sensors.add(n);
+			} else {
+				actuators.add(n);
+			}
+		}
+		model.addAttribute("sensors", sensors);
+		model.addAttribute("actuators", actuators);
+		return "home";
+	}
+	
+	
 	
 //	private final List<SseEmitter> sseEmitter = new LinkedList<>();
 //

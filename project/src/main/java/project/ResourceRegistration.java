@@ -44,7 +44,7 @@ public class ResourceRegistration extends CoapResource {
 		final Node a = new Node(nodeIP,nodeType,nodeResource);
 		Server.nodes.add(a);
 		
-
+		System.out.println("New server nodes size: "+Server.nodes.size());
 		CoapObserveRelation relation = client.observe(new CoapHandler() {
 							public void onLoad(CoapResponse response) {
 								
