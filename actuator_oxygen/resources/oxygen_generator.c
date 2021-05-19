@@ -50,7 +50,8 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 
 	static char *string_received;
 	
-	size_t len = coap_get_query_variable(request,"status",&value);
+	//size_t len = coap_get_query_variable(request,"status",&value);
+	size_t len = coap_get_post_variable(request,"status",&value);
 	printf("len is equal to: %d \n",len);
 	
 	if(len !=0){
@@ -60,13 +61,15 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 		memcpy(string_received,value,len);
 		string_received[len+1] = '\0';	
 		int newStatus = atoi(string_received);
+		printf("new status receives id %d\n",newStatus);
 		if(newStatus != status){
 			status = newStatus;
 			coap_notify_observers(&oxygen_generator);
 		}
 	}
 
-	len = coap_get_query_variable(request,"threshold",&value);
+	//len = coap_get_query_variable(request,"threshold",&value);
+	len = coap_get_post_variable(request,"threshold",&value);	
 	if(len != 0){
 		//receive a threshold
 		printf("receive a threshold\n");

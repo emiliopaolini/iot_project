@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.californium.core.CoapClient;
+import org.eclipse.californium.core.coap.MediaTypeRegistry;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +36,17 @@ public class Controlling {
 		model.addAttribute("sensors", sensors);
 		model.addAttribute("actuators", actuators);
 
+		return "home";
+	}
+	
+	@RequestMapping("/changeStatus")
+	public String changeStatus(Model model) {
+		
+		CoapClient client = new CoapClient("coap://[" + Server.nodes.get(1).getNodeIP() + "]/"+Server.nodes.get(1).getNodeResource());
+		client.post("status="+1, MediaTypeRegistry.TEXT_PLAIN);
+		
+		System.out.println("i am inside change status");
+		System.out.println("coap://[" + Server.nodes.get(1).getNodeIP() + "]/"+Server.nodes.get(1).getNodeResource());
 		return "home";
 	}
 	

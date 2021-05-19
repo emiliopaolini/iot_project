@@ -12,7 +12,7 @@
 
 <body id="pageWrapper" onLoad="setInterval(callUpdatePage, 3000)">
 	<table>
-	<tbody>
+	<tbody >
 		<tr th:each="node: ${sensors}" th:nodeIP="${node.nodeIP}">
 			
 			<td th:utext="${node.nodeIP}"> </td>
@@ -26,12 +26,20 @@
 	</tbody>
 	</table>
 	
+	<button id="buttonChangeStatus" onClick="changeStatus()">Change</button>
 	
 	<script type="text/javascript" th:inline="javascript">
 		function callUpdatePage() {
 			$('#pageWrapper').load("/home");
 		}
-
+		
+		$('#buttonChangeStatus').click(function(){
+			console.log("button clicked");
+			$.ajax({
+				type:'POST',
+				url: "/changeStatus"
+			});
+		});
 	</script>
 </body>
 

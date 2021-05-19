@@ -19,7 +19,6 @@ public class ResourceDiscovery extends CoapResource {
 
 	
 	public void handleGET(CoapExchange exchange) {
-		System.out.println("HELLO I'm here");
 		JSONObject contentJson = new JSONObject(new String(exchange.getRequestPayload()));
 		String nodeIP = exchange.getSourceAddress().getHostAddress();
 		System.out.println("A request from the actuator with ip: "+nodeIP+" has arrived...");
