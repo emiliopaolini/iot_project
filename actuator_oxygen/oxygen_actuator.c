@@ -66,7 +66,7 @@ void wait_for_discovery(coap_message_t *response) {
 	strcat(sensor_address,"]");   
 
 	sensor_discovered = '1';
-	
+
 	printf("address received: %s\n",sensor_address);
 	printf("len address received: %d\n",strlen(sensor_address));
 	coap_endpoint_parse(sensor_address, strlen(sensor_address), &sensor_ep); //initialize sensor endpoint
@@ -149,7 +149,7 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
 
 	}while(registered=='0');
 	
-	printf("registration completed!\n");
+
     // END SERVER REGISTRATION
 
 
