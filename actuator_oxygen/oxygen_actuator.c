@@ -54,8 +54,10 @@ void wait_for_discovery(coap_message_t *response) {
 	}
 
 	//LOG_DBG("Sensor IP: %s\n", response->payload);
-	
-
+	if(strcmp((const char *)response->payload, "NONE") == 0){
+        printf("No available sensors from the server..");
+        return;
+    }
 
 	strcpy(sensor_address, "coap://[");
 	strcat(sensor_address, (const char *)response->payload);

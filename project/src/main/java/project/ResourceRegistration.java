@@ -41,14 +41,9 @@ public class ResourceRegistration extends CoapResource {
 
 		// a coap client for each registered node to observe the resource
 		CoapClient client = new CoapClient("coap://[" + nodeIP + "]/"+nodeResource);
-		if(nodeType.equalsIgnoreCase("Sensor")){
-			Sensor s = new Sensor(nodeIP,nodeType);
-			Server.sensors.add(s);
-		}
-		if(nodeType.equalsIgnoreCase("actuator")){
-			//Actuator a = new Actuator(nodeIP,nodeType);
-			//Server.actuators.add(a);
-		}
+		Node a = new Node(nodeIP,nodeType,nodeResource);
+		Server.nodes.add(a);
+		
 
 		CoapObserveRelation relation = client.observe(new CoapHandler() {
 							public void onLoad(CoapResponse response) {
@@ -59,12 +54,24 @@ public class ResourceRegistration extends CoapResource {
 									return;
 								JSONObject contentJ = new JSONObject(content);
 								//here we retrieve the data
-								//String valueReceived = (String)contentJ.get("value");
-								//Server.sensors.get(Server.sensors.indexOf(s))
+								if(a.nodeType.equalsIgnoreCase("sensor"){
+									String valueReceived = (String)contentJ.get("value");
+								}
+								if(a.nodeType.equalsIgnoreCase("actuator"){
+									String valueReceived = (String)contentJ.get("status");
+								}
+								Server.nodes.get(Server.nodes.indexOf(a)).setCurrentValue(valueReceived);
+								printStatus();
 							}
 							public void onError() {
 								System.err.println("-Failed--------"); }
 							});
 		
+	}
+
+	public static void printStatus(){
+		for (Node temp : Server.nodes) {
+			System.out.println(temp.toString());
+        }
 	}
 }

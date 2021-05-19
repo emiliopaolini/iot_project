@@ -27,8 +27,20 @@ public class ResourceDiscovery extends CoapResource {
 		System.out.println("It is looking for " + nodeResource);
 
 		Response response = new Response(ResponseCode.CONTENT);
-		response.setPayload(Server.sensors.get(0).getNodeIP());
+		boolean found = false;
+		for (Node temp : Server.nodes) {
+			if(temp.getNodeType.equalsIgnoreCase("Sensor") && !temp.isAssigned()){
+				response.setPayload(temp.getNodeIP());
+				found = true;
+			}
+			
+        }
+		if(!found){
+			response.setPayload("NONE");
+		}
+
 		exchange.respond(response);
+		
 	}
 	 
 	
