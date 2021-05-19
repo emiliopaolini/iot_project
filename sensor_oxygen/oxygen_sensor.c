@@ -50,8 +50,6 @@ AUTOSTART_PROCESSES(&oxygen_sensor);
 PROCESS_THREAD(oxygen_sensor, ev, data) {
 	
 
-
-
 	//static coap_endpoint_t actuator_ep;
 	static coap_message_t request[1];
 	static coap_endpoint_t server_ep;

@@ -45,8 +45,6 @@ public class Controlling {
 		CoapClient client = new CoapClient("coap://[" + Server.nodes.get(1).getNodeIP() + "]/"+Server.nodes.get(1).getNodeResource());
 		client.post("status="+1, MediaTypeRegistry.TEXT_PLAIN);
 		
-		System.out.println("i am inside change status");
-		System.out.println("coap://[" + Server.nodes.get(1).getNodeIP() + "]/"+Server.nodes.get(1).getNodeResource());
 		return "home";
 	}
 	

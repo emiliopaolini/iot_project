@@ -20,11 +20,11 @@ public class Server extends CoapServer {
 		
 		SpringApplication.run(Server.class, args);
 		
-//		Server server = new Server(); 
-//		server.add(new ResourceRegistration("registration"));
-//		server.add(new ResourceDiscovery("discovery"));
-//		server.start();
-//		System.out.println("Running it!");
+		Server server = new Server(); 
+		server.add(new ResourceRegistration("registration"));
+		server.add(new ResourceDiscovery("discovery"));
+		server.start();
+		System.out.println("Running it!");
 //		
 		
 		
