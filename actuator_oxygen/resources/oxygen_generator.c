@@ -48,6 +48,9 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 	const char *value = NULL;
 	
 
+
+	
+
 	static char *string_received;
 	
 	//size_t len = coap_get_query_variable(request,"status",&value);
