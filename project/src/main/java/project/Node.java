@@ -19,10 +19,6 @@ public class Node{
         this.currentValue = "";
     }
     
-   
-
-    
-
 	public String toString(){
         String temp = "";
         temp += "Node IP: "+nodeIP+"\n";

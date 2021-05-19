@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Hydroponic Agriculture</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="../static/style.css" th:href="@{/style.css}" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+
+<body onLoad="setInterval(loadData, 3000)">
+	<p th:text="'Hello, ' + ${sensor} + '!'" />
+	<p th:text="'Hello, ' + ${actuator} + '!'" />
+	<script type="text/javascript" th:inline="javascript">
+		function loadData() {
+			$('#sensorWrapper').load("/refreshSensors");
+		}
+
+	</script>
+</body>
+
+</html>
