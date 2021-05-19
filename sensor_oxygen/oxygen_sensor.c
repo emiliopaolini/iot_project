@@ -48,6 +48,9 @@ AUTOSTART_PROCESSES(&oxygen_sensor);
 
 
 PROCESS_THREAD(oxygen_sensor, ev, data) {
+	
+
+
 
 	//static coap_endpoint_t actuator_ep;
 	static coap_message_t request[1];
@@ -58,6 +61,8 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
     	//static struct etimer registration_timer; //timer for CoAP registration
 	srand(time(0));
     	PROCESS_BEGIN();
+
+
     
     	LOG_INFO("Oxygen sensor: starting.... \n");
     
@@ -65,7 +70,7 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
     
 	coap_endpoint_parse(SERVER_EP, strlen(SERVER_EP), &server_ep); //initialize server endpoint
     	
-
+	
 	
 	do{
 		char *service_url = "/registration";
@@ -86,16 +91,24 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
 	etimer_set(&timer, CLOCK_SECOND*TIMER_PERIOD);
 	
 	while (1) {
+		PROCESS_YIELD();
 
-		PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
-
-		if (etimer_expired(&timer)){
-
-	    		oxygen_measuring_device.trigger(); //this will call the res_event_handler of the resource that will 							randomly change the oxygen level
 		
-	    		etimer_reset(&timer);//reset timer
-	    		printf("device is triggered...\n");
-		}	    
+			
+		if(ev == PROCESS_EVENT_TIMER)
+			if (etimer_expired(&timer)){
+				printf("device is triggered...\n");
+	    			oxygen_measuring_device.trigger(); //this will call the res_event_handler of the resource that will 							randomly change the oxygen level
+		
+	    			etimer_reset(&timer);//reset timer
+	    		
+			}	    
+		if(ev == button_hal_press_event){
+			//button is used to force the sensor to send the oxygen level
+			oxygen_measuring_device.trigger();
+			printf("button pressed\n");
+		}
+
 	}
 
     PROCESS_END();

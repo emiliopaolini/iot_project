@@ -4,9 +4,11 @@
 
 #include "coap-engine.h"
 
-#define GOOD_OXYGEN_LEVEL 25
+
 
 #define MAX_AGE 60
+
+
 
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_post_put_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
@@ -15,6 +17,7 @@ static void res_event_handler();
 extern float oxygen_level;
 
 int status = 0;
+int GOOD_OXYGEN_LEVEL = 25;
 
 EVENT_RESOURCE(oxygen_generator,
         "title=\"Oxygen actuator\"; GET/POST/PUT; status=1|0; rt=\"actuator\";\n",
@@ -41,6 +44,38 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
 static void res_post_put_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset){
     //this will respond to POST/PUT request
     //it will update the status of the air oxygen generator
+	printf("inside post/put handler\n");
+	const char *value = NULL;
+	
+
+	static char *string_received;
+	
+	size_t len = coap_get_query_variable(request,"status",&value);
+	printf("len is equal to: %d \n",len);
+	
+	if(len !=0){
+		// receive a status
+		printf("receive a status\n");
+		string_received = malloc(len+1);
+		memcpy(string_received,value,len);
+		string_received[len+1] = '\0';	
+		int newStatus = atoi(string_received);
+		if(newStatus != status){
+			status = newStatus;
+			coap_notify_observers(&oxygen_generator);
+		}
+	}
+
+	len = coap_get_query_variable(request,"threshold",&value);
+	if(len != 0){
+		//receive a threshold
+		printf("receive a threshold\n");
+		string_received = malloc(len+1);
+		memcpy(string_received,value,len);
+		string_received[len+1] = '\0';	
+		int newThreshold = atoi(string_received);
+		GOOD_OXYGEN_LEVEL = newThreshold;	
+	}
 }
 
 static void res_event_handler() {
