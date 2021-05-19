@@ -14,6 +14,7 @@
 
 //utility
 #define SERVER_EP "coap://[fd00::1]:5683"
+#define DISCOVERY_PERIOD 30
 
 static char registered = '0';
 static char sensor_discovered = '0';
@@ -121,7 +122,7 @@ static void oxygen_update_callback(coap_observee_t *obs, void *notification, coa
 PROCESS_THREAD(oxygen_actuator, ev, data) {
 
 
-	
+	static struct etimer discovery_timer;
     
     PROCESS_BEGIN();
     
@@ -153,28 +154,35 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
 
 
     //DISCOVERY OF THE SENSOR
-    
+    etimer_set(&timer, CLOCK_SECOND * DISCOVERY_PERIOD);
+
     do{
-		char *service_url = "/discovery";
-		// Prepare the message
-		coap_init_message(request, COAP_TYPE_CON, COAP_GET, 0);
-		coap_set_header_uri_path(request, service_url);
-		// Set the payload 
-		const char msg[] = "{\"Resource\":\"oxygen\"}";
-		coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
-		// Issue the request in a blocking manner
-		// The client will wait for the server to reply (or the transmission to timeout)
-		COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_discovery);
-		// if the registration was not successful, we have to do it again
+        PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&discovery_timer));
+
+        char *service_url = "/discovery";
+        // Prepare the message
+        coap_init_message(request, COAP_TYPE_CON, COAP_GET, 0);
+        coap_set_header_uri_path(request, service_url);
+        // Set the payload 
+        const char msg[] = "{\"Resource\":\"oxygen\"}";
+        coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
+        // Issue the request in a blocking manner
+        // The client will wait for the server to reply (or the transmission to timeout)
+        COAP_BLOCKING_REQUEST(&server_ep, request, wait_for_discovery);
+        // if the registration was not successful, we have to do it again
+
+        if(sensor_discovered=='0') etimer_reset(&discovery_timer);
 
 	}while(sensor_discovered=='0');
 
-    
+    etimer_stop(&discovery_timer);
     //END DISCOVERY
     
     // register the actuator as a coap client to the sensor 
     printf("registering to oxygen sensor...\n");
     obs = coap_obs_request_registration(&sensor_ep, "/oxygen", oxygen_update_callback, NULL);
+
+    
 	
     PROCESS_END();
 }
