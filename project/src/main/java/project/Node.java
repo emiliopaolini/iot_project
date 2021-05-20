@@ -1,5 +1,5 @@
 package project;
-
+//TODO: specify the assigned actuator for the sensor in order to represent on the UI
 public class Node{
     private String nodeIP;
 	private String nodeType;
