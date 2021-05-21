@@ -1,5 +1,7 @@
 package project;
 
+import java.util.Arrays;
+
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.coap.CoAP.ResponseCode;
 import org.eclipse.californium.core.coap.Response;
@@ -22,9 +24,12 @@ public class ResourceDiscovery extends CoapResource {
 
 		Response response = new Response(ResponseCode.CONTENT);
 		boolean found = false;
-		for (Node temp : Server.nodes) {
-			if (temp.getNodeType().equalsIgnoreCase("Sensor") && !temp.isAssigned()) {
-				response.setPayload(temp.getNodeIP());
+		Node actuator = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
+		
+		for (Node n : Server.nodes) {
+			if (n.getNodeType().equalsIgnoreCase("Sensor") && !n.hasActuator()) {
+				response.setPayload(n.getNodeIP());
+				n.setActuator(actuator);
 				found = true;
 			}
 

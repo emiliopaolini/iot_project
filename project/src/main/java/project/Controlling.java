@@ -17,12 +17,12 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 @Controller
 public class Controlling {
 
-	@GetMapping("/")
+	@RequestMapping("/")
 	public String run(Model model) {
 		return init(model);
 	}
 
-	@GetMapping("/home")
+	@RequestMapping("/home")
 	public String init(Model model) {
 		ArrayList<Node> sensors = new ArrayList<>();
 		ArrayList<Node> actuators = new ArrayList<>();
