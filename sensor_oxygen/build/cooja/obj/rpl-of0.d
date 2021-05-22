@@ -17,13 +17,7 @@ build/cooja/obj/rpl-of0.o: ../../os/net/routing/rpl-lite/rpl-of0.c \
  ../../os/net/routing/rpl-lite/rpl-conf.h \
  ../../os/net/routing/rpl-lite/rpl-types.h \
  ../../os/net/routing/rpl-lite/rpl-icmp6.h ../../os/net/ipv6/uip.h \
- ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/multicast/uip-mcast6.h \
- ../../os/net/ipv6/multicast/uip-mcast6-engines.h \
- ../../os/net/ipv6/multicast/uip-mcast6-route.h \
- ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h \
- ../../os/net/ipv6/multicast/roll-tm.h \
- ../../os/net/ipv6/multicast/uip-mcast6-stats.h \
- ../../os/net/ipv6/multicast/mpl.h ../../os/sys/stimer.h \
+ ../../os/net/ipv6/uip-ds6.h ../../os/sys/stimer.h \
  ../../os/net/ipv6/uip-nd6.h ../../os/net/ipv6/uip-ds6-nbr.h \
  ../../os/net/nbr-table.h ../../os/net/netstack.h ../../os/net/mac/mac.h \
  ../../os/dev/radio.h ../../os/net/mac/framer/framer.h \
@@ -54,13 +48,7 @@ build/cooja/obj/rpl-of0.o: ../../os/net/routing/rpl-lite/rpl-of0.c \
  ../../os/net/routing/rpl-lite/rpl-conf.h :
  ../../os/net/routing/rpl-lite/rpl-types.h :
  ../../os/net/routing/rpl-lite/rpl-icmp6.h ../../os/net/ipv6/uip.h :
- ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/multicast/uip-mcast6.h :
- ../../os/net/ipv6/multicast/uip-mcast6-engines.h :
- ../../os/net/ipv6/multicast/uip-mcast6-route.h :
- ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h :
- ../../os/net/ipv6/multicast/roll-tm.h :
- ../../os/net/ipv6/multicast/uip-mcast6-stats.h :
- ../../os/net/ipv6/multicast/mpl.h ../../os/sys/stimer.h :
+ ../../os/net/ipv6/uip-ds6.h ../../os/sys/stimer.h :
  ../../os/net/ipv6/uip-nd6.h ../../os/net/ipv6/uip-ds6-nbr.h :
  ../../os/net/nbr-table.h ../../os/net/netstack.h ../../os/net/mac/mac.h :
  ../../os/dev/radio.h ../../os/net/mac/framer/framer.h :

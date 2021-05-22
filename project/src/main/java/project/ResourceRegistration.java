@@ -52,6 +52,8 @@ public class ResourceRegistration extends CoapResource {
 		final Node a = new Node(nodeIP,nodeType,nodeResource);
 		Server.nodes.add(a);
 		
+		insertInDB(a);
+		
 		CoapObserveRelation relation = client.observe(new CoapHandler() {
 							public void onLoad(CoapResponse response) {
 								
@@ -70,7 +72,7 @@ public class ResourceRegistration extends CoapResource {
 								}
 								a.setCurrentValue(valueReceived);
 								insertInDB(a);
-								printStatus();
+								//printStatus();
 							}
 							public void onError() {
 								System.err.println("-Failed--------"); }
@@ -92,25 +94,30 @@ public class ResourceRegistration extends CoapResource {
 			
 			if(!rs.isBeforeFirst()){
 			    System.out.println("Registering the node..");
-			    sql = "INSERT INTO sensor VALUES(?,?);";
+			    sql = "INSERT INTO sensor VALUES(?,?,?);";
 			    ps = Server.con.prepareStatement(sql);
 			    ps.setString(1, a.getNodeIP());
 			    ps.setString(2, a.getNodeResource());
-			    rs=ps.executeQuery();
+			    ps.setString(3, a.getNodeType());
+			    ps.executeUpdate();
+			    System.out.println("DONE REGISTERED");
+			    return;
 			}
 			
+			
+			System.out.println("inserting values..");
 			//inserting the new value 
-			sql = "INSERT INTO measurement VALUES(?,?,?);";
+			sql = "INSERT INTO measurement(date,ip,value) VALUES(?,?,?);";
 		    ps = Server.con.prepareStatement(sql);
 		    
-		    DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+		    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	        Date date = new Date();
-		  
 		    ps.setString(1, dateFormat.format(date));
-		    ps.setString(2, a.getCurrentValue());
 		    ps.setString(2, a.getNodeIP());
-		    rs=ps.executeQuery();
-			
+		    ps.setString(3, a.getCurrentValue());
+		    
+		    ps.executeUpdate();
+			System.out.println("values inserted!");
 		
 			
 		}catch(Exception e) {

@@ -37,7 +37,9 @@ public class Server extends CoapServer  {
 		try{  
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iot_project","root","root");  
 			System.out.println("Connection to mysql done!");
-		}catch(Exception e){ System.out.println(e);}  
+		}catch(Exception e){ 
+			System.out.println(e);
+		}  
 		
 	}
 		
