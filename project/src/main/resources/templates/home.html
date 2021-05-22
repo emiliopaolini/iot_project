@@ -15,8 +15,8 @@
 
 </head>
 
-<body id="tables" onLoad="setInterval(callUpdatePage, 3000)" class="bg-light text-dark">
-	<div class="p-3 mb-2 bg-light text-dark">
+<body onLoad="setInterval(callUpdatePage, 3000)" class="bg-light text-dark">
+	<div class="p-3 mb-2 bg-light text-dark" id="sensorWrapper">
 		<div class=" shadow-sm p-0 mb-5 bg-body rounded " style="margin: 1% 10% 1% 5%;">
 			<h1 style="padding-left: 15%;">
 				Hydroponic Agriculture Management
@@ -65,15 +65,6 @@
 									</div>
 								</td>
 							</tr>
-							<tr>
-								<td>dummy </td>
-								<td>
-									<div class="form-check form-switch">
-										<input class="form-check-input" type="checkbox" onclick="callUpdatePage()"
-											name="status" checked="false">
-									</div>
-								</td>
-							</tr>
 
 						</tbody>
 					</table>
@@ -91,17 +82,18 @@
 		<script type="text/javascript" th:inline="javascript">
 
 			function callUpdatePage() {
-				// $('#tables').load("/home");
-				$.ajax({
-					type: 'GET',
-					url: "/home"
-				});
+				$('#sensorWrapper').load("/home");
+				//$('#tables')
+				//$.ajax({
+				//	type: 'GET',
+				//	url: "/home"
+				//});
 
 			}
 			function setActuator(ip, value) {
 				$.ajax({
 					type: 'GET',
-					url: "/setActuator?nodeIP="+ip+"&&currentValue="+value
+					url: "/setActuator?nodeIP="+ip+"&&currentValue="+this.checked
 				});
 
 

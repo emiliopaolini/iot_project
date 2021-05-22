@@ -47,6 +47,7 @@ public class Controlling {
 		Node node = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
 		node.setCurrentValue(currentValue);
 		CoapClient client = new CoapClient("coap://[" + node.getNodeIP() + "]/" + node.getNodeResource());
+		System.out.println("new status is sent: " + node.getCurrentValue());
 		client.post("status=" + node.getCurrentValue(), MediaTypeRegistry.TEXT_PLAIN);
 
 		return "home";
