@@ -46,7 +46,7 @@
 					
 					
 					
-					<table class="table table-hover table-info  table-striped">
+					<table id="actuatorsTable" class="table table-hover table-info  table-striped">
 						<thead>
 							<tr>
 								<th scope="col">Actuator</th>
@@ -55,18 +55,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="node: ${actuators}">
-								<td th:utext="${node.nodeResource}"> </td>
-								<td th:utext="${node.nodeIP}"> </td>
-								<td>
-										<input class="form-check-input" type="checkbox"
-											th:nodeIP="${node.nodeIP}"
-											th:currentValue="${node.currentValue}"
-											onclick="setActuator(this.getAttribute('nodeIP'), this.getAttribute('currentValue'))"
-											name="status">
-									</div>
-								</td>
-							</tr>
+							
 
 						</tbody>
 					</table>
@@ -100,7 +89,8 @@
 
 		<script type="text/javascript" th:inline="javascript">			
 			
-			
+			var nodesReceived = [];
+			var associative_arr = new Object();
 			
 			function getNodes() {
 				//$('#mainDiv').load("/home");
@@ -122,20 +112,46 @@
 						  var nodeResource = obj["Resource"];
 						  var nodeType = obj["Type"];
 						  var nodeValue = obj["Value"];
+						  var assignTo = obj["assignTo"];
+						  if(nodeType == "sensor" && nodesReceived.includes(nodeIP))
+							  if(assignTo != undefined){
+							  	associative_arr[nodeIP].innerHTML = assignTo;
+							  }
 						  
-						  if(nodeType=="sensor"){
-						  		var newRow=document.getElementById('sensorsTable').insertRow();
-						  		
-						  		
-  								newRow.innerHTML = "<td>"+nodeResource+"</td><td>"+nodeIP+"</td><td>ciao</td><td>"+nodeValue
-  								+"</td><td> <input type=date id="+nodeIP+"> <input class=btn-dark type=button value=ShowLog onclick=getLog("+nodeIP+") name=status></td>";
-  								
-  						   }
+						  if(nodeType=="actuator" && nodesReceived.includes(nodeIP) ){
+						  		if(nodeValue=="1"){
+									document.getElementById(nodeIP).checked=true;
+								}
+								else{
+									document.getElementById(nodeIP).checked=false;
+								}
+						  }
+						  
+						  if(!nodesReceived.includes(nodeIP)){
+						  	  nodesReceived.push(nodeIP);
+							  if(nodeType=="sensor"){
+							  		
+							  		var newRow=document.getElementById('sensorsTable').insertRow();
+							  		
+							  		
+									newRow.innerHTML = "<td>"+nodeResource+"</td><td>"+nodeIP+"</td><td id="+nodeIP+"_assign >"+assignTo+"</td><td>"+nodeValue
+										+"</td><td> <input type=date id="+nodeIP+"> <input class=btn-dark type=button value=ShowLog onclick=getLog("+"\'"+nodeIP+"\'"+") name=status></td>";
+									associative_arr[nodeIP] = document.getElementById(nodeIP+"_assign");
+							   }
+							   if(nodeType=="actuator"){
+							  		var newRow=document.getElementById('actuatorsTable').insertRow();
+							  		
+							  		console.log("actuator value received "+nodeValue);
+									newRow.innerHTML = "<td>"+nodeResource+"</td><td>"+nodeIP
+									+"</td><td> <input id="+nodeIP+" type=checkbox class=form-check-input value=ShowLog onclick=setActuator("+"\'"+nodeIP+"\'"+",\'"+nodeValue+"\'"+") name=status></td>";
+									if(nodeValue==1){
+										document.getElementById(nodeIP).checked=true;
+									}
+							   }
+						   }
+
 						}
-  						
-  						
-  						
-  
+
 					}
 					
 				});
@@ -143,9 +159,12 @@
 			}
 			
 			function setActuator(ip, value) {
+				var valueToSend = 0;
+				if(document.getElementById(ip).checked==true)
+					valueToSend = 1;
 				$.ajax({
 					type: 'GET',
-					url: "/setActuator?nodeIP="+ip+"&&currentValue="+this.checked
+					url: "/setActuator?nodeIP="+ip+"&&currentValue="+valueToSend
 				});
 
 
@@ -207,13 +226,6 @@
 		            
 		        });
 			}
-			
-			const checkboxes = document.querySelectorAll('input[name="status"]');
-			checkboxes.forEach((checkbox) => {
-				if (checkbox.getAttribute("currentValue") == "1")
-					checkbox.checked = true;
-
-			});
 
 		</script>
 	</div>

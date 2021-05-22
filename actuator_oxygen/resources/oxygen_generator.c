@@ -82,12 +82,18 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 }
 
 static void res_event_handler() {
-    
+    int newStatus = 0;
     if(oxygen_level <= GOOD_OXYGEN_LEVEL){
-        status = 1;
+	newStatus= 1;
     }
     else   
-        status = 0;
+	newStatus = 0;
+
+    if(newStatus!=status){
+	status=newStatus;
+	coap_notify_observers(&oxygen_generator);
+    }
     printf("My status is : %d\n",status);
-    coap_notify_observers(&oxygen_generator);
+    
+    
 }

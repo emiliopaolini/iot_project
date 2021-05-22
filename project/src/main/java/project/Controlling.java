@@ -154,6 +154,8 @@ public class Controlling {
 	    	jo.put("Type", n.getNodeType());
 	    	jo.put("Resource", n.getNodeResource());
 	    	jo.put("Value", n.getCurrentValue());
+	    	if(n.getNodeType().equalsIgnoreCase("sensor") && n.hasActuator())
+	    		jo.put("assignTo", n.getActuator().getNodeIP());
 	    	ja.put(jo);
 		
 		}
