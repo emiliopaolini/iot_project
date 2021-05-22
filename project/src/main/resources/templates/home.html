@@ -81,7 +81,7 @@
 						LOG
 					</div><br>
 					<div style="width: 100%; overflow-x: auto; overflow-y: hidden">
-  					<div style="width: 500px; height: 300px; ">
+  					<div style="width: 500px; height: 300px;" id="canvasContainer">
     				<canvas id="canvas" height="300" width="0"></canvas>
     			</div>
   			</div>
@@ -260,8 +260,14 @@
 						var values = data.jsonarray.map(function(e) {
 						   return e.value;
 						});;
-       					
-       					var ctx = document.getElementById('canvas').getContext('2d');
+       					var canvas = document.getElementById('canvas');
+       					canvas.remove();
+       					var newCanvas = document.createElement("canvas");
+       					newCanvas.height=300;
+       					newCanvas.width=0;
+       					newCanvas.id='canvas';
+       					document.getElementById("canvasContainer").append(newCanvas);
+       					var ctx = newCanvas.getContext('2d');
 						var config = {
 						options: {
 					         legend: {
