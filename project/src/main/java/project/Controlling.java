@@ -14,6 +14,8 @@ import java.util.Map;
 
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.coap.MediaTypeRegistry;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -86,9 +88,10 @@ public class Controlling {
 		//2021-04-25 
 		
 		System.out.println("data arrivata: "+date);
-		String sql = "SELECT value,TIME(date) as time FROM measurement WHERE ip=? AND DATE(date)=?";  
+		String sql = "SELECT value,EXTRACT(HOUR from  date) as hour,EXTRACT(MINUTE from  date) as minute FROM measurement WHERE ip=? AND DATE(date)=?";  
 		Map<String, Object> hm = new HashMap<>();
-		
+		JSONObject mainObj = new JSONObject();
+		JSONArray ja = new JSONArray();
 		try {
 		    PreparedStatement ps = Server.con.prepareStatement(sql);
 		    ps.setString(1,nodeIP);
@@ -101,15 +104,21 @@ public class Controlling {
 		    
 		    while (rs.next()) {
 		    	String value= rs.getString("value");
-		    	String time= rs.getString("time");
-		    	hm.put(time, value);
-		     	System.out.println(value);
+		    	String hour = rs.getString("hour");
+		    	String minute = rs.getString("minute");
+		    	String time = hour+"_"+minute; 
+		    	
+		    	JSONObject jo = new JSONObject();
+		    	jo.put("time", time);
+		    	jo.put("value",  value);
+		    	ja.put(jo);
+		
 		    }
 	    } catch (SQLException e) {
 	      System.out.println(e);
 	    }
-		
-        return new Gson().toJson(hm);
+		mainObj.put("jsonarray", ja);
+        return mainObj.toString();
 		//return "home";
 	}
 

@@ -7,7 +7,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" media	"all" href="./style.css" th:href="@{/style.css}" />
 	
-	<link rel="stylesheet" type="text/css" media href="./style.css" />
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -15,10 +14,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 		crossorigin="anonymous"></script>
-
+		
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 </head>
 
-<body onLoad="setInterval(callUpdatePage, 3000)" class="bg-light text-dark">
+<body onLoad="setInterval(callUpdatePage, 30000)" class="bg-light text-dark">
 	<div class="p-3 mb-2 bg-light text-dark" id="mainDiv">
 		<div class=" shadow-sm p-0 mb-5 bg-body rounded " style="margin: 1% 10% 1% 5%;">
 			<h1 style="padding-left: 15%;">
@@ -87,8 +87,8 @@
 					
 					
 				
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-				<canvas id="canvas"></canvas>
+				
+				
        				 	
 				
 				</div>
@@ -96,10 +96,14 @@
 						class="shadow-lg p-3 mb-5 bg-body rounded">
 				</div>
 			</div>
+			
 		</div>
-
-
-
+		<div style="width: 100%; overflow-x: auto; overflow-y: hidden">
+  <div style="width: 500px; height: 300px; ">
+    <canvas id="canvas" height="300" width="0"></canvas>
+  </div>
+</div>
+			
 
 		<script type="text/javascript" th:inline="javascript">
 
@@ -138,32 +142,42 @@
 				$.ajax({
 		            type: 'GET',
 		            url: '/getData?nodeIP='+ip+'&&date='+date.value,
-		            datatype: "JSON",
+		           	datatype: "JSON",
 		            success: function (resulting_data) {
+       				 	
        				 	console.log(resulting_data);
-       				 	var labels = resulting_data.jsonarray.map(function(e) {
-   							return e.name;
-						});
-						var data = resulting_data.jsonarray.map(function(e) {
-   							return e.age;
-						});;
-						
-						var ctx = canvas.getContext('2d');
-						var config = {
-	   							type: 'line',
-	   							data: {
-		      						labels: labels,
-		      						datasets: [{
-		         						label: 'Graph Line',
-		         						data: data,
-		         						backgroundColor: 'rgba(0, 119, 204, 0.3)'
-		      						}]
-	   							}
-						};
+       				 	var data = JSON.parse(resulting_data);
 
+
+       				 	var labels = data.jsonarray.map(function(e) {
+						   return e.time.replace("_",":");
+						});
+						var values = data.jsonarray.map(function(e) {
+						   return e.value;
+						});;
+       					
+       					var ctx = document.getElementById('canvas').getContext('2d');
+						var config = {
+						options: {
+					         legend: {
+					            display: false
+					         },
+					    },
+						   type: 'line',
+						   data: {
+						      labels: labels,
+						      datasets: [{
+						         label: '',
+						         data: values,
+						         backgroundColor: 'rgba(0, 0, 0, 0.3)'
+						      }]
+						   }
+						};
+						
 						var chart = new Chart(ctx, config);
-       				 	
-       				 	
+       					
+       					
+       					
     				}
 		            
 		        });
