@@ -35,7 +35,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="node: ${sensors}" >
+							<tr th:each="node: ${sensors}">
 								<td th:utext="${node.nodeResource}"> </td>
 								<td th:utext="${node.nodeIP}"> </td>
 								<td th:utext="${node.actuator} ? ${node.actuator.nodeIP}: ''"> </td>
@@ -48,16 +48,20 @@
 							<tr>
 								<th scope="col">Actuator</th>
 								<th scope="col">IP</th>
-								<th scope="col">Status</th>
+								<th scope="col">Active</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="node: ${actuators}" th:status="${node.currentValue}">
+							<tr th:each="node: ${actuators}">
 								<td th:utext="${node.nodeResource}"> </td>
 								<td th:utext="${node.nodeIP}"> </td>
 								<td>
 									<div class="form-check form-switch">
-										<input class="form-check-input" type="checkbox" name="status" value="${node.currentValue == 1} ? ${true}:  ${false}">
+										<input class="form-check-input" type="checkbox"
+											th:nodeIP="${node.nodeIP}"
+											th:currentValue="${node.currentValue}"
+											onclick="setActuator(this.getAttribute('nodeIP'), this.getAttribute('currentValue'))"
+											name="status">
 									</div>
 								</td>
 							</tr>
@@ -65,7 +69,8 @@
 								<td>dummy </td>
 								<td>
 									<div class="form-check form-switch">
-										<input class="form-check-input" type="checkbox" name="status">
+										<input class="form-check-input" type="checkbox" onclick="callUpdatePage()"
+											name="status" checked="false">
 									</div>
 								</td>
 							</tr>
@@ -88,23 +93,24 @@
 			function callUpdatePage() {
 				// $('#tables').load("/home");
 				$.ajax({
-					type: 'POST',
+					type: 'GET',
 					url: "/home"
 				});
 
 			}
+			function setActuator(ip, value) {
+				$.ajax({
+					type: 'GET',
+					url: "/setActuator?nodeIP="+ip+"&&currentValue="+value
+				});
+
+
+			}
 			const checkboxes = document.querySelectorAll('input[name="status"]');
 			checkboxes.forEach((checkbox) => {
-				checkbox.addEventListener('click', (event) => {
-					if (checkbox.checked) {
-						$.ajax({
-							type: 'POST',
-							url: "/changeStatus"
-						});
-					} else {
+				if (checkbox.getAttribute("currentValue") == "1")
+					checkbox.checked = true;
 
-					}
-				});
 			});
 
 		</script>

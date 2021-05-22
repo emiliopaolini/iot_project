@@ -1,6 +1,7 @@
 package project;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 @Controller
@@ -38,16 +40,17 @@ public class Controlling {
 
 		return "home";
 	}
-	
-	@RequestMapping("/changeStatus")
-	public String changeStatus(Model model) {
-		
-		CoapClient client = new CoapClient("coap://[" + Server.nodes.get(1).getNodeIP() + "]/"+Server.nodes.get(1).getNodeResource());
-		client.post("status="+1, MediaTypeRegistry.TEXT_PLAIN);
-		
+
+	@RequestMapping(value = "/setActuator")
+	public String setActuator(@RequestParam(required = true) String nodeIP,
+			@RequestParam(required = true) String currentValue, Model model) {
+		Node node = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
+		node.setCurrentValue(currentValue);
+		CoapClient client = new CoapClient("coap://[" + node.getNodeIP() + "]/" + node.getNodeResource());
+		client.post("status=" + node.getCurrentValue(), MediaTypeRegistry.TEXT_PLAIN);
+
 		return "home";
 	}
-	
 
 	@RequestMapping("/updatePage")
 	public String updatePage(Model model) {
@@ -64,9 +67,7 @@ public class Controlling {
 		model.addAttribute("actuators", actuators);
 		return "home";
 	}
-	
-	
-	
+
 //	private final List<SseEmitter> sseEmitter = new LinkedList<>();
 //
 //	@RequestMapping (path = "/home", method = RequestMethod.GET)
