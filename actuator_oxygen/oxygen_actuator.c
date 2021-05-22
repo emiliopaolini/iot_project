@@ -26,10 +26,31 @@ static coap_endpoint_t server_ep;
 
 static coap_observee_t *obs;
 
+
+
+extern enum leds {GREEN,YELLOW,RED} alert_level;
 // sensor
 extern coap_resource_t oxygen_generator; // resource for generating oxygen
 
 float oxygen_level = 0;
+
+
+void update_leds(){
+	printf("updating leds\n");
+	if(alert_level==RED){
+		printf("red\n");
+		leds_set(LEDS_NUM_TO_MASK(LEDS_RED));
+	}
+	if(alert_level==YELLOW){
+		printf("yellow\n");
+		leds_set(LEDS_NUM_TO_MASK(LEDS_YELLOW));
+	}
+	if(alert_level==GREEN){
+		printf("green\n");
+		leds_set(LEDS_NUM_TO_MASK(LEDS_GREEN));
+	}
+}
+
 
 void wait_for_ack(coap_message_t *response) {
    
@@ -100,6 +121,7 @@ static void oxygen_update_callback(coap_observee_t *obs, void *notification, coa
 
 	    oxygen_level = atof(ptr);
 	    oxygen_generator.trigger();
+	    update_leds();
             break;
         case OBSERVE_OK:  //server accepted observation request 
             printf("OBSERVE_OK: %*s\n", len, (char *)payload);
@@ -182,7 +204,7 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
     printf("registering to oxygen sensor...\n");
     obs = coap_obs_request_registration(&sensor_ep, "/oxygen", oxygen_update_callback, NULL);
 
-    
+   
 	
     PROCESS_END();
 }

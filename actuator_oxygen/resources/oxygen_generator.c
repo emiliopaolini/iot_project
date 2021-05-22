@@ -10,6 +10,10 @@
 
 
 
+
+
+enum leds {GREEN, YELLOW,RED} alert_level = GREEN;
+
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_post_put_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_event_handler();
@@ -82,13 +86,19 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 }
 
 static void res_event_handler() {
+    
     int newStatus = 0;
     if(oxygen_level <= GOOD_OXYGEN_LEVEL){
+	alert_level = RED;
 	newStatus= 1;
     }
-    else   
+    else{
+	 if(oxygen_level<=(GOOD_OXYGEN_LEVEL+GOOD_OXYGEN_LEVEL*0.3))
+    		alert_level = YELLOW;
+    	else
+		alert_level = GREEN;
 	newStatus = 0;
-
+    }
     if(newStatus!=status){
 	status=newStatus;
 	coap_notify_observers(&oxygen_generator);

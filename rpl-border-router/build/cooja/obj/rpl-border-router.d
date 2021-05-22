@@ -22,14 +22,7 @@ build/cooja/obj/rpl-border-router.o: \
  ../../os/net/ipv6/uip-ds6-route.h ../../os/lib/list.h \
  ../../os/net/ipv6/uip-sr.h \
  ../../os/services/rpl-border-router/rpl-border-router.h \
- ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/multicast/uip-mcast6.h \
- ../../os/net/ipv6/multicast/uip-mcast6-engines.h \
- ../../os/net/ipv6/multicast/uip-mcast6-route.h \
- ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h \
- ../../os/net/ipv6/multicast/roll-tm.h \
- ../../os/net/ipv6/multicast/uip-mcast6-stats.h \
- ../../os/net/ipv6/multicast/mpl.h ../../os/sys/log.h \
- ../../os/sys/log-conf.h
+ ../../os/net/ipv6/uip-ds6.h ../../os/sys/log.h ../../os/sys/log-conf.h
  ../../os/services/rpl-border-router/rpl-border-router.c :
  ../../os/services/rpl-border-router/module-macros.h ../../os/contiki.h :
  ../../arch/platform/cooja/./contiki-conf.h project-conf.h :
@@ -53,11 +46,4 @@ build/cooja/obj/rpl-border-router.o: \
  ../../os/net/ipv6/uip-ds6-route.h ../../os/lib/list.h :
  ../../os/net/ipv6/uip-sr.h :
  ../../os/services/rpl-border-router/rpl-border-router.h :
- ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/multicast/uip-mcast6.h :
- ../../os/net/ipv6/multicast/uip-mcast6-engines.h :
- ../../os/net/ipv6/multicast/uip-mcast6-route.h :
- ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h :
- ../../os/net/ipv6/multicast/roll-tm.h :
- ../../os/net/ipv6/multicast/uip-mcast6-stats.h :
- ../../os/net/ipv6/multicast/mpl.h ../../os/sys/log.h :
- ../../os/sys/log-conf.h :
+ ../../os/net/ipv6/uip-ds6.h ../../os/sys/log.h ../../os/sys/log-conf.h :
