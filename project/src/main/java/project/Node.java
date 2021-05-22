@@ -1,6 +1,8 @@
 package project;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 //TODO: specify the assigned actuator for the sensor in order to represent on the UI
@@ -10,6 +12,7 @@ public class Node {
 	private String nodeResource;
 	private String currentValue;// this can be "on/off" for actuators or the actual value for sensors
 	private Node actuator;
+	Map<String, String> thresholds; 
 
 	public Node() {
 		nodeIP = nodeType = currentValue = "";
@@ -21,6 +24,7 @@ public class Node {
 		this.nodeResource = nodeResource;
 		this.currentValue = "";
 		this.actuator = null;
+		this.thresholds =  new HashMap<String, String>();
 	}
 
 	public String toString() {
@@ -35,6 +39,14 @@ public class Node {
 		return temp;
 	}
 
+	public void addThreshold(String thresholdName,String thresholdValue) {
+		this.thresholds.put(thresholdName, thresholdValue);
+	}
+	
+	public Map<String, String> getThresholds(){
+		return this.thresholds;
+	}
+	
 	public String getNodeType() {
 		return nodeType;
 	}

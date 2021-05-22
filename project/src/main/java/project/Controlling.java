@@ -96,6 +96,19 @@ public class Controlling {
 		return "home";
 	}
 	
+	
+	@RequestMapping("/changeThreshold")
+	public String changeThreshold(@RequestParam(required = true) String nodeIP,@RequestParam(required = true) String thresholdName,@RequestParam(required = true) String thresholdValue) {
+		Node node = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
+	
+		node.addThreshold(thresholdName+"_threshold", thresholdValue);
+		CoapClient client = new CoapClient("coap://[" + node.getNodeIP() + "]/" + node.getNodeResource());
+		System.out.println("Threshold name: "+thresholdName);
+		System.out.println("Threshold value: "+thresholdValue);
+		client.post(thresholdName+"_threshold=" + thresholdValue, MediaTypeRegistry.TEXT_PLAIN);
+		return "home";
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "/getData")
 	public String getData(@RequestParam(required = true) String nodeIP,@RequestParam(required = true) String date) {
@@ -154,6 +167,18 @@ public class Controlling {
 	    	jo.put("Type", n.getNodeType());
 	    	jo.put("Resource", n.getNodeResource());
 	    	jo.put("Value", n.getCurrentValue());
+	    	
+	    	if(n.getNodeType().equalsIgnoreCase("actuator")){
+	    		Map<String,String> thresholds = n.getThresholds();
+	    		if(n.getNodeResource().equalsIgnoreCase("oxygen")) {
+	    			jo.put("oxygen_threshold", thresholds.get("oxygen_threshold"));
+	    		}
+	    		if(n.getNodeResource().equalsIgnoreCase("water")) {
+	    			jo.put("ph_threshold", thresholds.get("ph_threshold"));
+	    			jo.put("minerals_threshold", thresholds.get("minerals_threshold"));
+	    		}
+	    	}
+	    	
 	    	if(n.getNodeType().equalsIgnoreCase("sensor") && n.hasActuator())
 	    		jo.put("assignTo", n.getActuator().getNodeIP());
 	    	ja.put(jo);

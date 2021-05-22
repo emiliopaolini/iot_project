@@ -11,8 +11,8 @@ static void res_event_handler();
 
 
 float ph_level = 5.8; // normally should be between 5.5 and 6.2
-#define MAXIMUM_OXYGEN_LEVEL 14
-#define MINIMUM_OXYGEN_LEVEL 0
+#define MAXIMUM_PH_LEVEL 14
+#define MINIMUM_PH_LEVEL 0
 #define MAX_AGE 60
 
 extern bool actuator_status;

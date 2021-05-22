@@ -69,6 +69,13 @@ public class ResourceRegistration extends CoapResource {
 								}
 								if(a.getNodeType().equalsIgnoreCase("actuator")){
 									valueReceived = ""+contentJ.get("status");
+									if(a.getNodeResource().equalsIgnoreCase("oxygen")) {
+										a.addThreshold("oxygen_threshold",contentJ.get("threshold").toString());
+									}
+									if(a.getNodeResource().equalsIgnoreCase("water")) {
+										a.addThreshold("ph_threshold",contentJ.get("ph_threshold").toString());
+										a.addThreshold("minerals_threshold",contentJ.get("minerals_threshold").toString());
+									}
 								}
 								a.setCurrentValue(valueReceived);
 								insertInDB(a);

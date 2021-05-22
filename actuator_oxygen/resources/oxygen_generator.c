@@ -30,7 +30,7 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
 
     if (accept == APPLICATION_JSON) {
         coap_set_header_content_format(response, APPLICATION_JSON);
-        snprintf((char *)buffer, COAP_MAX_CHUNK_SIZE, "{\"status\":%d}", status);
+        snprintf((char *)buffer, COAP_MAX_CHUNK_SIZE, "{\"status\":%d,\"threshold\":%d}", status,GOOD_OXYGEN_LEVEL);
         coap_set_payload(response, buffer, strlen((char *)buffer));
     } else {
         coap_set_status_code(response, NOT_ACCEPTABLE_4_06);
@@ -69,7 +69,7 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 	}
 
 	//len = coap_get_query_variable(request,"threshold",&value);
-	len = coap_get_post_variable(request,"threshold",&value);	
+	len = coap_get_post_variable(request,"oxygen_threshold",&value);	
 	if(len != 0){
 		//receive a threshold
 		printf("receive a threshold\n");

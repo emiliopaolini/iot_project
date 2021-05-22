@@ -27,7 +27,7 @@ public class ResourceDiscovery extends CoapResource {
 		Node actuator = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
 		
 		for (Node n : Server.nodes) {
-			if (n.getNodeType().equalsIgnoreCase("Sensor") && !n.hasActuator()) {
+			if (n.getNodeType().equalsIgnoreCase("Sensor") && !n.hasActuator() && n.getNodeResource().equalsIgnoreCase(nodeResource)) {
 				response.setPayload(n.getNodeIP());
 				n.setActuator(actuator);
 				found = true;

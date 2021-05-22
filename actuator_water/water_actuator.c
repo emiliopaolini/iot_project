@@ -62,9 +62,9 @@ void wait_for_minerals_discovery(coap_message_t *response) {
 
 	//LOG_DBG("Sensor IP: %s\n", response->payload);
 	if(strcmp((const char *)response->payload, "NONE") == 0){
-        printf("No available sensors from the server..");
-        return;
-    }
+		printf("No available sensors from the server..");
+		return;
+    	}
 
 	strcpy(minerals_sensor_address, "coap://[");
 	strcat(minerals_sensor_address, (const char *)response->payload);
@@ -115,7 +115,7 @@ AUTOSTART_PROCESSES(&water_actuator);
 static void minerals_update_callback(coap_observee_t *minerals_obs, void *notification, coap_notification_flag_t flag){
     int len = 0;
     const uint8_t *payload = NULL;
-    printf("Received an update from the sensor!\n");
+    printf("Received an update from the minerals sensor!\n");
 
     char delim[] = ":";
     
@@ -154,7 +154,7 @@ static void minerals_update_callback(coap_observee_t *minerals_obs, void *notifi
 static void ph_update_callback(coap_observee_t *ph_obs, void *notification, coap_notification_flag_t flag){
     int len = 0;
     const uint8_t *payload = NULL;
-    printf("Received an update from the sensor!\n");
+    printf("Received an update from the ph sensor!\n");
 
     char delim[] = ":";
     
@@ -249,10 +249,7 @@ PROCESS_THREAD(water_actuator, ev, data) {
 
     etimer_stop(&discovery_timer);
     //END DISCOVERY
-    
-    // register the actuator as a coap client to the minerals sensor 
-    printf("registering to minerals sensor...\n");
-    minerals_obs = coap_obs_request_registration(&minerals_sensor_ep, "/minerals", minerals_update_callback, NULL);
+   
 
     //DISCOVERY OF THE PH SENSOR
     etimer_set(&discovery_timer, CLOCK_SECOND * DISCOVERY_PERIOD);
@@ -281,6 +278,8 @@ PROCESS_THREAD(water_actuator, ev, data) {
 
     // register the actuator as a coap client to the ph sensor 
     printf("registering to ph sensor...\n");
+    
+    minerals_obs = coap_obs_request_registration(&minerals_sensor_ep, "/minerals", minerals_update_callback, NULL);
     ph_obs = coap_obs_request_registration(&ph_sensor_ep, "/ph", ph_update_callback, NULL);
 	
     PROCESS_END();

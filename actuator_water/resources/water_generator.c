@@ -32,7 +32,7 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
 
     if (accept == APPLICATION_JSON) {
         coap_set_header_content_format(response, APPLICATION_JSON);
-        snprintf((char *)buffer, COAP_MAX_CHUNK_SIZE, "{\"status\":%d}", status);
+        snprintf((char *)buffer, COAP_MAX_CHUNK_SIZE, "{\"status\":%d,\"ph_threshold\":%d,\"minerals_threshold\":%d}", status,GOOD_PH_LEVEL,GOOD_MINERALS_LEVEL);
         coap_set_payload(response, buffer, strlen((char *)buffer));
     } else {
         coap_set_status_code(response, NOT_ACCEPTABLE_4_06);

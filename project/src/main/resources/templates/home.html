@@ -52,6 +52,7 @@
 								<th scope="col">Actuator</th>
 								<th scope="col">IP</th>
 								<th scope="col">Active</th>
+								<th scope="col">Threshold</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -90,7 +91,6 @@
 		<script type="text/javascript" th:inline="javascript">			
 			
 			var nodesReceived = [];
-			var associative_arr = new Object();
 			
 			function getNodes() {
 				//$('#mainDiv').load("/home");
@@ -113,11 +113,16 @@
 						  var nodeType = obj["Type"];
 						  var nodeValue = obj["Value"];
 						  var assignTo = obj["assignTo"];
-						  if(nodeType == "sensor" && nodesReceived.includes(nodeIP))
-							  if(assignTo != undefined){
-							  	associative_arr[nodeIP].innerHTML = assignTo;
-							  }
 						  
+						  
+						  
+						  if(nodeType == "sensor" && nodesReceived.includes(nodeIP)){
+							  if(assignTo != undefined){
+							  	document.getElementById(nodeIP+"_assign").innerHTML=assignTo;
+							  }
+							  document.getElementById(nodeIP+"_value").innerHTML=nodeValue;
+							  
+						  }
 						  if(nodeType=="actuator" && nodesReceived.includes(nodeIP) ){
 						  		if(nodeValue=="1"){
 									document.getElementById(nodeIP).checked=true;
@@ -132,18 +137,27 @@
 							  if(nodeType=="sensor"){
 							  		
 							  		var newRow=document.getElementById('sensorsTable').insertRow();
-							  		
-							  		
-									newRow.innerHTML = "<td>"+nodeResource+"</td><td>"+nodeIP+"</td><td id="+nodeIP+"_assign >"+assignTo+"</td><td>"+nodeValue
+									newRow.innerHTML = "<td>"+nodeResource+"</td><td>"+nodeIP+"</td><td id="+nodeIP+"_assign >"+assignTo+"</td><td id="+nodeIP+"_value"+">"+nodeValue
 										+"</td><td> <input type=date id="+nodeIP+"> <input class=btn-dark type=button value=ShowLog onclick=getLog("+"\'"+nodeIP+"\'"+") name=status></td>";
-									associative_arr[nodeIP] = document.getElementById(nodeIP+"_assign");
 							   }
 							   if(nodeType=="actuator"){
 							  		var newRow=document.getElementById('actuatorsTable').insertRow();
-							  		
 							  		console.log("actuator value received "+nodeValue);
 									newRow.innerHTML = "<td>"+nodeResource+"</td><td>"+nodeIP
-									+"</td><td> <input id="+nodeIP+" type=checkbox class=form-check-input value=ShowLog onclick=setActuator("+"\'"+nodeIP+"\'"+",\'"+nodeValue+"\'"+") name=status></td>";
+									+"</td><td> <input id="+nodeIP+" type=checkbox  value=ShowLog onclick=setActuator("+"\'"+nodeIP+"\'"+",\'"+nodeValue+"\'"+") name=status></td>";
+									var append;
+									if(nodeResource=="oxygen"){
+										 var oxygen_threshold = obj["oxygen_threshold"];
+										 append = "<td><div class=input-group><span class=input-group-text>Oxygen threshold:</span><input type=number id="+nodeIP+"_oxygen_threshold value="+oxygen_threshold+"><input type=button class=btn-dark value=Change onclick=changeThreshold("+"\'oxygen\'"+","+"\'"+nodeIP+"\'"+")></td>";
+									}
+									if(nodeResource=="water"){
+										 var ph_threshold = obj["ph_threshold"];
+										 var minerals_threshold = obj["minerals_threshold"];
+										 append = "<td><div class=input-group><span class=input-group-text>PH threshold:</span> <input type=number id="+nodeIP+"_ph_threshold value="+ph_threshold+"><input type=button class=btn-dark value=Change onclick=changeThreshold("+"\'ph\'"+","+"\'"+nodeIP+"\'"+")><span class=input-group-text>Minerals threshold</span><input type=number id="+nodeIP+"_minerals_threshold value="+minerals_threshold+"><input class=btn-dark type=button value=Change onclick=changeThreshold("+"\'minerals\'"+","+"\'"+nodeIP+"\'"+")></div></td>";
+									}
+									
+									newRow.innerHTML += append;
+									
 									if(nodeValue==1){
 										document.getElementById(nodeIP).checked=true;
 									}
@@ -156,6 +170,18 @@
 					
 				});
 
+			}
+			
+			
+			function changeThreshold(resourceType,nodeIP){
+				console.log(resourceType);
+				console.log(nodeIP+"_"+resourceType+"_threshold");
+				var thresholdValue = document.getElementById(nodeIP+"_"+resourceType+"_threshold").value;
+				console.log(thresholdValue);
+				$.ajax({
+					type: 'GET',
+					url: "/changeThreshold?nodeIP="+nodeIP+"&&thresholdName="+resourceType+"&&thresholdValue="+thresholdValue
+				});
 			}
 			
 			function setActuator(ip, value) {
