@@ -22,7 +22,7 @@ extern float oxygen_level;
 
 int status = 0;
 int GOOD_OXYGEN_LEVEL = 25;
-
+int manualMode = 0;
 
 
 
@@ -99,28 +99,40 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 		int newThreshold = atoi(string_received);
 		GOOD_OXYGEN_LEVEL = newThreshold;	
 	}
+
+	//len = coap_get_query_variable(request,"threshold",&value);
+	len = coap_get_post_variable(request,"manualMode",&value);	
+	if(len != 0){
+		//receive a threshold
+		printf("receive manual mode\n");
+		string_received = malloc(len+1);
+		memcpy(string_received,value,len);
+		string_received[len+1] = '\0';	
+		manualMode = atoi(string_received);
+		printf("manual mode received: %d\n",manualMode);
+		
+	}
 }
 
 
 
 static void res_event_handler() {
-    
-	int newStatus = 0;
-
-
-
-	if(oxygen_level <= GOOD_OXYGEN_LEVEL){
-		newStatus= 1;
+    	checkAlertLevel();
+	if(manualMode == 0){
+		int newStatus = 0;
+		if(oxygen_level <= GOOD_OXYGEN_LEVEL){
+			newStatus= 1;
+		}
+		else{
+			newStatus = 0;
+		}
+		
+		if(newStatus!=status){
+			status=newStatus;
+			coap_notify_observers(&oxygen_generator);
+		}
+		printf("My status is : %d\n",status);
 	}
-	else{
-		newStatus = 0;
-	}
-	checkAlertLevel();
-	if(newStatus!=status){
-		status=newStatus;
-		coap_notify_observers(&oxygen_generator);
-	}
-	printf("My status is : %d\n",status);
 }
 
 

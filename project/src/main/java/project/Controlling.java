@@ -79,6 +79,17 @@ public class Controlling {
 
 		return "home";
 	}
+	
+	@RequestMapping(value = "/setManual")
+	public String setManual(@RequestParam(required = true) String nodeIP,
+			@RequestParam(required = true) String currentValue, Model model) {
+		Node node = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
+		CoapClient client = new CoapClient("coap://[" + node.getNodeIP() + "]/" + node.getNodeResource());
+		System.out.println("new manual mode is sent: " + currentValue);
+		client.post("manualMode=" + currentValue, MediaTypeRegistry.TEXT_PLAIN);
+
+		return "home";
+	}
 
 	@RequestMapping("/updatePage")
 	public String updatePage(Model model) {

@@ -21,7 +21,24 @@ int status = 0;
 int GOOD_MINERALS_LEVEL = 65;
 int GOOD_PH_LEVEL = 6.0;
 
+int manualMode = 0;
+
 enum leds {GREEN, YELLOW,RED} alert_level = GREEN;
+
+
+static void checkAlertLevel(){
+	if(minerals_level <= GOOD_MINERALS_LEVEL || ph_level <= GOOD_PH_LEVEL){
+		alert_level = RED;
+	}
+	else{
+	 	if(minerals_level<=(GOOD_MINERALS_LEVEL+GOOD_MINERALS_LEVEL*0.3) && ph_level<=(GOOD_PH_LEVEL+GOOD_PH_LEVEL*0.3))
+			alert_level = YELLOW;
+		else
+			alert_level = GREEN;
+	}
+
+}
+
 
 EVENT_RESOURCE(water_generator,
         "title=\"Water actuator\"; rt=\"actuator\";obs\n",
@@ -94,26 +111,40 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 		int newThreshold = atoi(string_received);
 		GOOD_PH_LEVEL = newThreshold;	
 	}
+
+	//len = coap_get_query_variable(request,"threshold",&value);
+	len = coap_get_post_variable(request,"manualMode",&value);	
+	if(len != 0){
+		//receive a threshold
+		printf("receive manual mode\n");
+		string_received = malloc(len+1);
+		memcpy(string_received,value,len);
+		string_received[len+1] = '\0';	
+		manualMode = atoi(string_received);
+		printf("manual mode received: %d\n",manualMode);
+		
+	}
 }
 
 static void res_event_handler() {
-	int newStatus;
-	if(minerals_level <= GOOD_MINERALS_LEVEL || ph_level <= GOOD_PH_LEVEL){
-		newStatus = 1;
-		alert_level = RED;
-	}
-	else {
-		newStatus = 0;
-		if(minerals_level<=(GOOD_MINERALS_LEVEL+GOOD_MINERALS_LEVEL*0.3) && ph_level<=(GOOD_PH_LEVEL+GOOD_PH_LEVEL*0.3))
-			alert_level = YELLOW;
-		else
-			alert_level = GREEN;
-	}
+	checkAlertLevel();
+	if(manualMode == 0){
 
-	
-	if(newStatus!=status){
-		status=newStatus;
-		coap_notify_observers(&water_generator);
+		int newStatus;
+		if(minerals_level <= GOOD_MINERALS_LEVEL || ph_level <= GOOD_PH_LEVEL){
+			newStatus = 1;
+
+		}
+		else {
+			newStatus = 0;
+
+		}
+
+		
+		if(newStatus!=status){
+			status=newStatus;
+			coap_notify_observers(&water_generator);
+		}
+		printf("My status is : %d\n",status);
 	}
-        printf("My status is : %d\n",status);
 }
