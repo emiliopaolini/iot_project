@@ -104,15 +104,15 @@ public class ResourceRegistration extends CoapResource {
 			    return;
 			}
 			
-			
+			if(a.getCurrentValue().equals("")) return;
 			System.out.println("inserting values..");
 			//inserting the new value 
 			sql = "INSERT INTO measurement(date,ip,value) VALUES(?,?,?);";
 		    ps = Server.con.prepareStatement(sql);
 		    
-		    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-	        Date date = new Date();
-		    ps.setString(1, dateFormat.format(date));
+		    long now = System.currentTimeMillis();
+		    Timestamp sqlTimeStamp = new Timestamp(now);
+		    ps.setTimestamp(1, sqlTimeStamp);
 		    ps.setString(2, a.getNodeIP());
 		    ps.setString(3, a.getCurrentValue());
 		    
