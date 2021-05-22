@@ -31,6 +31,7 @@ static coap_observee_t *obs;
 extern enum leds {GREEN,YELLOW,RED} alert_level;
 // sensor
 extern coap_resource_t oxygen_generator; // resource for generating oxygen
+extern int GOOD_OXYGEN_LEVEL;
 
 float oxygen_level = 0;
 
@@ -162,7 +163,9 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
 		coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
 		coap_set_header_uri_path(request, service_url);
 		// Set the payload 
-		const char msg[] = "{\"Type\":\"actuator\", \"Resource\":\"oxygen\"}";
+		const char msg[COAP_MAX_CHUNK_SIZE];
+
+		snprintf((char*)msg, COAP_MAX_CHUNK_SIZE, "{\"Type\":\"actuator\", \"Resource\":\"oxygen\", \"threshold\":%d}", GOOD_OXYGEN_LEVEL);
 		coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
 		// Issue the request in a blocking manner
 		// The client will wait for the server to reply (or the transmission to timeout)
@@ -204,7 +207,15 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
     printf("registering to oxygen sensor...\n");
     obs = coap_obs_request_registration(&sensor_ep, "/oxygen", oxygen_update_callback, NULL);
 
-   
+    while(1){
+	
+	PROCESS_WAIT_EVENT();
+	if(ev== button_hal_press_event){
+		//force the resource to trigger
+		oxygen_generator.trigger();
+	    	update_leds();
+	}
+    }
 	
     PROCESS_END();
 }

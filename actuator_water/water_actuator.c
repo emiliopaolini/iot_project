@@ -35,6 +35,9 @@ static coap_observee_t *ph_obs;
 extern enum leds {GREEN,YELLOW,RED} alert_level;
 // sensor
 extern coap_resource_t water_generator; // resource for generating water
+extern int GOOD_PH_LEVEL;
+extern int GOOD_MINERALS_LEVEL;
+
 
 float minerals_level = 0;
 float ph_level = 0;
@@ -236,7 +239,8 @@ PROCESS_THREAD(water_actuator, ev, data) {
 		coap_init_message(request, COAP_TYPE_CON, COAP_POST, 0);
 		coap_set_header_uri_path(request, service_url);
 		// Set the payload 
-		const char msg[] = "{\"Type\":\"actuator\", \"Resource\":\"water\"}";
+		const char msg[COAP_MAX_CHUNK_SIZE];
+		snprintf((char*)msg, COAP_MAX_CHUNK_SIZE, "{\"Type\":\"actuator\", \"Resource\":\"water\", \"ph\":%d,\"minerals\":%d}",GOOD_PH_LEVEL,GOOD_MINERALS_LEVEL);
 		coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
 		// Issue the request in a blocking manner
 		// The client will wait for the server to reply (or the transmission to timeout)
@@ -286,7 +290,7 @@ PROCESS_THREAD(water_actuator, ev, data) {
         coap_init_message(request, COAP_TYPE_CON, COAP_GET, 0);
         coap_set_header_uri_path(request, service_url);
         // Set the payload 
-        const char msg[] = "{\"Resource\":\"ph\"}";
+	const char msg[] = "{\"Resource\":\"ph\"}";
         coap_set_payload(request, (uint8_t *)msg, sizeof(msg) - 1);
         // Issue the request in a blocking manner
         // The client will wait for the server to reply (or the transmission to timeout)
@@ -306,5 +310,16 @@ PROCESS_THREAD(water_actuator, ev, data) {
     minerals_obs = coap_obs_request_registration(&minerals_sensor_ep, "/minerals", minerals_update_callback, NULL);
     ph_obs = coap_obs_request_registration(&ph_sensor_ep, "/ph", ph_update_callback, NULL);
 	
+    while(1){
+	
+	PROCESS_WAIT_EVENT();
+	if(ev== button_hal_press_event){
+		// force the resource to trigger
+		water_generator.trigger();
+	    	update_leds();
+	}
+    }
+
+
     PROCESS_END();
 }

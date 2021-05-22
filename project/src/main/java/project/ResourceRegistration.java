@@ -7,6 +7,8 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapHandler;
@@ -38,8 +40,28 @@ public class ResourceRegistration extends CoapResource {
 		
 		String nodeType = (String) contentJson.get("Type");
 		String nodeResource = (String) contentJson.get("Resource");
+		
+		
 		System.out.println("NodeType: "+nodeType);
 		System.out.println("NodeResource: "+nodeResource);
+		
+		Map<String,String> thresholds = new HashMap<String,String>();
+		if(nodeType.equalsIgnoreCase("actuator")) {
+			if(nodeResource.equalsIgnoreCase("oxygen")) {
+				String nodeThreshold = ""+(Integer)contentJson.get("threshold");
+				System.out.println("threshold: "+nodeThreshold);
+				thresholds.put("oxygen_threshold",nodeThreshold);
+			}
+			if(nodeResource.equalsIgnoreCase("water")) {
+				String ph_threshold = ""+(Integer)contentJson.get("ph");
+				String minerals_threshold = ""+(Integer)contentJson.get("minerals");
+				thresholds.put("ph_threshold",ph_threshold);
+				thresholds.put("minerals_threshold",minerals_threshold);
+			}
+		}
+		
+		
+		
 		System.out.println("======================================================");
 		Response response = new Response(ResponseCode.CONTENT);
 		
@@ -49,7 +71,7 @@ public class ResourceRegistration extends CoapResource {
 
 		// a coap client for each registered node to observe the resource
 		CoapClient client = new CoapClient("coap://[" + nodeIP + "]/"+nodeResource);
-		final Node a = new Node(nodeIP,nodeType,nodeResource);
+		final Node a = new Node(nodeIP,nodeType,nodeResource,thresholds);
 		Server.nodes.add(a);
 		
 		insertInDB(a);
@@ -69,13 +91,6 @@ public class ResourceRegistration extends CoapResource {
 								}
 								if(a.getNodeType().equalsIgnoreCase("actuator")){
 									valueReceived = ""+contentJ.get("status");
-									if(a.getNodeResource().equalsIgnoreCase("oxygen")) {
-										a.addThreshold("oxygen_threshold",contentJ.get("threshold").toString());
-									}
-									if(a.getNodeResource().equalsIgnoreCase("water")) {
-										a.addThreshold("ph_threshold",contentJ.get("ph_threshold").toString());
-										a.addThreshold("minerals_threshold",contentJ.get("minerals_threshold").toString());
-									}
 								}
 								a.setCurrentValue(valueReceived);
 								insertInDB(a);
@@ -114,7 +129,6 @@ public class ResourceRegistration extends CoapResource {
 			if(a.getCurrentValue().equals("")) return;
 			
 			
-			System.out.println("inserting values..");
 			//inserting the new value 
 			sql = "INSERT INTO measurement(date,ip,value) VALUES(?,?,?);";
 		    ps = Server.con.prepareStatement(sql);
@@ -126,7 +140,6 @@ public class ResourceRegistration extends CoapResource {
 		    ps.setString(3, a.getCurrentValue());
 		    
 		    ps.executeUpdate();
-			System.out.println("values inserted!");
 		
 			
 		}catch(Exception e) {

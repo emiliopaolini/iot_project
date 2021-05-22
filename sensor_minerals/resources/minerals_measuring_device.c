@@ -12,7 +12,7 @@ static void res_event_handler();
 
 float minerals_level = 60; // normally should be between 50 and 70
 #define MAXIMUM_MINERALS_LEVEL 100
-#define MINIMUM_MINERALS_LEVEL 0
+#define MINIMUM_MINERALS_LEVEL 1
 #define MAX_AGE 60
 
 extern bool actuator_status;

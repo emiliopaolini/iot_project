@@ -12,7 +12,7 @@ static void res_event_handler();
 
 float oxygen_level = 22; // normally should be between 19 and 22
 #define MAXIMUM_OXYGEN_LEVEL 100
-#define MINIMUM_OXYGEN_LEVEL 0
+#define MINIMUM_OXYGEN_LEVEL 1
 #define MAX_AGE 60
 
 extern bool actuator_status;

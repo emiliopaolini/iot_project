@@ -18,13 +18,13 @@ public class Node {
 		nodeIP = nodeType = currentValue = "";
 	}
 
-	public Node(String nodeIP, String nodeType, String nodeResource) {
+	public Node(String nodeIP, String nodeType, String nodeResource,Map<String,String> thresholds) {
 		this.nodeIP = nodeIP;
 		this.nodeType = nodeType;
 		this.nodeResource = nodeResource;
 		this.currentValue = "";
 		this.actuator = null;
-		this.thresholds =  new HashMap<String, String>();
+		this.thresholds = thresholds;
 	}
 
 	public String toString() {

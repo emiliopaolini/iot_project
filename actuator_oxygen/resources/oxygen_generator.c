@@ -23,8 +23,24 @@ extern float oxygen_level;
 int status = 0;
 int GOOD_OXYGEN_LEVEL = 25;
 
+
+
+
+static void checkAlertLevel(){
+	if(oxygen_level <= GOOD_OXYGEN_LEVEL){
+		alert_level = RED;
+	}
+	else{
+		 if(oxygen_level<=(GOOD_OXYGEN_LEVEL+GOOD_OXYGEN_LEVEL*0.3))
+	    		alert_level = YELLOW;
+	    	else
+			alert_level = GREEN;
+	}
+
+}
+
 EVENT_RESOURCE(oxygen_generator,
-        "title=\"Oxygen actuator\"; GET/POST/PUT; status=1|0; rt=\"actuator\";\n",
+        "title=\"Oxygen actuator\"; rt=\"actuator\";obs\n",
         res_get_handler, res_post_put_handler, res_post_put_handler, NULL, res_event_handler);
 
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset){
@@ -85,25 +101,27 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 	}
 }
 
+
+
 static void res_event_handler() {
     
-    int newStatus = 0;
-    if(oxygen_level <= GOOD_OXYGEN_LEVEL){
-	alert_level = RED;
-	newStatus= 1;
-    }
-    else{
-	 if(oxygen_level<=(GOOD_OXYGEN_LEVEL+GOOD_OXYGEN_LEVEL*0.3))
-    		alert_level = YELLOW;
-    	else
-		alert_level = GREEN;
-	newStatus = 0;
-    }
-    if(newStatus!=status){
-	status=newStatus;
-	coap_notify_observers(&oxygen_generator);
-    }
-    printf("My status is : %d\n",status);
-    
-    
+	int newStatus = 0;
+
+
+
+	if(oxygen_level <= GOOD_OXYGEN_LEVEL){
+		newStatus= 1;
+	}
+	else{
+		newStatus = 0;
+	}
+	checkAlertLevel();
+	if(newStatus!=status){
+		status=newStatus;
+		coap_notify_observers(&oxygen_generator);
+	}
+	printf("My status is : %d\n",status);
 }
+
+
+
