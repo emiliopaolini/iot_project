@@ -33,24 +33,39 @@ public class Controlling {
 
 	@RequestMapping("/")
 	public String run(Model model) {
-		return init(model);
+		return home(model);
 	}
 
 	@RequestMapping("/home")
-	public String init(Model model) {
+	public String home(Model model) {
 		ArrayList<Node> sensors = new ArrayList<>();
 		ArrayList<Node> actuators = new ArrayList<>();
+		JSONObject mainObj = new JSONObject();
+		JSONArray ja = new JSONArray();
+		
 		for (Node n : Server.nodes) {
+			
+			JSONObject jo = new JSONObject();
+	    	jo.put("IP", n.getNodeIP());
+	    	jo.put("Type", n.getNodeType());
+	    	jo.put("Resource", n.getNodeResource());
+	    	jo.put("Value", n.getCurrentValue());
+	    	ja.put(jo);
+			
 			if (n.getNodeType().equalsIgnoreCase("sensor")) {
 				sensors.add(n);
 			} else {
 				actuators.add(n);
 			}
 		}
+		mainObj.put("jsonarray", ja);
+        return "home";
+        /*
 		model.addAttribute("sensors", sensors);
 		model.addAttribute("actuators", actuators);
 
 		return "home";
+		*/
 	}
 
 	@RequestMapping(value = "/setActuator")
@@ -98,9 +113,6 @@ public class Controlling {
 		    ps.setString(2,date);
 		    
 		    ResultSet rs=ps.executeQuery();
-		
-		   
-		    
 		    
 		    while (rs.next()) {
 		    	String value= rs.getString("value");
@@ -121,6 +133,30 @@ public class Controlling {
 	    } catch (SQLException e) {
 	      System.out.println(e);
 	    }
+		mainObj.put("jsonarray", ja);
+        return mainObj.toString();
+		//return "home";
+	}
+	
+	
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/getSensors")
+	public String getSensors() {
+		JSONObject mainObj = new JSONObject();
+		JSONArray ja = new JSONArray();
+		
+		for (Node n : Server.nodes) {
+			
+			JSONObject jo = new JSONObject();
+	    	jo.put("IP", n.getNodeIP());
+	    	jo.put("Type", n.getNodeType());
+	    	jo.put("Resource", n.getNodeResource());
+	    	jo.put("Value", n.getCurrentValue());
+	    	ja.put(jo);
+		
+		}
 		mainObj.put("jsonarray", ja);
         return mainObj.toString();
 		//return "home";

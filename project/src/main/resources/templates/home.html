@@ -18,7 +18,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 </head>
 
-<body onLoad="setInterval(callUpdatePage, 30000)" class="bg-light text-dark">
+<body onload="setInterval(getNodes, 3000)" class="bg-light text-dark">
 	<div class="p-3 mb-2 bg-light text-dark" id="mainDiv">
 		<div class=" shadow-sm p-0 mb-5 bg-body rounded " style="margin: 1% 10% 1% 5%;">
 			<h1 style="padding-left: 15%;">
@@ -28,7 +28,7 @@
 		<div class="container">
 			<div class="row ">
 				<div class="col shadow-lg p-3 mb-5 bg-body rounded table-responsive">
-					<table class="table table-hover table-success  table-striped">
+					<table id="sensorsTable" class="table table-hover table-success  table-striped">
 						<thead>
 							<tr>
 								<th scope="col">Sensor</th>
@@ -40,21 +40,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="node: ${sensors}">
-								<td th:utext="${node.nodeResource}"> </td>
-								<td th:utext="${node.nodeIP}"> </td>
-								<td th:utext="${node.actuator} ? ${node.actuator.nodeIP}: ''"> </td>
-								<td th:utext="${node.currentValue}"> </td>
-								<td>
-								
-									<input type="date" th:id="${node.nodeIP}">
-									<input class="btn btn-dark" type="button"
-											th:nodeIP="${node.nodeIP}"
-											value="Show Log"
-											onclick="getLog(this.getAttribute('nodeIP'))"
-											name="status">		
-								</td>
-							</tr>
+							
 						</tbody>
 					</table>
 					
@@ -110,19 +96,52 @@
 			
 		</div>
 
+
+
+		<script type="text/javascript" th:inline="javascript">			
 			
-
-		<script type="text/javascript" th:inline="javascript">
-
-			function callUpdatePage() {
-				$('#mainDiv').load("/home");
+			
+			
+			function getNodes() {
+				//$('#mainDiv').load("/home");
 				//$('#tables')
-				//$.ajax({
-				//	type: 'GET',
-				//	url: "/home"
-				//});
+				console.log("i am here");
+				$.ajax({
+					type: 'GET',
+					url: "/getSensors",
+					success: function (data) {
+						//now we have the nodes, we need to add them to the gui
+						//console.log(data);
+						var json_data = JSON.parse(data);
+						
+						
+  						
+  						for (var i = 0; i < json_data.jsonarray.length; i++){
+						  var obj = json_data.jsonarray[i];
+						  var nodeIP = obj["IP"];
+						  var nodeResource = obj["Resource"];
+						  var nodeType = obj["Type"];
+						  var nodeValue = obj["Value"];
+						  
+						  if(nodeType=="sensor"){
+						  		var newRow=document.getElementById('sensorsTable').insertRow();
+						  		
+						  		
+  								newRow.innerHTML = "<td>"+nodeResource+"</td><td>"+nodeIP+"</td><td>ciao</td><td>"+nodeValue
+  								+"</td><td> <input type=date id="+nodeIP+"> <input class=btn-dark type=button value=ShowLog onclick=getLog("+nodeIP+") name=status></td>";
+  								
+  						   }
+						}
+  						
+  						
+  						
+  
+					}
+					
+				});
 
 			}
+			
 			function setActuator(ip, value) {
 				$.ajax({
 					type: 'GET',
@@ -134,7 +153,6 @@
 		
 			
 			function getLog(ip){
-				
 				var date = document.getElementById(ip);
 				if(date.value==""){
 					//if the user doesn't choose any date, we set it to the current day
