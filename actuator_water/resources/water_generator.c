@@ -21,6 +21,8 @@ int status = 0;
 int GOOD_MINERALS_LEVEL = 65;
 int GOOD_PH_LEVEL = 6.0;
 
+enum leds {GREEN, YELLOW,RED} alert_level = GREEN;
+
 EVENT_RESOURCE(water_generator,
         "title=\"Water actuator\"; GET/POST/PUT; status=1|0; rt=\"actuator\";\n",
         res_get_handler, res_post_put_handler, res_post_put_handler, NULL, res_event_handler);
@@ -95,15 +97,23 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 }
 
 static void res_event_handler() {
-    int newStatus;
-    if(minerals_level <= GOOD_MINERALS_LEVEL || ph_level <= GOOD_PH_LEVEL){
-        newStatus = 1;
-    }
-    else   
-        newStatus = 0;
+	int newStatus;
+	if(minerals_level <= GOOD_MINERALS_LEVEL || ph_level <= GOOD_PH_LEVEL){
+		newStatus = 1;
+		alert_level = RED;
+	}
+	else {
+		newStatus = 0;
+		if(minerals_level<=(GOOD_MINERALS_LEVEL+GOOD_MINERALS_LEVEL*0.3) && ph_level<=(GOOD_PH_LEVEL+GOOD_PH_LEVEL*0.3))
+			alert_level = YELLOW;
+		else
+			alert_level = GREEN;
+	}
+
+	
 	if(newStatus!=status){
 		status=newStatus;
 		coap_notify_observers(&water_generator);
 	}
-    printf("My status is : %d\n",status);
+        printf("My status is : %d\n",status);
 }
