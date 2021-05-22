@@ -16,7 +16,7 @@
 </head>
 
 <body onLoad="setInterval(callUpdatePage, 3000)" class="bg-light text-dark">
-	<div class="p-3 mb-2 bg-light text-dark" id="sensorWrapper">
+	<div class="p-3 mb-2 bg-light text-dark" id="mainDiv">
 		<div class=" shadow-sm p-0 mb-5 bg-body rounded " style="margin: 1% 10% 1% 5%;">
 			<h1 style="padding-left: 15%;">
 				Hydroponic Agriculture Management
@@ -82,7 +82,7 @@
 		<script type="text/javascript" th:inline="javascript">
 
 			function callUpdatePage() {
-				$('#sensorWrapper').load("/home");
+				$('#mainDiv').load("/home");
 				//$('#tables')
 				//$.ajax({
 				//	type: 'GET',
