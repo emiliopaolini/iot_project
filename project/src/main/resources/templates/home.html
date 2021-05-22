@@ -120,15 +120,12 @@
 			
 			function getLog(ip){
 				
-				console.log("ci arrivo");
-				
-				
 				var date = document.getElementById(ip);
-				console.log(date);
+				
 				
 				$.ajax({
 		            type: 'GET',
-		            url: '/getData?nodeIP='+ip
+		            url: '/getData?nodeIP='+ip+'&&date='+date.value
 		            
 		        });
 			}
