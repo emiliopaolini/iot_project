@@ -16,10 +16,12 @@ import spring.Application;
 
 @SpringBootApplication
 @RestController
-public class Server extends CoapServer {
+public class Server extends CoapServer  {
 
 	public static ArrayList<Node> nodes = new ArrayList<Node>();
 
+	public static Connection con;  
+	
 	public static void main(String args[]) {
 		
 		SpringApplication.run(Server.class, args);
@@ -28,17 +30,13 @@ public class Server extends CoapServer {
 		server.add(new ResourceRegistration("registration"));
 		server.add(new ResourceDiscovery("discovery"));
 		server.start();
+		
+		
 		System.out.println("Running it!");
 //		
 		try{  
-			Connection con=DriverManager.getConnection(  
-			"jdbc:mysql://localhost:3306/iot_project","root","root");  
-			//here sonoo is database name, root is username and password  
-			Statement stmt=con.createStatement();  
-			ResultSet rs=stmt.executeQuery("select * from sensor");  
-			while(rs.next())  
-				System.out.println(rs.getString(1)+"  "+rs.getString(2));  
-			con.close();  
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iot_project","root","root");  
+			System.out.println("Connection to mysql done!");
 		}catch(Exception e){ System.out.println(e);}  
 		
 	}

@@ -1,5 +1,10 @@
 package project;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Timestamp;
+
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapHandler;
 import org.eclipse.californium.core.CoapObserveRelation;
@@ -61,12 +66,53 @@ public class ResourceRegistration extends CoapResource {
 									valueReceived = ""+contentJ.get("status");
 								}
 								a.setCurrentValue(valueReceived);
+								insertInDB(a);
 								printStatus();
 							}
 							public void onError() {
 								System.err.println("-Failed--------"); }
 							});
 		
+	}
+	
+	
+	public static void insertInDB(Node a) {
+		//first check if the node already exists
+		try {
+			
+			String sql = "SELECT * FROM sensor WHERE ip=?";  
+
+		    PreparedStatement ps = Server.con.prepareStatement(sql);
+		    ps.setString(1,a.getNodeIP());
+		    
+		    ResultSet rs=ps.executeQuery();
+			
+			if(!rs.isBeforeFirst()){
+			    System.out.println("Registering the node..");
+			    sql = "INSERT INTO sensor VALUES(?,?);";
+			    ps = Server.con.prepareStatement(sql);
+			    ps.setString(1, a.getNodeIP());
+			    ps.setString(2, a.getNodeResource());
+			    rs=ps.executeQuery();
+			}
+			
+			//inserting the new value 
+			sql = "INSERT INTO measurement VALUES(?,?,?);";
+		    ps = Server.con.prepareStatement(sql);
+		    
+		    long now = System.currentTimeMillis();
+		    Timestamp sqlTimestamp = new Timestamp(now);
+		  
+		    ps.setTimestamp(1, sqlTimestamp);
+		    ps.setString(2, a.getCurrentValue());
+		    ps.setString(2, a.getNodeIP());
+		    rs=ps.executeQuery();
+			
+		
+			
+		}catch(Exception e) {
+			
+		}
 	}
 
 	public static void printStatus(){
