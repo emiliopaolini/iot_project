@@ -32,6 +32,7 @@
 								<th scope="col">IP</th>
 								<th scope="col">Assigned To</th>
 								<th scope="col">Value</th>
+								<th scope="col">Show Log</th>
 								
 							</tr>
 						</thead>
@@ -41,11 +42,12 @@
 								<td th:utext="${node.nodeIP}"> </td>
 								<td th:utext="${node.actuator} ? ${node.actuator.nodeIP}: ''"> </td>
 								<td th:utext="${node.currentValue}"> </td>
-								<input class="form-check-input" type="checkbox"
+								<td><input class="btn btn-dark" type="button"
 											th:nodeIP="${node.nodeIP}"
 											value="Show Log"
 											onclick="getLog(this.getAttribute('nodeIP'))"
-											name="status">				
+											name="status">		
+								</td>		
 							</tr>
 						</tbody>
 					</table>
@@ -110,7 +112,7 @@
 			function getLog(ip){
 				$.ajax({
 		            type: 'GET',
-		            url: '/getData?nodeIP=ip'
+		            url: '/getData?nodeIP='+ip
 		            
 		        });
 			}
