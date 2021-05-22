@@ -128,13 +128,13 @@
 					var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 					var yyyy = today.getFullYear();
 
-					date.value = yyyy+"-"+mm+"-"dd;
+					//date.value = yyyy+"-"+mm+"-"dd;
 				}
 				
 				$.ajax({
 		            type: 'GET',
 		            url: '/getData?nodeIP='+ip+'&&date='+date.value,
-		            datatype="JSON",
+		            datatype: "JSON",
 		            success: function (data) {
        				 	console.log(data);
     				}

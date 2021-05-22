@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import com.google.gson.Gson;
@@ -78,12 +79,14 @@ public class Controlling {
 		return "home";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value = "/getData")
 	public String getData(@RequestParam(required = true) String nodeIP,@RequestParam(required = true) String date) {
 		System.out.println("Ip received: "+nodeIP+"\n Retrieving all its data for "+date+"\n");
 		//2021-04-25 
 		
-		String sql = "SELECT value,TIME(date) as time FROM measurement WHERE ip=? AND DATE(`date`)=?";  
+		System.out.println("data arrivata: "+date);
+		String sql = "SELECT value,TIME(date) as time FROM measurement WHERE ip=? AND DATE(date)=?";  
 		Map<String, Object> hm = new HashMap<>();
 		
 		try {
