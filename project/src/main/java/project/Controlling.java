@@ -106,6 +106,10 @@ public class Controlling {
 		    	String value= rs.getString("value");
 		    	String hour = rs.getString("hour");
 		    	String minute = rs.getString("minute");
+		    	int temp = Integer.parseInt(minute);
+		    	if(temp<10)
+		    		minute = "0"+minute;
+		    	
 		    	String time = hour+"_"+minute; 
 		    	
 		    	JSONObject jo = new JSONObject();
