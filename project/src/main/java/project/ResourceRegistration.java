@@ -91,8 +91,18 @@ public class ResourceRegistration extends CoapResource {
 								}
 								if(a.getNodeType().equalsIgnoreCase("actuator")){
 									valueReceived = ""+contentJ.get("status");
+									//  update the corresponding sensor in order to make the simulation consistent
 								}
 								a.setCurrentValue(valueReceived);
+								if(a.getNodeType().equalsIgnoreCase("actuator")) {
+									Thread t = new Thread() {				
+										public void run() {
+											updateSensorOnActuatorStatus(a,a.getCurrentValue());
+										}
+									};
+									t.start();
+									
+								}
 								insertInDB(a);
 								//printStatus();
 							}
@@ -102,6 +112,21 @@ public class ResourceRegistration extends CoapResource {
 		
 	}
 	
+	public static void updateSensorOnActuatorStatus(Node a,String valueReceived) {
+		for (Node n : Server.nodes) {
+			if(n.getNodeType().equalsIgnoreCase("sensor")) {
+				if(n.hasActuator()) {
+					if(n.getActuator().equals(a)) {
+						// send a post request to the sensor
+						CoapClient client2 = new CoapClient("coap://[" + n.getNodeIP() + "]/" + n.getNodeResource());
+						System.out.println("new status of actuator is sent: " + valueReceived);
+						System.out.println("COAP ENDPOINT: coap://[" + n.getNodeIP() + "]/" + n.getNodeResource());
+						client2.post("actuator_status=" + valueReceived, MediaTypeRegistry.TEXT_PLAIN);
+					}
+				}
+			}
+		}
+	}
 	
 	public static void insertInDB(Node a) {
 		//first check if the node already exists

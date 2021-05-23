@@ -10,8 +10,6 @@
 
 
 
-
-
 enum leds {GREEN, YELLOW,RED} alert_level = GREEN;
 
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
@@ -20,6 +18,7 @@ static void res_event_handler();
 
 extern float oxygen_level;
 
+
 int status = 0;
 int GOOD_OXYGEN_LEVEL = 25;
 int manualMode = 0;
@@ -27,13 +26,13 @@ int manualMode = 0;
 
 
 static void checkAlertLevel(){
-	if(oxygen_level <= GOOD_OXYGEN_LEVEL){
+	if(oxygen_level <= GOOD_OXYGEN_LEVEL ){
 		alert_level = RED;
 	}
 	else{
-		 if(oxygen_level<=(GOOD_OXYGEN_LEVEL+GOOD_OXYGEN_LEVEL*0.3))
-	    		alert_level = YELLOW;
-	    	else
+	 	if(oxygen_level<=(GOOD_OXYGEN_LEVEL+GOOD_OXYGEN_LEVEL*0.3))
+			alert_level = YELLOW;
+		else
 			alert_level = GREEN;
 	}
 
@@ -115,7 +114,6 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 }
 
 
-
 static void res_event_handler() {
     	checkAlertLevel();
 	if(manualMode == 0){
@@ -128,8 +126,10 @@ static void res_event_handler() {
 		}
 		
 		if(newStatus!=status){
+			
 			status=newStatus;
-			coap_notify_observers(&oxygen_generator);
+			coap_notify_observers(&oxygen_generator); //to the cloud application
+
 		}
 		printf("My status is : %d\n",status);
 	}

@@ -101,7 +101,6 @@
 			function getNodes() {
 				//$('#mainDiv').load("/home");
 				//$('#tables')
-				console.log("i am here");
 				$.ajax({
 					type: 'GET',
 					url: "/getSensors",
@@ -267,6 +266,7 @@
        					newCanvas.width=0;
        					newCanvas.id='canvas';
        					document.getElementById("canvasContainer").append(newCanvas);
+       					console.log("ok arrived here");
        					var ctx = newCanvas.getContext('2d');
 						var config = {
 						options: {
@@ -286,7 +286,6 @@
 						};
 						
 						var chart = new Chart(ctx, config);
-       					
        					
        					
     				}
