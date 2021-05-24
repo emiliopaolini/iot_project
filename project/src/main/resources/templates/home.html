@@ -86,7 +86,11 @@
 					</table>
 					
 					
-
+				
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+				<canvas id="canvas"></canvas>
+       				 	
+				
 				</div>
 				<div class="col"><img src="./landing_image.jpg" style="width:90%; height:90%;"
 						class="shadow-lg p-3 mb-5 bg-body rounded">
@@ -135,8 +139,31 @@
 		            type: 'GET',
 		            url: '/getData?nodeIP='+ip+'&&date='+date.value,
 		            datatype: "JSON",
-		            success: function (data) {
-       				 	console.log(data);
+		            success: function (resulting_data) {
+       				 	console.log(resulting_data);
+       				 	var labels = resulting_data.jsonarray.map(function(e) {
+   							return e.name;
+						});
+						var data = resulting_data.jsonarray.map(function(e) {
+   							return e.age;
+						});;
+						
+						var ctx = canvas.getContext('2d');
+						var config = {
+	   							type: 'line',
+	   							data: {
+		      						labels: labels,
+		      						datasets: [{
+		         						label: 'Graph Line',
+		         						data: data,
+		         						backgroundColor: 'rgba(0, 119, 204, 0.3)'
+		      						}]
+	   							}
+						};
+
+						var chart = new Chart(ctx, config);
+       				 	
+       				 	
     				}
 		            
 		        });
