@@ -63,10 +63,10 @@ static void res_event_handler(){
     oxygen_level += randInRange(-2.0,2.0);
 
     if(oxygen_level>=MAXIMUM_OXYGEN_LEVEL)
-	oxygen_level = MAXIMUM_OXYGEN_LEVEL;
+	    oxygen_level = MAXIMUM_OXYGEN_LEVEL;
 
     if(oxygen_level<=MINIMUM_OXYGEN_LEVEL)
-	oxygen_level = MINIMUM_OXYGEN_LEVEL;
+	    oxygen_level = MINIMUM_OXYGEN_LEVEL;
     //notify coap clients subscribed to this resource
     coap_notify_observers(&oxygen_measuring_device);
 }

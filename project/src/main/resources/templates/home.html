@@ -68,6 +68,12 @@
 
 						</tbody>
 					</table>
+					
+					<input class="btn btn-primary"
+       					type="button"
+       					value="Prova"
+       					onclick="prova()"
+       					>
 
 				</div>
 				<div class="col"><img src="./landing_image.jpg" style="width:90%; height:90%;"
@@ -98,6 +104,24 @@
 
 
 			}
+			
+			function prova(){
+				$.ajax({
+		            type: 'POST',
+		            url: '/getData',
+		            data: {
+		                sensor_ip: 'hello'
+		            },
+		            success: function(text) {
+		            	console.log("success!!");
+		                $(document.body).text('Response: ' + text);
+		            },
+		            error: function (jqXHR) {
+		                $(document.body).text('Error: ' + jqXHR.status);
+		            }
+		        });
+			}
+			
 			const checkboxes = document.querySelectorAll('input[name="status"]');
 			checkboxes.forEach((checkbox) => {
 				if (checkbox.getAttribute("currentValue") == "1")

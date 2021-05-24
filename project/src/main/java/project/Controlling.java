@@ -11,6 +11,7 @@ import org.eclipse.californium.core.coap.MediaTypeRegistry;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -67,6 +68,12 @@ public class Controlling {
 		model.addAttribute("sensors", sensors);
 		model.addAttribute("actuators", actuators);
 		return "home";
+	}
+	
+	@RequestMapping("/getData")
+	public String getData(@RequestParam("sensor_ip") String sensor_ip) {
+		System.out.println("Ip received: "+sensor_ip);
+		return "";
 	}
 
 //	private final List<SseEmitter> sseEmitter = new LinkedList<>();
