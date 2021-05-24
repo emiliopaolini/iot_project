@@ -72,7 +72,7 @@ public class Controlling {
 	
 	@RequestMapping(value = "/getData")
 	public String getData(@RequestParam(required = true) String nodeIP) {
-		System.out.println("Ip received: "+nodeIP);
+		System.out.println("Ip received: "+nodeIP+"\n Retrieving all its data for ");
 		
 		return "home";
 	}

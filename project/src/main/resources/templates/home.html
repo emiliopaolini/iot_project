@@ -5,7 +5,7 @@
 	<title>Hydroponic Agriculture</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" media="all" href="./style.css" th:href="@{/style.css}" />
+	<link rel="stylesheet" type="text/css" media	"all" href="./style.css" th:href="@{/style.css}" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -42,15 +42,34 @@
 								<td th:utext="${node.nodeIP}"> </td>
 								<td th:utext="${node.actuator} ? ${node.actuator.nodeIP}: ''"> </td>
 								<td th:utext="${node.currentValue}"> </td>
-								<td><input class="btn btn-dark" type="button"
+								<td>
+								
+									<input type="date" id="${node.nodeIP}">
+									<input class="btn btn-dark" type="button"
 											th:nodeIP="${node.nodeIP}"
 											value="Show Log"
 											onclick="getLog(this.getAttribute('nodeIP'))"
 											name="status">		
-								</td>		
+								</td>
 							</tr>
 						</tbody>
 					</table>
+					
+					
+					
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
+					
+					  <!-- Modal content -->
+					  <div class="modal-content">
+					    <span class="close">&times;</span>
+					    <p>Some text in the Modal..</p>
+					  </div>
+					
+					</div>
+					
+					
+					
 					<table class="table table-hover table-info  table-striped">
 						<thead>
 							<tr>
@@ -64,7 +83,6 @@
 								<td th:utext="${node.nodeResource}"> </td>
 								<td th:utext="${node.nodeIP}"> </td>
 								<td>
-									<div class="form-check form-switch">
 										<input class="form-check-input" type="checkbox"
 											th:nodeIP="${node.nodeIP}"
 											th:currentValue="${node.currentValue}"
@@ -109,7 +127,18 @@
 
 			}
 			
+			$( function() {
+    			$( "#datepicker" ).datepicker();
+  			} );
+			
 			function getLog(ip){
+			
+				var jsDate = $('#'+ip).datepicker('getDate');
+				if (jsDate !== null) { // if any date selected in datepicker
+						var date = $('#'+ip).datepicker({ dateFormat: 'dd,MM,yyyy' }).val();
+						console.log(date);
+				}
+				
 				$.ajax({
 		            type: 'GET',
 		            url: '/getData?nodeIP='+ip
