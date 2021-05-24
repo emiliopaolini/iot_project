@@ -4,6 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapHandler;
@@ -100,10 +103,10 @@ public class ResourceRegistration extends CoapResource {
 			sql = "INSERT INTO measurement VALUES(?,?,?);";
 		    ps = Server.con.prepareStatement(sql);
 		    
-		    long now = System.currentTimeMillis();
-		    Timestamp sqlTimestamp = new Timestamp(now);
+		    DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+	        Date date = new Date();
 		  
-		    ps.setTimestamp(1, sqlTimestamp);
+		    ps.setString(1, dateFormat.format(date));
 		    ps.setString(2, a.getCurrentValue());
 		    ps.setString(2, a.getNodeIP());
 		    rs=ps.executeQuery();

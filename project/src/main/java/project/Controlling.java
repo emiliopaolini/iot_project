@@ -2,6 +2,10 @@ package project;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -73,7 +77,25 @@ public class Controlling {
 	@RequestMapping(value = "/getData")
 	public String getData(@RequestParam(required = true) String nodeIP,@RequestParam(required = true) String date) {
 		System.out.println("Ip received: "+nodeIP+"\n Retrieving all its data for "+date+"\n");
+		//2021-04-25 
 		
+		String sql = "SELECT value FROM measurement WHERE ip=? AND date=?";  
+		try {
+	    PreparedStatement ps = Server.con.prepareStatement(sql);
+	    ps.setString(1,nodeIP);
+	    ps.setString(2,date);
+	    
+	    ResultSet rs=ps.executeQuery();
+	    
+	     
+	      while (rs.next()) {
+	        String value= rs.getString("value");
+	        
+	        System.out.println(value);
+	      }
+	    } catch (SQLException e) {
+	      System.out.println(e);
+	    }
 		return "home";
 	}
 
