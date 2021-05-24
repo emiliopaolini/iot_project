@@ -32,6 +32,7 @@
 								<th scope="col">IP</th>
 								<th scope="col">Assigned To</th>
 								<th scope="col">Value</th>
+								
 							</tr>
 						</thead>
 						<tbody>
@@ -40,6 +41,11 @@
 								<td th:utext="${node.nodeIP}"> </td>
 								<td th:utext="${node.actuator} ? ${node.actuator.nodeIP}: ''"> </td>
 								<td th:utext="${node.currentValue}"> </td>
+								<input class="form-check-input" type="checkbox"
+											th:nodeIP="${node.nodeIP}"
+											value="Show Log"
+											onclick="getLog(this.getAttribute('nodeIP'))"
+											name="status">				
 							</tr>
 						</tbody>
 					</table>
@@ -69,11 +75,7 @@
 						</tbody>
 					</table>
 					
-					<input class="btn btn-primary"
-       					type="button"
-       					value="Prova"
-       					onclick="prova()"
-       					>
+					
 
 				</div>
 				<div class="col"><img src="./landing_image.jpg" style="width:90%; height:90%;"
@@ -105,20 +107,11 @@
 
 			}
 			
-			function prova(){
+			function getLog(ip){
 				$.ajax({
-		            type: 'POST',
-		            url: '/getData',
-		            data: {
-		                sensor_ip: 'hello'
-		            },
-		            success: function(text) {
-		            	console.log("success!!");
-		                $(document.body).text('Response: ' + text);
-		            },
-		            error: function (jqXHR) {
-		                $(document.body).text('Error: ' + jqXHR.status);
-		            }
+		            type: 'GET',
+		            url: '/getData?nodeIP=ip'
+		            
 		        });
 			}
 			

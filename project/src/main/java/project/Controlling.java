@@ -70,10 +70,11 @@ public class Controlling {
 		return "home";
 	}
 	
-	@RequestMapping("/getData")
-	public String getData(@RequestParam("sensor_ip") String sensor_ip) {
-		System.out.println("Ip received: "+sensor_ip);
-		return "";
+	@RequestMapping(value = "/getData")
+	public String getData(@RequestParam(required = true) String nodeIP) {
+		System.out.println("Ip received: "+nodeIP);
+		
+		return "home";
 	}
 
 //	private final List<SseEmitter> sseEmitter = new LinkedList<>();
