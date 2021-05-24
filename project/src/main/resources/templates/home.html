@@ -133,7 +133,11 @@
 				
 				$.ajax({
 		            type: 'GET',
-		            url: '/getData?nodeIP='+ip+'&&date='+date.value
+		            url: '/getData?nodeIP='+ip+'&&date='+date.value,
+		            datatype="JSON",
+		            success: function (data) {
+       				 	console.log(data);
+    				}
 		            
 		        });
 			}

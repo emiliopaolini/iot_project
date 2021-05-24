@@ -7,8 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.coap.MediaTypeRegistry;
@@ -20,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+
+import com.google.gson.Gson;
 
 @Controller
 public class Controlling {
@@ -79,24 +83,31 @@ public class Controlling {
 		System.out.println("Ip received: "+nodeIP+"\n Retrieving all its data for "+date+"\n");
 		//2021-04-25 
 		
-		String sql = "SELECT value FROM measurement WHERE ip=? AND date=?";  
+		String sql = "SELECT value,TIME(date) as time FROM measurement WHERE ip=? AND DATE(`date`)=?";  
+		Map<String, Object> hm = new HashMap<>();
+		
 		try {
-	    PreparedStatement ps = Server.con.prepareStatement(sql);
-	    ps.setString(1,nodeIP);
-	    ps.setString(2,date);
-	    
-	    ResultSet rs=ps.executeQuery();
-	    
-	     
-	      while (rs.next()) {
-	        String value= rs.getString("value");
-	        
-	        System.out.println(value);
-	      }
+		    PreparedStatement ps = Server.con.prepareStatement(sql);
+		    ps.setString(1,nodeIP);
+		    ps.setString(2,date);
+		    
+		    ResultSet rs=ps.executeQuery();
+		
+		   
+		    
+		    
+		    while (rs.next()) {
+		    	String value= rs.getString("value");
+		    	String time= rs.getString("time");
+		    	hm.put(time, value);
+		     	System.out.println(value);
+		    }
 	    } catch (SQLException e) {
 	      System.out.println(e);
 	    }
-		return "home";
+		
+        return new Gson().toJson(hm);
+		//return "home";
 	}
 
 //	private final List<SseEmitter> sseEmitter = new LinkedList<>();

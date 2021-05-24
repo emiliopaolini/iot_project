@@ -105,6 +105,8 @@ public class ResourceRegistration extends CoapResource {
 			}
 			
 			if(a.getCurrentValue().equals("")) return;
+			
+			
 			System.out.println("inserting values..");
 			//inserting the new value 
 			sql = "INSERT INTO measurement(date,ip,value) VALUES(?,?,?);";
