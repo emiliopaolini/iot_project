@@ -147,13 +147,22 @@
 									+"</td><td> <input id="+nodeIP+" type=checkbox  value=ShowLog onclick=setActuator("+"\'"+nodeIP+"\'"+",\'"+nodeValue+"\'"+") name=status></td>";
 									var append;
 									if(nodeResource=="oxygen"){
-										 var oxygen_threshold = obj["oxygen_threshold"];
-										 append = "<td><div class=input-group><span class=input-group-text>Oxygen threshold:</span><input type=number id="+nodeIP+"_oxygen_threshold value="+oxygen_threshold+"><input type=button class=btn-dark value=Change onclick=changeThreshold("+"\'oxygen\'"+","+"\'"+nodeIP+"\'"+")></td>";
+										var oxygen_threshold = obj["oxygen_threshold"];
+										append = "<td><div class=input-group><span class=input-group-text>Oxygen threshold:</span>";
+										append +="<input class=form-control type=number id="+nodeIP+"_oxygen_threshold value="+oxygen_threshold+">";
+										append += "<input type=button class=btn-dark value=Change onclick=changeThreshold("+"\'oxygen\'"+","+"\'"+nodeIP+"\'"+")>";
+										append += "</div></td>";
 									}
 									if(nodeResource=="water"){
-										 var ph_threshold = obj["ph_threshold"];
-										 var minerals_threshold = obj["minerals_threshold"];
-										 append = "<td><div class=input-group><span class=input-group-text>PH threshold:</span> <input type=number id="+nodeIP+"_ph_threshold value="+ph_threshold+"><input type=button class=btn-dark value=Change onclick=changeThreshold("+"\'ph\'"+","+"\'"+nodeIP+"\'"+")><span class=input-group-text>Minerals threshold</span><input type=number id="+nodeIP+"_minerals_threshold value="+minerals_threshold+"><input class=btn-dark type=button value=Change onclick=changeThreshold("+"\'minerals\'"+","+"\'"+nodeIP+"\'"+")></div></td>";
+										var ph_threshold = obj["ph_threshold"];
+										var minerals_threshold = obj["minerals_threshold"];
+										append = "<td><div class=input-group><span class=input-group-text>PH threshold:</span>";
+										append += "<input class=form-control type=number id="+nodeIP+"_ph_threshold value="+ph_threshold+">";
+										append += "<input type=button class=btn-dark value=Change onclick=changeThreshold("+"\'ph\'"+","+"\'"+nodeIP+"\'"+")>";
+										append += "<span class=input-group-text>Minerals threshold</span>";
+										append += "<input class=form-control type=number id="+nodeIP+"_minerals_threshold value="+minerals_threshold+">";
+										append += "<input class=btn-dark type=button value=Change onclick=changeThreshold("+"\'minerals\'"+","+"\'"+nodeIP+"\'"+")>";
+										append += "</div></td>";
 									}
 									
 									newRow.innerHTML += append;
