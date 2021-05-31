@@ -17,7 +17,6 @@ float oxygen_level = 22; // normally should be between 19 and 22
 #define MINIMUM_OXYGEN_LEVEL 1
 #define MAX_AGE 60
 
-extern bool actuator_status;
 
 int actuatorStatus = 0;
 
@@ -87,11 +86,11 @@ static void res_event_handler(){
     // make simulation consistent
     if(actuatorStatus==0){
 	printf("actuator is off.. oxygen is decreasing\n");
-    	oxygen_level += randInRange(-2.0,0);
+    	oxygen_level += randInRange(-2,0);
     }
     else{
 	printf("actuator is on.. oxygen is increasing\n");
-	oxygen_level += randInRange(0.5,2.5);
+	oxygen_level += randInRange(2,4.5);
     }
     
     //make sure that the changes will be between MINIMUM_OXYGEN_LEVEL and MAXIMUM_OXYGEN_LEVEL

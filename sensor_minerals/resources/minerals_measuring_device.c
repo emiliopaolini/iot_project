@@ -7,6 +7,7 @@
 
 
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
+static void res_post_put_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_event_handler();
 
 
@@ -15,7 +16,7 @@ float minerals_level = 60; // normally should be between 50 and 70
 #define MINIMUM_MINERALS_LEVEL 1
 #define MAX_AGE 60
 
-extern bool actuator_status;
+int actuatorStatus = 0;
 
 float randInRange(float min, float max){
   
@@ -27,15 +28,37 @@ float randInRange(float min, float max){
 EVENT_RESOURCE(
     minerals_measuring_device,
     "title=\"Minerals sensor\"; GET; rt=\"sensor\"; obs\n",
-    res_get_handler, NULL, NULL, NULL, res_event_handler);
+    res_get_handler, res_post_put_handler, res_post_put_handler, NULL, res_event_handler);
+
+
+
+
+static void res_post_put_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset){
+	printf("Receive an update from the actuator\n");
+	const char *value = NULL;
+	static char *string_received;
+	
+	//size_t len = coap_get_query_variable(request,"status",&value);
+	size_t len = coap_get_post_variable(request,"actuator_status",&value);
+	printf("len is equal to: %d \n",len);
+	
+	if(len !=0){
+		// receive a status
+		string_received = malloc(len+1);
+		memcpy(string_received,value,len);
+		string_received[len+1] = '\0';	
+		int newStatus = atoi(string_received);
+		printf("new status received is %d\n",newStatus);
+		if(newStatus != actuatorStatus){
+			actuatorStatus = newStatus;
+		}
+	}
+
+}
 
 
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset){
     //this will respond to GET request
-
-    
-
-
     unsigned int accept = APPLICATION_JSON;
     coap_get_header_accept(request, &accept);
 
@@ -60,7 +83,14 @@ static void res_event_handler(){
 
     //randomly change level minerals
     //make sure that the changes will be between MINIMUM_MINERALS_LEVEL and MAXIMUM_MINERALS_LEVEL
-    minerals_level += randInRange(-5.0,5.0);
+    if(actuatorStatus==0){
+	printf("actuator is off.. minerals is decreasing\n");
+    	minerals_level += randInRange(-2.0,0);
+    }
+    else{
+	printf("actuator is on.. minerals is increasing\n");
+	minerals_level += randInRange(2,4.5);
+    }
 
     if(minerals_level>=MAXIMUM_MINERALS_LEVEL)
 	minerals_level = MAXIMUM_MINERALS_LEVEL;
