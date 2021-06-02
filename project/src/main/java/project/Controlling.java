@@ -84,6 +84,10 @@ public class Controlling {
 	public String setManual(@RequestParam(required = true) String nodeIP,
 			@RequestParam(required = true) String currentValue, Model model) {
 		Node node = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
+		if(currentValue.equalsIgnoreCase("0"))
+			node.setManualMode(0);
+		else
+			node.setManualMode(1);
 		CoapClient client = new CoapClient("coap://[" + node.getNodeIP() + "]/" + node.getNodeResource());
 		System.out.println("new manual mode is sent: " + currentValue);
 		client.post("manualMode=" + currentValue, MediaTypeRegistry.TEXT_PLAIN);
@@ -191,6 +195,7 @@ public class Controlling {
 	    			jo.put("ph_threshold", thresholds.get("ph_threshold"));
 	    			jo.put("minerals_threshold", thresholds.get("minerals_threshold"));
 	    		}
+	    		jo.put("ManualMode", n.getManualMode());
 	    	}
 	    	
 	    	if(n.getNodeType().equalsIgnoreCase("sensor") && n.hasActuator())

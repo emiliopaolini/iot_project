@@ -129,6 +129,8 @@
 							  
 						  }
 						  if(nodeType=="actuator" && nodesReceived.includes(nodeIP) ){
+						  		
+						  			
 						  		if(nodeValue=="1"){
 									document.getElementById(nodeIP).checked=true;
 								}
@@ -161,6 +163,8 @@
 									+"<input id="+nodeIP+"_manual style='margin-left:-20%;' class='form-check-input' type=checkbox   onclick=setManual("+"\'"+nodeIP+"\'"+") name=status>"
 									+"</div></td>";
 									
+									
+									
 									var append;
 									if(nodeResource=="oxygen"){
 										var oxygen_threshold = obj["oxygen_threshold"];
@@ -189,6 +193,12 @@
 									}
 									
 									newRow.innerHTML += append;
+									
+									var manualMode = obj["ManualMode"];
+							  		if(manualMode==0)
+							  			document.getElementById(nodeIP+"_manual").checked=false;
+							  		else
+							  			document.getElementById(nodeIP+"_manual").checked=true;
 									
 									if(nodeValue==1){
 										document.getElementById(nodeIP).checked=true;

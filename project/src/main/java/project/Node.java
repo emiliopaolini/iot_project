@@ -12,6 +12,7 @@ public class Node {
 	private String nodeResource;
 	private String currentValue;// this can be "on/off" for actuators or the actual value for sensors
 	private Node actuator;
+	private int manualMode; 
 	Map<String, String> thresholds; 
 
 	public Node() {
@@ -25,6 +26,7 @@ public class Node {
 		this.currentValue = "";
 		this.actuator = null;
 		this.thresholds = thresholds;
+		this.manualMode = 0;
 	}
 
 	public String toString() {
@@ -41,6 +43,14 @@ public class Node {
 
 
 	
+	public int getManualMode() {
+		return manualMode;
+	}
+
+	public void setManualMode(int manualMode) {
+		this.manualMode = manualMode;
+	}
+
 	public void addThreshold(String thresholdName,String thresholdValue) {
 		this.thresholds.put(thresholdName, thresholdValue);
 	}
