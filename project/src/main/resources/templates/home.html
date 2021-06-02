@@ -169,6 +169,13 @@
 										append += "<input type=button class='btn-dark' value=Change onclick=changeThreshold("+"\'oxygen\'"+","+"\'"+nodeIP+"\'"+")>";
 										append += "</div></td>";
 									}
+									if(nodeResource=="light"){
+										var light_threshold = obj["light_threshold"];
+										append = "<td style=text-align:center;><div class='input-group'><span class='input-group-text' style=width:80px;>Light:</span>";
+										append +="<input class='form-control' type=number style=width:40px; id="+nodeIP+"_light_threshold value="+light_threshold+">";
+										append += "<input type=button class='btn-dark' value=Change onclick=changeThreshold("+"\'light\'"+","+"\'"+nodeIP+"\'"+")>";
+										append += "</div></td>";
+									}
 									if(nodeResource=="water"){
 										var ph_threshold = obj["ph_threshold"];
 										var minerals_threshold = obj["minerals_threshold"];

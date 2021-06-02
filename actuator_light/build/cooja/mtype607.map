@@ -1,0 +1,2830 @@
+Archive member included to satisfy reference by file (symbol)
+
+build/cooja/mtype607.a(simEnvChange.o)
+                              build/cooja/mtype607.o (simDontFallAsleep)
+build/cooja/mtype607.a(cooja_mt.o)
+                              build/cooja/mtype607.o (cooja_mt_start)
+build/cooja/mtype607.a(cooja_mtarch.o)
+                              build/cooja/mtype607.a(cooja_mt.o) (cooja_mtarch_start)
+build/cooja/mtype607.a(rtimer-arch.o)
+                              build/cooja/mtype607.o (rtimer_arch_check)
+build/cooja/mtype607.a(beep.o)
+                              build/cooja/mtype607.o (beep_interface)
+build/cooja/mtype607.a(leds-arch.o)
+                              build/cooja/mtype607.o (leds_interface)
+build/cooja/mtype607.a(moteid.o)
+                              build/cooja/mtype607.o (moteid_interface)
+build/cooja/mtype607.a(pir-sensor.o)
+                              build/cooja/mtype607.o (pir_interface)
+build/cooja/mtype607.a(rs232.o)
+                              build/cooja/mtype607.o (rs232_interface)
+build/cooja/mtype607.a(vib-sensor.o)
+                              build/cooja/mtype607.o (vib_interface)
+build/cooja/mtype607.a(clock.o)
+                              build/cooja/mtype607.o (clock_interface)
+build/cooja/mtype607.a(cooja-log.o)
+                              build/cooja/mtype607.o (simlog_interface)
+build/cooja/mtype607.a(cfs-cooja.o)
+                              build/cooja/mtype607.o (cfs_interface)
+build/cooja/mtype607.a(cooja-radio.o)
+                              build/cooja/mtype607.o (radio_interface)
+build/cooja/mtype607.a(eeprom.o)
+                              build/cooja/mtype607.o (eeprom_interface)
+build/cooja/mtype607.a(random.o)
+                              build/cooja/mtype607.a(moteid.o) (random_init)
+build/cooja/mtype607.a(sensors.o)
+                              build/cooja/mtype607.a(pir-sensor.o) (sensors_changed)
+build/cooja/mtype607.a(leds.o)
+                              build/cooja/mtype607.a(leds-arch.o) (leds_get)
+build/cooja/mtype607.a(gpio-hal-arch.o)
+                              build/cooja/mtype607.a(leds-arch.o) (gpio_hal_arch_register_pin_callback)
+build/cooja/mtype607.a(buttons.o)
+                              build/cooja/mtype607.o (button_interface)
+build/cooja/mtype607.a(oxygen_generato)
+                              oxygen_actuator.o (oxygen_generator)
+build/cooja/mtype607.a(coap-observe-cl)
+                              oxygen_actuator.o (coap_obs_request_registration)
+build/cooja/mtype607.a(coap-blocking-a)
+                              oxygen_actuator.o (coap_blocking_request)
+build/cooja/mtype607.a(coap-engine.o)
+                              oxygen_actuator.o (coap_activate_resource)
+build/cooja/mtype607.a(coap-res-well-k)
+                              build/cooja/mtype607.a(coap-engine.o) (res_well_known_core)
+build/cooja/mtype607.a(coap-observe.o)
+                              build/cooja/mtype607.a(coap-engine.o) (coap_remove_observer_by_mid)
+build/cooja/mtype607.a(coap-uip.o)
+                              oxygen_actuator.o (coap_endpoint_log)
+build/cooja/mtype607.a(coap-timer.o)
+                              build/cooja/mtype607.a(coap-engine.o) (coap_timer_set)
+build/cooja/mtype607.a(coap-transactio)
+                              build/cooja/mtype607.a(coap-observe-cl) (coap_send_transaction)
+build/cooja/mtype607.a(coap.o)
+                              build/cooja/mtype607.a(coap-engine.o) (coap_status_code)
+build/cooja/mtype607.a(contiki-main.o)
+                              build/cooja/mtype607.o (main)
+build/cooja/mtype607.a(autostart.o)
+                              build/cooja/mtype607.a(contiki-main.o) (autostart_start)
+build/cooja/mtype607.a(ctimer.o)
+                              build/cooja/mtype607.a(contiki-main.o) (ctimer_init)
+build/cooja/mtype607.a(log.o)
+                              build/cooja/mtype607.a(contiki-main.o) (curr_log_level_main)
+build/cooja/mtype607.a(energest.o)
+                              build/cooja/mtype607.a(contiki-main.o) (energest_init)
+build/cooja/mtype607.a(etimer.o)
+                              build/cooja/mtype607.a(contiki-main.o) (etimer_process)
+build/cooja/mtype607.a(node-id.o)
+                              build/cooja/mtype607.a(contiki-main.o) (node_id)
+build/cooja/mtype607.a(rtimer.o)
+                              build/cooja/mtype607.a(contiki-main.o) (rtimer_init)
+build/cooja/mtype607.a(process.o)
+                              build/cooja/mtype607.a(coap-blocking-a) (process_current)
+build/cooja/mtype607.a(timer.o)
+                              build/cooja/mtype607.a(etimer.o) (timer_set)
+build/cooja/mtype607.a(list.o)
+                              build/cooja/mtype607.a(coap-engine.o) (list_init)
+build/cooja/mtype607.a(memb.o)
+                              build/cooja/mtype607.a(coap-observe-cl) (memb_alloc)
+build/cooja/mtype607.a(button-hal.o)
+                              build/cooja/mtype607.o (button_hal_init)
+build/cooja/mtype607.a(serial-line.o)
+                              build/cooja/mtype607.a(rs232.o) (serial_line_input_byte)
+build/cooja/mtype607.a(gpio-hal.o)
+                              build/cooja/mtype607.a(button-hal.o) (gpio_hal_register_handler)
+build/cooja/mtype607.a(queuebuf.o)
+                              build/cooja/mtype607.a(contiki-main.o) (queuebuf_init)
+build/cooja/mtype607.a(packetbuf.o)
+                              build/cooja/mtype607.a(cooja-radio.o) (packetbuf_clear)
+build/cooja/mtype607.a(netstack.o)
+                              build/cooja/mtype607.a(contiki-main.o) (netstack_init)
+build/cooja/mtype607.a(linkaddr.o)
+                              build/cooja/mtype607.a(contiki-main.o) (linkaddr_node_addr)
+build/cooja/mtype607.a(csma.o)
+                              build/cooja/mtype607.a(cooja-radio.o) (csma_driver)
+build/cooja/mtype607.a(csma-output.o)
+                              build/cooja/mtype607.a(csma.o) (csma_output_packet)
+build/cooja/mtype607.a(uip-ds6.o)
+                              build/cooja/mtype607.a(contiki-main.o) (uip_ds6_get_link_local)
+build/cooja/mtype607.a(uip-udp-packet.)
+                              build/cooja/mtype607.a(coap-uip.o) (uip_udp_packet_sendto)
+build/cooja/mtype607.a(uip-ds6-route.o)
+                              build/cooja/mtype607.a(uip-ds6.o) (uip_ds6_route_init)
+build/cooja/mtype607.a(tcpip.o)
+                              build/cooja/mtype607.a(coap-uip.o) (tcpip_event)
+build/cooja/mtype607.a(uip6.o)
+                              build/cooja/mtype607.a(contiki-main.o) (uip_lladdr)
+build/cooja/mtype607.a(uip-ds6-nbr.o)
+                              build/cooja/mtype607.a(uip-ds6.o) (uip_ds6_neighbors_init)
+build/cooja/mtype607.a(uip-nd6.o)
+                              build/cooja/mtype607.a(uip6.o) (uip_nd6_init)
+build/cooja/mtype607.a(sicslowpan.o)
+                              build/cooja/mtype607.a(contiki-main.o) (sicslowpan_driver)
+build/cooja/mtype607.a(uiplib.o)
+                              build/cooja/mtype607.a(coap-uip.o) (uiplib_ip6addrconv)
+build/cooja/mtype607.a(rpl.o)
+                              build/cooja/mtype607.a(coap-uip.o) (rpl_lite_driver)
+build/cooja/mtype607.a(rpl-icmp6.o)
+                              build/cooja/mtype607.a(rpl.o) (rpl_icmp6_init)
+build/cooja/mtype607.a(rpl-dag-root.o)
+                              build/cooja/mtype607.a(rpl.o) (rpl_dag_root_is_root)
+build/cooja/mtype607.a(watchdog.o)
+                              build/cooja/mtype607.a(contiki-main.o) (watchdog_init)
+build/cooja/mtype607.a(int-master.o)
+                              build/cooja/mtype607.a(button-hal.o) (int_master_read_and_disable)
+build/cooja/mtype607.a(coap-timer-defa)
+                              build/cooja/mtype607.a(coap-timer.o) (coap_timer_default_driver)
+build/cooja/mtype607.a(stimer.o)
+                              build/cooja/mtype607.a(uip-ds6.o) (stimer_set)
+build/cooja/mtype607.a(ringbuf.o)
+                              build/cooja/mtype607.a(serial-line.o) (ringbuf_init)
+build/cooja/mtype607.a(assert.o)
+                              build/cooja/mtype607.a(csma-output.o) (_xassert)
+build/cooja/mtype607.a(nbr-table.o)
+                              build/cooja/mtype607.a(uip-ds6-nbr.o) (nbr_table_get_from_lladdr)
+build/cooja/mtype607.a(link-stats.o)
+                              build/cooja/mtype607.a(sicslowpan.o) (link_stats_packet_sent)
+build/cooja/mtype607.a(mac-sequence.o)
+                              build/cooja/mtype607.a(csma.o) (mac_sequence_is_duplicate)
+build/cooja/mtype607.a(mac.o)
+                              build/cooja/mtype607.a(csma-output.o) (mac_call_sent_callback)
+build/cooja/mtype607.a(framer-802154.o)
+                              build/cooja/mtype607.a(csma.o) (framer_802154)
+build/cooja/mtype607.a(frame802154.o)
+                              build/cooja/mtype607.a(framer-802154.o) (frame802154_get_pan_id)
+build/cooja/mtype607.a(csma-security.o)
+                              build/cooja/mtype607.a(csma-output.o) (csma_security_create_frame)
+build/cooja/mtype607.a(uipbuf.o)
+                              build/cooja/mtype607.a(tcpip.o) (uipbuf_clear)
+build/cooja/mtype607.a(uip-icmp6.o)
+                              build/cooja/mtype607.a(uip6.o) (uip_icmp6_input)
+build/cooja/mtype607.a(uip-sr.o)
+                              build/cooja/mtype607.a(rpl-dag-root.o) (uip_sr_num_nodes)
+build/cooja/mtype607.a(uip-packetqueue)
+                              build/cooja/mtype607.a(uip-ds6-nbr.o) (uip_packetqueue_new)
+build/cooja/mtype607.a(rpl-nbr-policy.)
+                              build/cooja/mtype607.a(nbr-table.o) (rpl_nbr_gc_get_worst)
+build/cooja/mtype607.a(rpl-neighbor.o)
+                              build/cooja/mtype607.a(rpl-icmp6.o) (rpl_neighbor_get_ipaddr)
+build/cooja/mtype607.a(rpl-dag.o)
+                              build/cooja/mtype607.a(rpl.o) (curr_instance)
+build/cooja/mtype607.a(rpl-timers.o)
+                              build/cooja/mtype607.a(rpl-dag.o) (rpl_timers_schedule_periodic_dis)
+build/cooja/mtype607.a(rpl-ext-header.)
+                              build/cooja/mtype607.a(rpl.o) (rpl_ext_header_srh_get_next_hop)
+build/cooja/mtype607.a(rpl-mrhof.o)
+                              build/cooja/mtype607.a(rpl-dag.o) (rpl_mrhof)
+/usr/lib/gcc/i686-linux-gnu/5/libgcc.a(_udivdi3.o)
+                              build/cooja/mtype607.a(coap-timer-defa) (__udivdi3)
+
+Allocating common symbols
+Common symbol       size              file
+
+simButtonIsDown     0x1               build/cooja/mtype607.a(buttons.o)
+simOutDataBuffer    0x7d              build/cooja/mtype607.a(cooja-radio.o)
+uip_ds6_prefix_list
+                    0x60              build/cooja/mtype607.a(uip-ds6.o)
+linkaddr_node_addr  0x8               build/cooja/mtype607.a(linkaddr.o)
+simSerialReceivingFlag
+                    0x1               build/cooja/mtype607.a(rs232.o)
+simEEPROMData       0x400             build/cooja/mtype607.a(eeprom.o)
+periodic_timer      0x20              build/cooja/mtype607.a(link-stats.o)
+simLoggedLength     0x4               build/cooja/mtype607.a(cooja-log.o)
+simSerialReceivingLength
+                    0x4               build/cooja/mtype607.a(rs232.o)
+simEtimerPending    0x4               build/cooja/mtype607.a(simEnvChange.o)
+uip_slen            0x2               build/cooja/mtype607.a(uip6.o)
+uip_ds6_timer_periodic
+                    0x10              build/cooja/mtype607.a(uip-ds6.o)
+simVibChanged       0x1               build/cooja/mtype607.a(vib-sensor.o)
+simRtimerPending    0x4               build/cooja/mtype607.a(rtimer-arch.o)
+button_hal_periodic_event
+                    0x1               build/cooja/mtype607.a(button-hal.o)
+uip_ds6_netif_addr_list_offset
+                    0x1               build/cooja/mtype607.a(uip-ds6.o)
+uip_lladdr          0x8               build/cooja/mtype607.a(uip6.o)
+button_hal_press_event
+                    0x1               build/cooja/mtype607.a(button-hal.o)
+simProcessRunValue  0x4               build/cooja/mtype607.a(simEnvChange.o)
+serial_line_event_message
+                    0x1               build/cooja/mtype607.a(serial-line.o)
+uip_appdata         0x4               build/cooja/mtype607.a(uip6.o)
+referenceVar        0x4               build/cooja/mtype607.o
+simCurrentTime      0x4               build/cooja/mtype607.a(clock.o)
+simVibIsActive      0x1               build/cooja/mtype607.a(vib-sensor.o)
+uip_ds6_if          0x11c             build/cooja/mtype607.a(uip-ds6.o)
+uip_flags           0x1               build/cooja/mtype607.a(uip6.o)
+uip_ds6_timer_ra    0x8               build/cooja/mtype607.a(uip-ds6.o)
+simSerialReceivingData
+                    0x800             build/cooja/mtype607.a(rs232.o)
+simLoggedFlag       0x1               build/cooja/mtype607.a(cooja-log.o)
+packetbuf_attrs     0x1a              build/cooja/mtype607.a(packetbuf.o)
+uip_ds6_addr_size   0x1               build/cooja/mtype607.a(uip-ds6.o)
+uip_aligned_buf     0x500             build/cooja/mtype607.a(uip6.o)
+simRtimerCurrentTicks
+                    0x8               build/cooja/mtype607.a(rtimer-arch.o)
+simRandomSeed       0x4               build/cooja/mtype607.a(moteid.o)
+rpl_multicast_addr  0x10              build/cooja/mtype607.a(rpl.o)
+simLoggedData       0x2000            build/cooja/mtype607.a(cooja-log.o)
+simEtimerNextExpirationTime
+                    0x4               build/cooja/mtype607.a(simEnvChange.o)
+uip_len             0x2               build/cooja/mtype607.a(uip6.o)
+simButtonChanged    0x1               build/cooja/mtype607.a(buttons.o)
+simRtimerNextExpirationTime
+                    0x8               build/cooja/mtype607.a(rtimer-arch.o)
+simPirIsActive      0x1               build/cooja/mtype607.a(pir-sensor.o)
+simInDataBuffer     0x7d              build/cooja/mtype607.a(cooja-radio.o)
+simPirChanged       0x1               build/cooja/mtype607.a(pir-sensor.o)
+simBeeped           0x1               build/cooja/mtype607.a(beep.o)
+tcpip_event         0x1               build/cooja/mtype607.a(tcpip.o)
+uip_sappdata        0x4               build/cooja/mtype607.a(uip6.o)
+sensors_event       0x1               build/cooja/mtype607.a(sensors.o)
+uip_udp_conns       0x100             build/cooja/mtype607.a(uip6.o)
+button_hal_release_event
+                    0x1               build/cooja/mtype607.a(button-hal.o)
+packetbuf_addrs     0x10              build/cooja/mtype607.a(packetbuf.o)
+uip_udp_conn        0x4               build/cooja/mtype607.a(uip6.o)
+simMoteIDChanged    0x1               build/cooja/mtype607.a(moteid.o)
+sensors_flags       0x4               build/cooja/mtype607.o
+curr_instance       0x164             build/cooja/mtype607.a(rpl-dag.o)
+simMoteID           0x4               build/cooja/mtype607.a(moteid.o)
+uip_conn            0x4               build/cooja/mtype607.a(uip6.o)
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ .group         0x0000000000000000        0x8 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ .group         0x0000000000000000        0x8 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 oxygen_actuator.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(simEnvChange.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(cooja_mt.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(cooja_mtarch.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rtimer-arch.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(beep.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(leds-arch.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(moteid.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(pir-sensor.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rs232.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(vib-sensor.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(clock.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(cooja-log.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(cfs-cooja.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(cooja-radio.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(eeprom.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(random.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(sensors.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(leds.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(gpio-hal-arch.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(buttons.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(oxygen_generato)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap-observe-cl)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap-blocking-a)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap-engine.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap-res-well-k)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap-observe.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap-uip.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap-timer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap-transactio)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(contiki-main.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(autostart.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(ctimer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(log.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(energest.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(etimer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(node-id.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rtimer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(process.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(timer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(list.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(memb.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(button-hal.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(serial-line.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(gpio-hal.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(queuebuf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(packetbuf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(netstack.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(linkaddr.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(csma.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(csma-output.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uip-ds6.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uip-udp-packet.)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uip-ds6-route.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(tcpip.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uip6.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uip-ds6-nbr.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uip-nd6.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(sicslowpan.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uiplib.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rpl.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rpl-icmp6.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rpl-dag-root.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(watchdog.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(int-master.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(coap-timer-defa)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(stimer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(ringbuf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(assert.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(nbr-table.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(link-stats.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(mac-sequence.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(mac.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(framer-802154.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(frame802154.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(csma-security.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uipbuf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uip-icmp6.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uip-sr.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(uip-packetqueue)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rpl-nbr-policy.)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rpl-neighbor.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rpl-dag.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rpl-timers.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rpl-ext-header.)
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/cooja/mtype607.a(rpl-mrhof.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i686-linux-gnu/5/libgcc.a(_udivdi3.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtendS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+LOAD /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+LOAD oxygen_actuator.o
+LOAD build/cooja/mtype607.o
+LOAD build/cooja/mtype607.a
+LOAD /usr/lib/gcc/i686-linux-gnu/5/libgcc.a
+LOAD /usr/lib/gcc/i686-linux-gnu/5/libgcc_s.so
+LOAD /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/libc.so
+START GROUP
+LOAD /lib/i386-linux-gnu/libc.so.6
+LOAD /usr/lib/i386-linux-gnu/libc_nonshared.a
+LOAD /lib/i386-linux-gnu/ld-linux.so.2
+END GROUP
+LOAD /usr/lib/gcc/i686-linux-gnu/5/libgcc.a
+LOAD /usr/lib/gcc/i686-linux-gnu/5/libgcc_s.so
+LOAD /usr/lib/gcc/i686-linux-gnu/5/crtendS.o
+LOAD /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crtn.o
+                0x0000000000000114                . = (0x0 + SIZEOF_HEADERS)
+
+.note.gnu.build-id
+                0x0000000000000114       0x24
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x0000000000000114       0x24 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+
+.hash
+ *(.hash)
+
+.gnu.hash       0x0000000000000138     0x15d0
+ *(.gnu.hash)
+ .gnu.hash      0x0000000000000138     0x15d0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+
+.dynsym         0x0000000000001708     0x3010
+ *(.dynsym)
+ .dynsym        0x0000000000001708     0x3010 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+
+.dynstr         0x0000000000004718     0x3817
+ *(.dynstr)
+ .dynstr        0x0000000000004718     0x3817 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+
+.gnu.version    0x0000000000007f30      0x602
+ *(.gnu.version)
+ .gnu.version   0x0000000000007f30      0x602 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+
+.gnu.version_d  0x0000000000008534        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x0000000000008534        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+
+.gnu.version_r  0x0000000000008534       0x40
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x0000000000008534       0x40 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+
+.rel.dyn        0x0000000000008574     0x9668
+ *(.rel.init)
+ .rel.init      0x0000000000008574        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x0000000000008574     0x8c68 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.rel.fini)
+ .rel.fini      0x00000000000111dc        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ .rel.rodata    0x00000000000111dc      0x5b0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ .rel.data.rel.local
+                0x000000000001178c        0x8 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ .rel.data      0x0000000000011794      0x410 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x0000000000011ba4       0x28 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rel.ifunc)
+ .rel.ifunc     0x0000000000011bcc        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ .rel.fini_array
+                0x0000000000011bcc        0x8 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ .rel.init_array
+                0x0000000000011bd4        0x8 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+
+.rel.plt        0x0000000000011bdc        0x0
+ *(.rel.plt)
+ .rel.plt       0x0000000000011bdc        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.rel.iplt)
+
+.init           0x0000000000011bdc       0x23
+ *(SORT(.init))
+ .init          0x0000000000011bdc       0x1e /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+                0x0000000000011bdc                _init
+ .init          0x0000000000011bfa        0x5 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crtn.o
+
+.plt            0x0000000000011c00       0x10
+ *(.plt)
+ .plt           0x0000000000011c00       0x10 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.iplt)
+
+.plt.got        0x0000000000011c10       0x10
+ *(.plt.got)
+ .plt.got       0x0000000000011c10       0x10 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+
+.text           0x0000000000011c20    0x19732
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ .text.unlikely
+                0x0000000000011c20        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ .text.unlikely
+                0x0000000000011c20        0x0 /usr/lib/gcc/i686-linux-gnu/5/libgcc.a(_udivdi3.o)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000011c20        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ .gnu.linkonce.t.__x86.get_pc_thunk.bx
+                0x0000000000011c20        0x4 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+                0x0000000000011c20                __x86.get_pc_thunk.bx
+ *fill*         0x0000000000011c24        0xc 
+ .text          0x0000000000011c30      0x11c /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ .text.__x86.get_pc_thunk.dx
+                0x0000000000011d4c        0x4 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+                0x0000000000011d4c                __x86.get_pc_thunk.dx
+ .text          0x0000000000011d50      0x64d oxygen_actuator.o
+                0x0000000000011d50                wait_for_ack
+                0x0000000000011da5                wait_for_discovery
+ .text          0x000000000001239d      0x283 build/cooja/mtype607.o
+                0x000000000001242f                platform_init_stage_one
+                0x0000000000012442                platform_init_stage_two
+                0x0000000000012455                platform_init_stage_three
+                0x0000000000012468                platform_main_loop
+                0x00000000000124db                Java_org_contikios_cooja_corecomm_Lib101_init
+                0x0000000000012512                Java_org_contikios_cooja_corecomm_Lib101_getMemory
+                0x0000000000012545                Java_org_contikios_cooja_corecomm_Lib101_setMemory
+                0x00000000000125a5                Java_org_contikios_cooja_corecomm_Lib101_tick
+                0x000000000001260d                Java_org_contikios_cooja_corecomm_Lib101_setReferenceAddress
+ .text          0x0000000000012620       0x65 build/cooja/mtype607.a(simEnvChange.o)
+                0x0000000000012620                doActionsBeforeTick
+                0x0000000000012652                doActionsAfterTick
+ .text          0x0000000000012685       0x83 build/cooja/mtype607.a(cooja_mt.o)
+                0x0000000000012685                cooja_mt_start
+                0x00000000000126af                cooja_mt_exec
+                0x00000000000126e5                cooja_mt_yield
+ .text          0x0000000000012708       0xbe build/cooja/mtype607.a(cooja_mtarch.o)
+                0x0000000000012708                cooja_mtarch_start
+                0x000000000001277b                cooja_sw
+                0x000000000001279e                cooja_mtarch_exec
+                0x00000000000127bb                cooja_mtarch_yield
+ .text          0x00000000000127c6       0xc5 build/cooja/mtype607.a(rtimer-arch.o)
+                0x00000000000127c6                rtimer_arch_init
+                0x00000000000127ea                rtimer_arch_schedule
+                0x000000000001281a                rtimer_arch_next
+                0x000000000001282a                rtimer_arch_pending
+                0x0000000000012834                rtimer_arch_check
+                0x000000000001287b                rtimer_arch_now
+ .text          0x000000000001288b       0x81 build/cooja/mtype607.a(beep.o)
+                0x000000000001288b                beep_alarm
+                0x0000000000012898                beep_beep
+                0x00000000000128a5                beep
+                0x00000000000128b2                beep_down
+                0x00000000000128bf                beep_on
+                0x00000000000128cc                beep_off
+                0x00000000000128d9                beep_spinup
+                0x00000000000128e6                beep_quick
+                0x00000000000128f3                beep_long
+ .text          0x000000000001290c       0x65 build/cooja/mtype607.a(leds-arch.o)
+                0x000000000001291f                leds_arch_init
+ .text          0x0000000000012971       0x35 build/cooja/mtype607.a(moteid.o)
+ .text          0x00000000000129a6       0xb7 build/cooja/mtype607.a(pir-sensor.o)
+ .text          0x0000000000012a5d      0x148 build/cooja/mtype607.a(rs232.o)
+                0x0000000000012a5d                rs232_init
+                0x0000000000012a63                rs232_set_speed
+                0x0000000000012a72                rs232_set_input
+                0x0000000000012a80                rs232_send
+                0x0000000000012aa4                rs232_print
+                0x0000000000012ac0                slip_arch_writeb
+ .text          0x0000000000012ba5       0xb7 build/cooja/mtype607.a(vib-sensor.o)
+ .text          0x0000000000012c5c       0x38 build/cooja/mtype607.a(clock.o)
+                0x0000000000012c5c                clock_init
+                0x0000000000012c62                clock_time
+                0x0000000000012c6c                clock_seconds
+                0x0000000000012c82                clock_delay
+ .text          0x0000000000012c94      0x219 build/cooja/mtype607.a(cooja-log.o)
+                0x0000000000012c94                simlog_char
+                0x0000000000012cd7                simlog
+                0x0000000000012d4d                log_message
+                0x0000000000012d7e                log_set_putchar_with_slip
+                0x0000000000012d8c                log_putchar
+                0x0000000000012e07                log_puts
+                0x0000000000012e2f                log_printf
+ .text          0x0000000000012ead      0x2b9 build/cooja/mtype607.a(cfs-cooja.o)
+                0x0000000000012ead                cfs_open
+                0x0000000000012f16                cfs_close
+                0x0000000000012f23                cfs_read
+                0x0000000000012fb8                cfs_write
+                0x0000000000013094                cfs_seek
+                0x000000000001311c                cfs_remove
+                0x0000000000013140                cfs_opendir
+                0x000000000001314a                cfs_readdir
+                0x0000000000013154                cfs_closedir
+ .text          0x0000000000013166      0x62b build/cooja/mtype607.a(cooja-radio.o)
+                0x00000000000131a8                radio_set_channel
+                0x00000000000131b6                radio_set_txpower
+                0x00000000000131ce                radio_signal_strength_last
+                0x00000000000131d8                radio_signal_strength_current
+                0x00000000000131e2                radio_LQI
+ .text          0x0000000000013791       0xee build/cooja/mtype607.a(eeprom.o)
+                0x0000000000013791                eeprom_init
+                0x0000000000013797                eeprom_read
+                0x0000000000013805                eeprom_write
+ .text          0x000000000001387f       0x2d build/cooja/mtype607.a(random.o)
+                0x000000000001387f                random_init
+                0x000000000001389f                random_rand
+ .text          0x00000000000138ac      0x29c build/cooja/mtype607.a(sensors.o)
+                0x00000000000138e7                sensors_first
+                0x00000000000138f1                sensors_next
+                0x000000000001390b                sensors_changed
+                0x000000000001393f                sensors_find
+ .text          0x0000000000013b48      0x349 build/cooja/mtype607.a(leds.o)
+                0x0000000000013b48                leds_init
+                0x0000000000013b8f                leds_single_on
+                0x0000000000013bee                leds_single_off
+                0x0000000000013c4d                leds_single_toggle
+                0x0000000000013c7f                leds_on
+                0x0000000000013d01                leds_off
+                0x0000000000013d83                leds_toggle
+                0x0000000000013dd8                leds_set
+                0x0000000000013e04                leds_get
+ .text          0x0000000000013e91      0x343 build/cooja/mtype607.a(gpio-hal-arch.o)
+                0x0000000000013e91                gpio_hal_arch_register_pin_callback
+                0x0000000000013efd                gpio_hal_arch_init
+                0x0000000000013f42                gpio_hal_arch_no_port_interrupt_enable
+                0x0000000000013f72                gpio_hal_arch_no_port_interrupt_disable
+                0x0000000000013fa2                gpio_hal_arch_no_port_pin_cfg_set
+                0x0000000000013fc7                gpio_hal_arch_no_port_pin_cfg_get
+                0x0000000000013fed                gpio_hal_arch_no_port_pin_set_input
+                0x0000000000013fff                gpio_hal_arch_no_port_pin_set_output
+                0x0000000000014011                gpio_hal_arch_no_port_set_pin
+                0x0000000000014032                gpio_hal_arch_no_port_clear_pin
+                0x0000000000014053                gpio_hal_arch_no_port_read_pin
+                0x0000000000014079                gpio_hal_arch_no_port_write_pin
+                0x00000000000140a3                gpio_hal_arch_no_port_set_pins
+                0x00000000000140ea                gpio_hal_arch_no_port_clear_pins
+                0x0000000000014131                gpio_hal_arch_no_port_read_pins
+                0x0000000000014174                gpio_hal_arch_no_port_write_pins
+ .text          0x00000000000141d4       0x89 build/cooja/mtype607.a(buttons.o)
+ .text          0x000000000001425d      0x30c build/cooja/mtype607.a(oxygen_generato)
+ .text          0x0000000000014569      0x6ee build/cooja/mtype607.a(coap-observe-cl)
+                0x0000000000014607                coap_obs_add_observee
+                0x00000000000146a3                coap_obs_remove_observee
+                0x00000000000146d3                coap_get_obs_subject_by_token
+                0x000000000001473b                coap_obs_remove_observee_by_token
+                0x00000000000147ce                coap_obs_remove_observee_by_url
+                0x0000000000014926                coap_handle_notification
+                0x0000000000014a81                coap_generate_token
+                0x0000000000014aa3                coap_obs_request_registration
+ .text          0x0000000000014c57      0x27b build/cooja/mtype607.a(coap-blocking-a)
+                0x0000000000014c57                coap_blocking_request_callback
+                0x0000000000014c81                coap_blocking_request
+ .text          0x0000000000014ed2      0xc26 build/cooja/mtype607.a(coap-engine.o)
+                0x0000000000014f67                coap_add_handler
+                0x0000000000014f84                coap_remove_handler
+                0x0000000000014fa1                coap_call_handlers
+                0x00000000000150a9                coap_receive
+                0x00000000000156e0                coap_engine_init
+                0x000000000001573e                coap_activate_resource
+                0x00000000000157e9                coap_get_first_resource
+                0x0000000000015802                coap_get_next_resource
+ .text          0x0000000000015af8      0x2d9 build/cooja/mtype607.a(coap-res-well-k)
+ .text          0x0000000000015dd1      0x96a build/cooja/mtype607.a(coap-observe.o)
+                0x0000000000015ee6                coap_remove_observer
+                0x0000000000015f16                coap_remove_observer_by_client
+                0x0000000000015f7e                coap_remove_observer_by_token
+                0x0000000000016011                coap_remove_observer_by_uri
+                0x00000000000160b8                coap_remove_observer_by_mid
+                0x0000000000016134                coap_notify_observers
+                0x000000000001614d                coap_notify_observers_sub
+                0x00000000000165b7                coap_observe_handler
+                0x00000000000166d2                coap_has_observers
+ .text          0x000000000001673b      0x733 build/cooja/mtype607.a(coap-uip.o)
+                0x000000000001673b                coap_endpoint_log
+                0x00000000000167c1                coap_endpoint_print
+                0x0000000000016847                coap_endpoint_snprint
+                0x000000000001697a                coap_endpoint_copy
+                0x00000000000169b7                coap_endpoint_cmp
+                0x0000000000016ac5                coap_endpoint_parse
+                0x0000000000016cb0                coap_endpoint_is_secure
+                0x0000000000016cbf                coap_endpoint_is_connected
+                0x0000000000016cf3                coap_endpoint_connect
+                0x0000000000016d0f                coap_endpoint_disconnect
+                0x0000000000016d15                coap_databuf
+                0x0000000000016d1f                coap_transport_init
+                0x0000000000016d6f                coap_sendto
+ .text          0x0000000000016e6e      0x324 build/cooja/mtype607.a(coap-timer.o)
+                0x0000000000016f6b                coap_timer_stop
+                0x0000000000016f96                coap_timer_set
+                0x0000000000016fd9                coap_timer_reset
+                0x000000000001701c                coap_timer_time_to_next_expiration
+                0x0000000000017088                coap_timer_run
+                0x0000000000017154                coap_timer_init
+ .text          0x0000000000017192      0x2c6 build/cooja/mtype607.a(coap-transactio)
+                0x00000000000171f8                coap_new_transaction
+                0x000000000001725e                coap_send_transaction
+                0x00000000000173bf                coap_clear_transaction
+                0x0000000000017407                coap_get_transaction_by_mid
+ .text          0x0000000000017458     0x1ceb build/cooja/mtype607.a(coap.o)
+                0x00000000000179c5                coap_init_connection
+                0x00000000000179d9                coap_get_mid
+                0x00000000000179f5                coap_init_message
+                0x0000000000017a3e                coap_serialize_message
+                0x00000000000180c0                coap_parse_message
+                0x00000000000187bf                coap_get_query_variable
+                0x0000000000018801                coap_get_post_variable
+                0x0000000000018845                coap_set_status_code
+                0x000000000001886a                coap_set_token
+                0x00000000000188b1                coap_get_header_content_format
+                0x00000000000188e2                coap_set_header_content_format
+                0x0000000000018905                coap_get_header_accept
+                0x0000000000018936                coap_set_header_accept
+                0x0000000000018959                coap_get_header_max_age
+                0x000000000001898a                coap_set_header_max_age
+                0x00000000000189aa                coap_get_header_etag
+                0x00000000000189dc                coap_set_header_etag
+                0x0000000000018a33                coap_get_header_if_match
+                0x0000000000018a65                coap_set_header_if_match
+                0x0000000000018abc                coap_get_header_if_none_match
+                0x0000000000018ad6                coap_set_header_if_none_match
+                0x0000000000018aed                coap_get_header_proxy_uri
+                0x0000000000018b1b                coap_set_header_proxy_uri
+                0x0000000000018b58                coap_get_header_uri_host
+                0x0000000000018b86                coap_set_header_uri_host
+                0x0000000000018bc3                coap_get_header_uri_path
+                0x0000000000018bf1                coap_set_header_uri_path
+                0x0000000000018c3e                coap_get_header_uri_query
+                0x0000000000018c72                coap_set_header_uri_query
+                0x0000000000018cc8                coap_get_header_location_path
+                0x0000000000018cf6                coap_set_header_location_path
+                0x0000000000018d8f                coap_get_header_location_query
+                0x0000000000018dbd                coap_set_header_location_query
+                0x0000000000018e0a                coap_get_header_observe
+                0x0000000000018e39                coap_set_header_observe
+                0x0000000000018e59                coap_get_header_block2
+                0x0000000000018ec5                coap_set_header_block2
+                0x0000000000018f3c                coap_get_header_block1
+                0x0000000000018fb1                coap_set_header_block1
+                0x000000000001902c                coap_get_header_size2
+                0x000000000001905c                coap_set_header_size2
+                0x000000000001907f                coap_get_header_size1
+                0x00000000000190af                coap_set_header_size1
+                0x00000000000190d2                coap_get_payload
+                0x000000000001910c                coap_set_payload
+ .text          0x0000000000019143      0x332 build/cooja/mtype607.a(contiki-main.o)
+                0x0000000000019143                main
+ .text          0x0000000000019475       0x92 build/cooja/mtype607.a(autostart.o)
+                0x0000000000019475                autostart_start
+                0x00000000000194bf                autostart_exit
+ .text          0x0000000000019507      0x355 build/cooja/mtype607.a(ctimer.o)
+                0x000000000001962f                ctimer_init
+                0x0000000000019662                ctimer_set
+                0x0000000000019688                ctimer_set_with_process
+                0x0000000000019705                ctimer_reset
+                0x0000000000019759                ctimer_restart
+                0x00000000000197ad                ctimer_stop
+                0x00000000000197fd                ctimer_expired
+ .text          0x000000000001985c      0x3d7 build/cooja/mtype607.a(log.o)
+                0x000000000001985c                log_6addr
+                0x00000000000198af                log_6addr_compact_snprint
+                0x000000000001994d                log_6addr_compact
+                0x00000000000199a0                log_lladdr
+                0x0000000000019a12                log_lladdr_compact
+                0x0000000000019a7a                log_bytes
+                0x0000000000019abd                log_set_level
+                0x0000000000019b78                log_get_level
+                0x0000000000019bf1                log_level_to_str
+ .text          0x0000000000019c33       0x1b build/cooja/mtype607.a(energest.o)
+                0x0000000000019c33                energest_init
+                0x0000000000019c39                energest_flush
+                0x0000000000019c3f                energest_get_total_time
+ .text          0x0000000000019c4e      0x43f build/cooja/mtype607.a(etimer.o)
+                0x0000000000019e72                etimer_request_poll
+                0x0000000000019efb                etimer_set
+                0x0000000000019f24                etimer_reset_with_new_interval
+                0x0000000000019f53                etimer_reset
+                0x0000000000019f79                etimer_restart
+                0x0000000000019f9f                etimer_adjust
+                0x0000000000019fbc                etimer_expired
+                0x0000000000019fcf                etimer_expiration_time
+                0x0000000000019fe1                etimer_start_time
+                0x0000000000019feb                etimer_pending
+                0x0000000000019ffd                etimer_next_expiration_time
+                0x000000000001a017                etimer_stop
+ .text          0x000000000001a08d       0x25 build/cooja/mtype607.a(node-id.o)
+                0x000000000001a08d                node_id_init
+ .text          0x000000000001a0b2       0xeb build/cooja/mtype607.a(rtimer.o)
+                0x000000000001a0b2                rtimer_init
+                0x000000000001a0c0                rtimer_set
+                0x000000000001a13b                rtimer_run_next
+ .text          0x000000000001a19d      0x4fb build/cooja/mtype607.a(process.o)
+                0x000000000001a19d                process_alloc_event
+                0x000000000001a1b2                process_start
+                0x000000000001a38c                process_exit
+                0x000000000001a3a9                process_init
+                0x000000000001a53e                process_run
+                0x000000000001a571                process_nevents
+                0x000000000001a58c                process_post
+                0x000000000001a61f                process_post_synch
+                0x000000000001a654                process_poll
+                0x000000000001a684                process_is_running
+ .text          0x000000000001a698       0xb1 build/cooja/mtype607.a(timer.o)
+                0x000000000001a698                timer_set
+                0x000000000001a6b6                timer_reset
+                0x000000000001a6e3                timer_restart
+                0x000000000001a6f8                timer_expired
+                0x000000000001a725                timer_remaining
+ .text          0x000000000001a749      0x28f build/cooja/mtype607.a(list.o)
+                0x000000000001a749                list_init
+                0x000000000001a758                list_head
+                0x000000000001a762                list_copy
+                0x000000000001a772                list_tail
+                0x000000000001a7a8                list_add
+                0x000000000001a7f4                list_push
+                0x000000000001a820                list_chop
+                0x000000000001a88a                list_pop
+                0x000000000001a8b2                list_remove
+                0x000000000001a91a                list_length
+                0x000000000001a948                list_insert
+                0x000000000001a98d                list_item_next
+                0x000000000001a9a4                list_contains
+ .text          0x000000000001a9d8      0x1b5 build/cooja/mtype607.a(memb.o)
+                0x000000000001a9d8                memb_init
+                0x000000000001aa2d                memb_alloc
+                0x000000000001aa90                memb_free
+                0x000000000001ab07                memb_inmemb
+                0x000000000001ab46                memb_numfree
+ .text          0x000000000001ab8d      0x493 build/cooja/mtype607.a(button-hal.o)
+                0x000000000001ad19                button_hal_get_by_id
+                0x000000000001ad57                button_hal_get_by_index
+                0x000000000001ad83                button_hal_get_state
+                0x000000000001add5                button_hal_init
+ .text          0x000000000001b020      0x1f3 build/cooja/mtype607.a(serial-line.o)
+                0x000000000001b020                serial_line_input_byte
+                0x000000000001b1de                serial_line_init
+ .text          0x000000000001b213      0x168 build/cooja/mtype607.a(gpio-hal.o)
+                0x000000000001b213                gpio_hal_register_handler
+                0x000000000001b230                gpio_hal_event_handler
+                0x000000000001b28c                gpio_hal_init
+                0x000000000001b2ab                gpio_hal_arch_port_toggle_pin
+                0x000000000001b2e7                gpio_hal_arch_port_toggle_pins
+                0x000000000001b315                gpio_hal_arch_no_port_toggle_pin
+                0x000000000001b353                gpio_hal_arch_no_port_toggle_pins
+ .text          0x000000000001b37b      0x2e7 build/cooja/mtype607.a(queuebuf.o)
+                0x000000000001b385                queuebuf_init
+                0x000000000001b3ae                queuebuf_numfree
+                0x000000000001b3c6                queuebuf_new_from_packetbuf
+                0x000000000001b465                queuebuf_update_attr_from_packetbuf
+                0x000000000001b49a                queuebuf_update_from_packetbuf
+                0x000000000001b4ea                queuebuf_free
+                0x000000000001b533                queuebuf_to_packetbuf
+                0x000000000001b59f                queuebuf_dataptr
+                0x000000000001b5d9                queuebuf_datalen
+                0x000000000001b5fc                queuebuf_addr
+                0x000000000001b631                queuebuf_attr
+                0x000000000001b65c                queuebuf_debug_print
+ .text          0x000000000001b662      0x407 build/cooja/mtype607.a(packetbuf.o)
+                0x000000000001b662                packetbuf_clear
+                0x000000000001b68d                packetbuf_copyfrom
+                0x000000000001b6dc                packetbuf_copyto
+                0x000000000001b76f                packetbuf_hdralloc
+                0x000000000001b7eb                packetbuf_hdrreduce
+                0x000000000001b831                packetbuf_set_datalen
+                0x000000000001b84b                packetbuf_dataptr
+                0x000000000001b868                packetbuf_hdrptr
+                0x000000000001b872                packetbuf_datalen
+                0x000000000001b87e                packetbuf_hdrlen
+                0x000000000001b895                packetbuf_totlen
+                0x000000000001b8ab                packetbuf_remaininglen
+                0x000000000001b8be                packetbuf_attr_clear
+                0x000000000001b90a                packetbuf_attr_copyto
+                0x000000000001b962                packetbuf_attr_copyfrom
+                0x000000000001b9ba                packetbuf_set_attr
+                0x000000000001b9e4                packetbuf_attr
+                0x000000000001b9fe                packetbuf_set_addr
+                0x000000000001ba2f                packetbuf_addr
+                0x000000000001ba4c                packetbuf_holds_broadcast
+ .text          0x000000000001ba69       0xef build/cooja/mtype607.a(netstack.o)
+                0x000000000001ba69                netstack_process_ip_callback
+                0x000000000001bafa                netstack_ip_packet_processor_add
+                0x000000000001bb1d                uip_ds6_ip_packet_processor_rm
+                0x000000000001bb3a                netstack_init
+ .text          0x000000000001bb58       0x4f build/cooja/mtype607.a(linkaddr.o)
+                0x000000000001bb58                linkaddr_copy
+                0x000000000001bb6e                linkaddr_cmp
+                0x000000000001bb91                linkaddr_set_node_addr
+ .text          0x000000000001bba7      0x229 build/cooja/mtype607.a(csma.o)
+ .text          0x000000000001bdd0      0x95d build/cooja/mtype607.a(csma-output.o)
+                0x000000000001c467                csma_output_packet
+                0x000000000001c6f4                csma_output_init
+ .text          0x000000000001c72d      0xc11 build/cooja/mtype607.a(uip-ds6.o)
+                0x000000000001c72d                uip_ds6_default_prefix
+                0x000000000001c737                uip_ds6_set_default_prefix
+                0x000000000001c762                uip_ds6_init
+                0x000000000001c9c4                uip_ds6_periodic
+                0x000000000001ca4b                uip_ds6_list_loop
+                0x000000000001cb0b                uip_ds6_prefix_add
+                0x000000000001cbb7                uip_ds6_prefix_rm
+                0x000000000001cbca                uip_ds6_prefix_lookup
+                0x000000000001cc09                uip_ds6_is_addr_onlink
+                0x000000000001cc7c                uip_ds6_addr_add
+                0x000000000001cd9c                uip_ds6_addr_rm
+                0x000000000001ce45                uip_ds6_addr_lookup
+                0x000000000001ce7e                uip_ds6_get_link_local
+                0x000000000001ceff                uip_ds6_get_global
+                0x000000000001cf80                uip_ds6_maddr_add
+                0x000000000001cfe0                uip_ds6_maddr_rm
+                0x000000000001cff3                uip_ds6_maddr_lookup
+                0x000000000001d02c                uip_ds6_aaddr_add
+                0x000000000001d08c                uip_ds6_aaddr_rm
+                0x000000000001d09f                uip_ds6_aaddr_lookup
+                0x000000000001d0d8                uip_ds6_select_src
+                0x000000000001d221                uip_ds6_set_addr_iid
+                0x000000000001d24c                uip_ds6_set_lladdr_from_iid
+                0x000000000001d275                get_match_length
+                0x000000000001d306                uip_ds6_compute_reachable_time
+ .text          0x000000000001d33e      0x128 build/cooja/mtype607.a(uip-udp-packet.)
+                0x000000000001d33e                uip_udp_packet_send
+                0x000000000001d399                uip_udp_packet_sendto
+ .text          0x000000000001d466      0x365 build/cooja/mtype607.a(uip-ds6-route.o)
+                0x000000000001d4b7                uip_ds6_route_init
+                0x000000000001d4e1                uip_ds6_route_count_nexthop_neighbors
+                0x000000000001d4eb                uip_ds6_route_nexthop
+                0x000000000001d4f5                uip_ds6_route_head
+                0x000000000001d4ff                uip_ds6_route_next
+                0x000000000001d509                uip_ds6_route_is_nexthop
+                0x000000000001d513                uip_ds6_route_num_routes
+                0x000000000001d51d                uip_ds6_route_lookup
+                0x000000000001d527                uip_ds6_route_add
+                0x000000000001d53a                uip_ds6_route_rm
+                0x000000000001d540                uip_ds6_route_rm_by_nexthop
+                0x000000000001d546                uip_ds6_defrt_head
+                0x000000000001d55f                uip_ds6_defrt_add
+                0x000000000001d60d                uip_ds6_defrt_rm
+                0x000000000001d673                uip_ds6_defrt_lookup
+                0x000000000001d6da                uip_ds6_defrt_choose
+                0x000000000001d750                uip_ds6_defrt_periodic
+ .text          0x000000000001d7cb      0x6f7 build/cooja/mtype607.a(tcpip.o)
+                0x000000000001d7e5                tcpip_output
+                0x000000000001d864                udp_attach
+                0x000000000001d87c                udp_new
+                0x000000000001d8c6                udp_broadcast_new
+                0x000000000001da38                tcpip_input
+                0x000000000001dbc8                tcpip_ipv6_output
+                0x000000000001ddbc                tcpip_poll_udp
+                0x000000000001ddda                tcpip_uipcall
+ .text          0x000000000001dec2     0x1205 build/cooja/mtype607.a(uip6.o)
+                0x000000000001df71                uip_chksum
+                0x000000000001e048                uip_icmp6chksum
+                0x000000000001e05d                uip_udpchksum
+                0x000000000001e072                uip_init
+                0x000000000001e0bb                uip_remove_ext_hdr
+                0x000000000001e195                uip_udp_new
+                0x000000000001e4a9                uip_process
+                0x000000000001efa1                uip_htons
+                0x000000000001efc3                uip_htonl
+                0x000000000001f001                uip_send
+ .text          0x000000000001f0c7      0x369 build/cooja/mtype607.a(uip-ds6-nbr.o)
+                0x000000000001f0c7                uip_ds6_neighbors_init
+                0x000000000001f0eb                uip_ds6_nbr_add
+                0x000000000001f171                uip_ds6_nbr_rm
+                0x000000000001f1bc                uip_ds6_nbr_update_ll
+                0x000000000001f2aa                uip_ds6_nbr_get_ipaddr
+                0x000000000001f2bf                uip_ds6_nbr_get_ll
+                0x000000000001f2db                uip_ds6_nbr_num
+                0x000000000001f324                uip_ds6_nbr_head
+                0x000000000001f33d                uip_ds6_nbr_next
+                0x000000000001f359                uip_ds6_nbr_lookup
+                0x000000000001f3b1                uip_ds6_nbr_ll_lookup
+                0x000000000001f3cd                uip_ds6_nbr_ipaddr_from_lladdr
+                0x000000000001f3f6                uip_ds6_nbr_lladdr_from_ipaddr
+                0x000000000001f42a                uip_ds6_link_callback
+ .text          0x000000000001f430      0x6ad build/cooja/mtype607.a(uip-nd6.o)
+                0x000000000001fac4                uip_nd6_init
+ .text          0x000000000001fadd     0x2f35 build/cooja/mtype607.a(sicslowpan.o)
+                0x00000000000200e4                netstack_sniffer_add
+                0x00000000000200f2                netstack_sniffer_remove
+                0x00000000000229e6                sicslowpan_init
+                0x0000000000022a08                sicslowpan_get_last_rssi
+ .text          0x0000000000022a12      0x4d1 build/cooja/mtype607.a(uiplib.o)
+                0x0000000000022a12                uiplib_ip6addrconv
+                0x0000000000022bca                uiplib_ip4addrconv
+                0x0000000000022c8d                uiplib_ipaddr_print
+                0x0000000000022ce0                uiplib_ipaddr_snprint
+ .text          0x0000000000022ee3      0x4c9 build/cooja/mtype607.a(rpl.o)
+                0x0000000000022ee3                rpl_lollipop_greater_than
+                0x0000000000022f3d                rpl_get_global_address
+                0x0000000000023035                rpl_link_callback
+                0x0000000000023079                rpl_has_joined
+                0x000000000002309e                rpl_is_reachable
+                0x000000000002311f                rpl_reset_prefix
+                0x0000000000023189                rpl_set_prefix_from_addr
+                0x000000000002326e                rpl_set_prefix
+                0x0000000000023388                rpl_set_leaf_only
+                0x00000000000233a0                rpl_get_leaf_only
+ .text          0x00000000000233ac     0x138c build/cooja/mtype607.a(rpl-icmp6.o)
+                0x00000000000234d1                rpl_icmp6_update_nbr_table
+                0x000000000002355a                rpl_icmp6_dis_output
+                0x0000000000023ba0                rpl_icmp6_dio_output
+                0x000000000002439e                rpl_icmp6_dao_output
+                0x000000000002467f                rpl_icmp6_dao_ack_output
+                0x00000000000246ef                rpl_icmp6_init
+ .text          0x0000000000024738      0x264 build/cooja/mtype607.a(rpl-dag-root.o)
+                0x0000000000024738                rpl_dag_root_print_links
+                0x0000000000024864                rpl_dag_root_set_prefix
+                0x0000000000024890                rpl_dag_root_start
+                0x000000000002496d                rpl_dag_root_is_root
+ .text          0x000000000002499c       0x30 build/cooja/mtype607.a(watchdog.o)
+                0x000000000002499c                watchdog_init
+                0x00000000000249a2                watchdog_start
+                0x00000000000249a8                watchdog_periodic
+                0x00000000000249c0                watchdog_stop
+                0x00000000000249c6                watchdog_reboot
+ .text          0x00000000000249cc       0x4a build/cooja/mtype607.a(int-master.o)
+                0x00000000000249cc                int_master_enable
+                0x00000000000249dc                int_master_read_and_disable
+                0x00000000000249f9                int_master_status_set
+                0x0000000000024a07                int_master_is_enabled
+ .text          0x0000000000024a16      0x226 build/cooja/mtype607.a(coap-timer-defa)
+ .text          0x0000000000024c3c       0xc7 build/cooja/mtype607.a(stimer.o)
+                0x0000000000024c3c                stimer_set
+                0x0000000000024c5a                stimer_reset
+                0x0000000000024c87                stimer_restart
+                0x0000000000024c9c                stimer_expired
+                0x0000000000024cc7                stimer_remaining
+                0x0000000000024ceb                stimer_elapsed
+ .text          0x0000000000024d03      0x156 build/cooja/mtype607.a(ringbuf.o)
+                0x0000000000024d03                ringbuf_init
+                0x0000000000024d35                ringbuf_put
+                0x0000000000024db3                ringbuf_get
+                0x0000000000024e20                ringbuf_size
+                0x0000000000024e32                ringbuf_elements
+ .text          0x0000000000024e59       0x1f build/cooja/mtype607.a(assert.o)
+                0x0000000000024e59                _xassert
+ .text          0x0000000000024e78      0x9aa build/cooja/mtype607.a(nbr-table.o)
+                0x000000000002519b                nbr_table_count_entries
+                0x0000000000025229                nbr_table_gc_get_worst
+                0x000000000002525f                nbr_table_can_accept_new
+                0x00000000000253ba                nbr_table_entry_is_allowed
+                0x000000000002543e                nbr_table_register
+                0x00000000000254ab                nbr_table_is_registered
+                0x00000000000254e6                nbr_table_head
+                0x0000000000025541                nbr_table_next
+                0x00000000000255a2                nbr_table_add_lladdr
+                0x00000000000256da                nbr_table_get_from_lladdr
+                0x0000000000025726                nbr_table_remove
+                0x000000000002575e                nbr_table_lock
+                0x0000000000025778                nbr_table_unlock
+                0x0000000000025792                nbr_table_get_lladdr
+                0x00000000000257be                nbr_table_clear
+                0x00000000000257f3                nbr_table_key_head
+                0x000000000002580c                nbr_table_key_next
+ .text          0x0000000000025822      0x3a5 build/cooja/mtype607.a(link-stats.o)
+                0x0000000000025822                link_stats_from_lladdr
+                0x000000000002583e                link_stats_get_lladdr
+                0x000000000002585a                link_stats_is_fresh
+                0x0000000000025896                guess_etx_from_rssi
+                0x0000000000025912                link_stats_packet_sent
+                0x0000000000025a32                link_stats_input_callback
+                0x0000000000025b42                link_stats_reset
+                0x0000000000025b92                link_stats_init
+ .text          0x0000000000025bc7      0x187 build/cooja/mtype607.a(mac-sequence.o)
+                0x0000000000025bc7                mac_sequence_is_duplicate
+                0x0000000000025c67                mac_sequence_register_seqno
+ .text          0x0000000000025d4e       0x23 build/cooja/mtype607.a(mac.o)
+                0x0000000000025d4e                mac_call_sent_callback
+ .text          0x0000000000025d71      0x432 build/cooja/mtype607.a(framer-802154.o)
+                0x0000000000025f00                framer_802154_setup_params
+ .text          0x00000000000261a3      0xb6f build/cooja/mtype607.a(frame802154.o)
+                0x00000000000261d4                frame802154_get_pan_id
+                0x00000000000261e0                frame802154_set_pan_id
+                0x00000000000261fa                frame802154_has_panid
+                0x00000000000263a9                frame802154_check_dest_panid
+                0x0000000000026431                frame802154_is_broadcast_addr
+                0x000000000002647e                frame802154_extract_linkaddr
+                0x00000000000266e3                frame802154_hdrlen
+                0x0000000000026756                frame802154_create_fcf
+                0x000000000002680e                frame802154_create
+                0x0000000000026983                frame802154_parse_fcf
+                0x0000000000026a65                frame802154_parse
+ .text          0x0000000000026d12       0x2d build/cooja/mtype607.a(csma-security.o)
+                0x0000000000026d12                csma_security_create_frame
+                0x0000000000026d30                csma_security_parse_frame
+ .text          0x0000000000026d3f      0x509 build/cooja/mtype607.a(uipbuf.o)
+                0x0000000000026d3f                uipbuf_clear
+                0x0000000000026d66                uipbuf_add_ext_hdr
+                0x0000000000026de6                uipbuf_set_len
+                0x0000000000026e13                uipbuf_set_len_field
+                0x0000000000026e3f                uipbuf_get_len_field
+                0x0000000000026e5f                uipbuf_get_next_header
+                0x0000000000026f91                uipbuf_get_last_header
+                0x000000000002700a                uipbuf_search_header
+                0x00000000000270c0                uipbuf_get_attr
+                0x00000000000270e7                uipbuf_set_attr
+                0x000000000002711e                uipbuf_set_default_attr
+                0x0000000000027155                uipbuf_clear_attr
+                0x000000000002719e                uipbuf_set_attr_flag
+                0x00000000000271bf                uipbuf_clr_attr_flag
+                0x00000000000271e6                uipbuf_is_attr_flag
+                0x000000000002720a                uipbuf_init
+ .text          0x0000000000027248      0x73f build/cooja/mtype607.a(uip-icmp6.o)
+                0x00000000000272bd                uip_icmp6_input
+                0x0000000000027314                uip_icmp6_register_input_handler
+                0x0000000000027467                uip_icmp6_error_output
+                0x0000000000027718                uip_icmp6_send
+                0x000000000002790f                uip_icmp6_echo_reply_callback_add
+                0x0000000000027941                uip_icmp6_echo_reply_callback_rm
+                0x000000000002795e                uip_icmp6_init
+ .text          0x0000000000027987      0x69b build/cooja/mtype607.a(uip-sr.o)
+                0x0000000000027987                uip_sr_num_nodes
+                0x0000000000027a15                uip_sr_get_node
+                0x0000000000027a6c                uip_sr_is_addr_reachable
+                0x0000000000027b1a                uip_sr_expire_parent
+                0x0000000000027b63                uip_sr_update_node
+                0x0000000000027c93                uip_sr_init
+                0x0000000000027cc7                uip_sr_node_head
+                0x0000000000027ce0                uip_sr_node_next
+                0x0000000000027cf6                uip_sr_periodic
+                0x0000000000027dfc                uip_sr_free_all
+                0x0000000000027e6c                uip_sr_link_snprint
+ .text          0x0000000000028022      0x146 build/cooja/mtype607.a(uip-packetqueue)
+                0x0000000000028050                uip_packetqueue_new
+                0x000000000002805f                uip_packetqueue_alloc
+                0x00000000000280ba                uip_packetqueue_free
+                0x0000000000028101                uip_packetqueue_buf
+                0x000000000002811e                uip_packetqueue_buflen
+                0x000000000002813f                uip_packetqueue_set_buflen
+ .text          0x0000000000028168       0x70 build/cooja/mtype607.a(rpl-nbr-policy.)
+                0x00000000000281a1                rpl_nbr_gc_get_worst
+ .text          0x00000000000281d8      0x915 build/cooja/mtype607.a(rpl-neighbor.o)
+                0x0000000000028254                rpl_neighbor_snprint
+                0x0000000000028507                rpl_neighbor_print_list
+                0x00000000000285bc                rpl_neighbor_count
+                0x0000000000028663                rpl_neighbor_get_from_lladdr
+                0x000000000002867f                rpl_neighbor_is_acceptable_parent
+                0x00000000000286b3                rpl_neighbor_get_link_metric
+                0x00000000000286e7                rpl_neighbor_rank_via_nbr
+                0x000000000002871b                rpl_neighbor_get_lladdr
+                0x0000000000028737                rpl_neighbor_get_ipaddr
+                0x000000000002875e                rpl_neighbor_get_link_stats
+                0x0000000000028785                rpl_neighbor_is_fresh
+                0x00000000000287ac                rpl_neighbor_is_reachable
+                0x00000000000287f7                rpl_neighbor_is_parent
+                0x0000000000028821                rpl_neighbor_set_preferred_parent
+                0x00000000000288b8                rpl_neighbor_remove_all
+                0x0000000000028914                rpl_neighbor_get_from_ipaddr
+                0x0000000000028a22                rpl_neighbor_select_best
+                0x0000000000028ace                rpl_neighbor_init
+ .text          0x0000000000028aed      0xe69 build/cooja/mtype607.a(rpl-dag.o)
+                0x0000000000028aed                rpl_dag_state_to_str
+                0x0000000000028b2c                rpl_dag_get_root_ipaddr
+                0x0000000000028b74                rpl_dag_leave
+                0x0000000000028bfd                rpl_dag_poison_and_leave
+                0x0000000000028c15                rpl_dag_periodic
+                0x0000000000028c9d                rpl_is_addr_in_our_dag
+                0x0000000000028ce1                rpl_get_default_instance
+                0x0000000000028cfd                rpl_get_any_dag
+                0x0000000000028d56                rpl_refresh_routes
+                0x0000000000028d96                rpl_global_repair
+                0x0000000000028e2f                rpl_local_repair
+                0x0000000000028e79                rpl_dag_ready_to_advertise
+                0x0000000000028ebc                rpl_dag_update_state
+                0x00000000000295e9                rpl_process_dio
+                0x0000000000029667                rpl_process_dis
+                0x00000000000296ac                rpl_process_dao
+                0x000000000002973b                rpl_process_dao_ack
+                0x00000000000297d2                rpl_process_hbh
+                0x0000000000029822                rpl_dag_init_root
+                0x0000000000029936                rpl_dag_init
+ .text          0x0000000000029956      0x9e7 build/cooja/mtype607.a(rpl-timers.o)
+                0x0000000000029956                rpl_timers_schedule_periodic_dis
+                0x0000000000029aa4                rpl_timers_dio_reset
+                0x0000000000029bb2                rpl_timers_schedule_unicast_dio
+                0x0000000000029d06                rpl_timers_schedule_dao
+                0x0000000000029dc5                rpl_timers_schedule_dao_ack
+                0x0000000000029e4b                rpl_timers_notify_dao_ack
+                0x0000000000029ea9                get_probing_delay
+                0x0000000000029edd                get_probing_target
+                0x000000000002a0c7                rpl_schedule_probing
+                0x000000000002a0f5                rpl_schedule_probing_now
+                0x000000000002a15f                rpl_timers_unschedule_leaving
+                0x000000000002a197                rpl_timers_schedule_leaving
+                0x000000000002a1d8                rpl_timers_init
+                0x000000000002a268                rpl_timers_stop_dag_timers
+                0x000000000002a2e1                rpl_timers_unschedule_state_update
+                0x000000000002a305                rpl_timers_schedule_state_update
+ .text          0x000000000002a33d      0xbd8 build/cooja/mtype607.a(rpl-ext-header.)
+                0x000000000002a33d                rpl_ext_header_srh_get_next_hop
+                0x000000000002a424                rpl_ext_header_srh_update
+                0x000000000002a9da                rpl_ext_header_hbh_update
+                0x000000000002acda                rpl_ext_header_update
+                0x000000000002ad63                rpl_ext_header_remove
+ .text          0x000000000002af15      0x31b build/cooja/mtype607.a(rpl-mrhof.o)
+ .text          0x000000000002b230      0x122 /usr/lib/gcc/i686-linux-gnu/5/libgcc.a(_udivdi3.o)
+                0x000000000002b230                __udivdi3
+ .text          0x000000000002b352        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtendS.o
+ .text          0x000000000002b352        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crtn.o
+ *(.gnu.warning)
+
+.fini           0x000000000002b354       0x14
+ *(SORT(.fini))
+ .fini          0x000000000002b354        0xf /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+                0x000000000002b354                _fini
+ .fini          0x000000000002b363        0x5 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crtn.o
+                [!provide]                        PROVIDE (__etext, .)
+                [!provide]                        PROVIDE (_etext, .)
+                [!provide]                        PROVIDE (etext, .)
+
+.rodata         0x000000000002b380      0xccb
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x000000000002b380      0x25d oxygen_actuator.o
+                0x000000000002b470                autostart_processes
+ *fill*         0x000000000002b5dd        0x3 
+ .rodata        0x000000000002b5e0        0x8 build/cooja/mtype607.a(beep.o)
+                0x000000000002b5e0                beep_interface
+ .rodata        0x000000000002b5e8        0xe build/cooja/mtype607.a(leds-arch.o)
+                0x000000000002b5e8                leds_interface
+                0x000000000002b5f0                leds_arch_leds
+ *fill*         0x000000000002b5f6        0x2 
+ .rodata        0x000000000002b5f8        0x8 build/cooja/mtype607.a(moteid.o)
+                0x000000000002b5f8                moteid_interface
+ .rodata        0x000000000002b600       0x1c build/cooja/mtype607.a(pir-sensor.o)
+                0x000000000002b600                pir_interface
+                0x000000000002b60c                pir_sensor
+ .rodata        0x000000000002b61c        0xe build/cooja/mtype607.a(rs232.o)
+                0x000000000002b61c                rs232_interface
+ *fill*         0x000000000002b62a        0x2 
+ .rodata        0x000000000002b62c       0x24 build/cooja/mtype607.a(vib-sensor.o)
+                0x000000000002b62c                vib_interface
+                0x000000000002b640                vib_sensor
+ .rodata        0x000000000002b650        0x8 build/cooja/mtype607.a(clock.o)
+                0x000000000002b650                clock_interface
+ .rodata        0x000000000002b658        0x8 build/cooja/mtype607.a(cooja-log.o)
+                0x000000000002b658                simlog_interface
+ .rodata        0x000000000002b660       0x2f build/cooja/mtype607.a(cfs-cooja.o)
+                0x000000000002b660                cfs_interface
+ *fill*         0x000000000002b68f       0x11 
+ .rodata        0x000000000002b6a0       0xb8 build/cooja/mtype607.a(cooja-radio.o)
+                0x000000000002b6a0                radio_interface
+                0x000000000002b720                cooja_radio_driver
+ .rodata        0x000000000002b758        0x8 build/cooja/mtype607.a(eeprom.o)
+                0x000000000002b758                eeprom_interface
+ .rodata        0x000000000002b760        0x8 build/cooja/mtype607.a(sensors.o)
+ .rodata        0x000000000002b768       0x2c build/cooja/mtype607.a(buttons.o)
+                0x000000000002b768                button_interface
+                0x000000000002b77c                button_hal_button_count
+                0x000000000002b784                button_sensor
+ .rodata        0x000000000002b794      0x112 build/cooja/mtype607.a(oxygen_generato)
+ .rodata        0x000000000002b8a6       0x41 build/cooja/mtype607.a(coap-engine.o)
+ .rodata        0x000000000002b8e7       0x19 build/cooja/mtype607.a(coap-res-well-k)
+ .rodata        0x000000000002b900       0x11 build/cooja/mtype607.a(coap-observe.o)
+ .rodata        0x000000000002b911       0x35 build/cooja/mtype607.a(coap-uip.o)
+ *fill*         0x000000000002b946        0x2 
+ .rodata        0x000000000002b948      0x1ac build/cooja/mtype607.a(coap.o)
+ .rodata        0x000000000002baf4       0xf8 build/cooja/mtype607.a(contiki-main.o)
+ .rodata        0x000000000002bbec        0xf build/cooja/mtype607.a(ctimer.o)
+ *fill*         0x000000000002bbfb        0x1 
+ .rodata        0x000000000002bbfc       0xc4 build/cooja/mtype607.a(log.o)
+ .rodata        0x000000000002bcc0        0xc build/cooja/mtype607.a(etimer.o)
+ .rodata        0x000000000002bccc       0x13 build/cooja/mtype607.a(button-hal.o)
+ .rodata        0x000000000002bcdf        0xe build/cooja/mtype607.a(serial-line.o)
+ *fill*         0x000000000002bced        0x3 
+ .rodata        0x000000000002bcf0        0x8 build/cooja/mtype607.a(linkaddr.o)
+                0x000000000002bcf0                linkaddr_null
+ .rodata        0x000000000002bcf8       0x24 build/cooja/mtype607.a(csma.o)
+                0x000000000002bd00                csma_driver
+ .rodata        0x000000000002bd1c       0x24 build/cooja/mtype607.a(csma-output.o)
+ .rodata        0x000000000002bd40       0x4d build/cooja/mtype607.a(uip-ds6-route.o)
+ .rodata        0x000000000002bd8d        0xd build/cooja/mtype607.a(tcpip.o)
+ *fill*         0x000000000002bd9a        0x2 
+ .rodata        0x000000000002bd9c       0x30 build/cooja/mtype607.a(sicslowpan.o)
+                0x000000000002bd9c                unc_llconf
+                0x000000000002bda0                unc_ctxconf
+                0x000000000002bda4                unc_mxconf
+                0x000000000002bda8                llprefix
+                0x000000000002bdbc                sicslowpan_driver
+ .rodata        0x000000000002bdcc       0x2d build/cooja/mtype607.a(uiplib.o)
+ *fill*         0x000000000002bdf9        0x7 
+ .rodata        0x000000000002be00       0x74 build/cooja/mtype607.a(rpl.o)
+                0x000000000002be20                rpl_lite_driver
+ .rodata        0x000000000002be74       0x20 build/cooja/mtype607.a(coap-timer-defa)
+                0x000000000002be88                coap_timer_default_driver
+ .rodata        0x000000000002be94       0x25 build/cooja/mtype607.a(assert.o)
+ *fill*         0x000000000002beb9        0x3 
+ .rodata        0x000000000002bebc        0xc build/cooja/mtype607.a(framer-802154.o)
+                0x000000000002bebc                framer_802154
+ .rodata        0x000000000002bec8       0x44 build/cooja/mtype607.a(uip-sr.o)
+ .rodata        0x000000000002bf0c       0x58 build/cooja/mtype607.a(rpl-neighbor.o)
+ .rodata        0x000000000002bf64       0xdb build/cooja/mtype607.a(rpl-dag.o)
+ .rodata        0x000000000002c03f        0xc build/cooja/mtype607.a(rpl-timers.o)
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr   0x000000000002c04c     0x1ab4
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x000000000002c04c     0x1ab4 oxygen_actuator.o
+                0x000000000002c04c                __GNU_EH_FRAME_HDR
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame       0x000000000002db00     0x6c58
+ *(.eh_frame)
+ .eh_frame      0x000000000002db00       0x3c /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+                                         0x40 (size before relaxing)
+ .eh_frame      0x000000000002db3c       0x84 oxygen_actuator.o
+                                         0x9c (size before relaxing)
+ .eh_frame      0x000000000002dbc0      0x178 build/cooja/mtype607.o
+                                        0x190 (size before relaxing)
+ .eh_frame      0x000000000002dd38       0x40 build/cooja/mtype607.a(simEnvChange.o)
+                                         0x58 (size before relaxing)
+ .eh_frame      0x000000000002dd78       0x60 build/cooja/mtype607.a(cooja_mt.o)
+                                         0x78 (size before relaxing)
+ .eh_frame      0x000000000002ddd8       0x80 build/cooja/mtype607.a(cooja_mtarch.o)
+                                         0x98 (size before relaxing)
+ .eh_frame      0x000000000002de58       0xc8 build/cooja/mtype607.a(rtimer-arch.o)
+                                         0xe0 (size before relaxing)
+ .eh_frame      0x000000000002df20      0x160 build/cooja/mtype607.a(beep.o)
+                                        0x178 (size before relaxing)
+ .eh_frame      0x000000000002e080       0x80 build/cooja/mtype607.a(leds-arch.o)
+                                         0x98 (size before relaxing)
+ .eh_frame      0x000000000002e100       0x40 build/cooja/mtype607.a(moteid.o)
+                                         0x58 (size before relaxing)
+ .eh_frame      0x000000000002e140       0xa0 build/cooja/mtype607.a(pir-sensor.o)
+                                         0xb8 (size before relaxing)
+ .eh_frame      0x000000000002e1e0      0x100 build/cooja/mtype607.a(rs232.o)
+                                        0x118 (size before relaxing)
+ .eh_frame      0x000000000002e2e0       0xa0 build/cooja/mtype607.a(vib-sensor.o)
+                                         0xb8 (size before relaxing)
+ .eh_frame      0x000000000002e380       0xc0 build/cooja/mtype607.a(clock.o)
+                                         0xd8 (size before relaxing)
+ .eh_frame      0x000000000002e440      0x120 build/cooja/mtype607.a(cooja-log.o)
+                                        0x138 (size before relaxing)
+ .eh_frame      0x000000000002e560      0x160 build/cooja/mtype607.a(cfs-cooja.o)
+                                        0x178 (size before relaxing)
+ .eh_frame      0x000000000002e6c0      0x340 build/cooja/mtype607.a(cooja-radio.o)
+                                        0x358 (size before relaxing)
+ .eh_frame      0x000000000002ea00       0xa0 build/cooja/mtype607.a(eeprom.o)
+                                         0xb8 (size before relaxing)
+ .eh_frame      0x000000000002eaa0       0x40 build/cooja/mtype607.a(random.o)
+                                         0x58 (size before relaxing)
+ .eh_frame      0x000000000002eae0       0xc0 build/cooja/mtype607.a(sensors.o)
+                                         0xd8 (size before relaxing)
+ .eh_frame      0x000000000002eba0      0x120 build/cooja/mtype607.a(leds.o)
+                                        0x138 (size before relaxing)
+ .eh_frame      0x000000000002ecc0      0x220 build/cooja/mtype607.a(gpio-hal-arch.o)
+                                        0x238 (size before relaxing)
+ .eh_frame      0x000000000002eee0       0xa0 build/cooja/mtype607.a(buttons.o)
+                                         0xb8 (size before relaxing)
+ .eh_frame      0x000000000002ef80       0x60 build/cooja/mtype607.a(oxygen_generato)
+                                         0x78 (size before relaxing)
+ .eh_frame      0x000000000002efe0      0x1c4 build/cooja/mtype607.a(coap-observe-cl)
+                                        0x1dc (size before relaxing)
+ .eh_frame      0x000000000002f1a4       0x44 build/cooja/mtype607.a(coap-blocking-a)
+                                         0x5c (size before relaxing)
+ .eh_frame      0x000000000002f1e8      0x220 build/cooja/mtype607.a(coap-engine.o)
+                                        0x238 (size before relaxing)
+ .eh_frame      0x000000000002f408       0x24 build/cooja/mtype607.a(coap-res-well-k)
+                                         0x3c (size before relaxing)
+ .eh_frame      0x000000000002f42c      0x188 build/cooja/mtype607.a(coap-observe.o)
+                                        0x1a0 (size before relaxing)
+ .eh_frame      0x000000000002f5b4      0x250 build/cooja/mtype607.a(coap-uip.o)
+                                        0x268 (size before relaxing)
+ .eh_frame      0x000000000002f804      0x114 build/cooja/mtype607.a(coap-timer.o)
+                                        0x12c (size before relaxing)
+ .eh_frame      0x000000000002f918      0x100 build/cooja/mtype607.a(coap-transactio)
+                                        0x118 (size before relaxing)
+ .eh_frame      0x000000000002fa18      0x6ec build/cooja/mtype607.a(coap.o)
+                                        0x704 (size before relaxing)
+ .eh_frame      0x0000000000030104       0x30 build/cooja/mtype607.a(contiki-main.o)
+                                         0x48 (size before relaxing)
+ .eh_frame      0x0000000000030134       0x40 build/cooja/mtype607.a(autostart.o)
+                                         0x58 (size before relaxing)
+ .eh_frame      0x0000000000030174      0x100 build/cooja/mtype607.a(ctimer.o)
+                                        0x118 (size before relaxing)
+ .eh_frame      0x0000000000030274      0x120 build/cooja/mtype607.a(log.o)
+                                        0x138 (size before relaxing)
+ .eh_frame      0x0000000000030394       0x60 build/cooja/mtype607.a(energest.o)
+                                         0x78 (size before relaxing)
+ .eh_frame      0x00000000000303f4      0x1e0 build/cooja/mtype607.a(etimer.o)
+                                        0x1f8 (size before relaxing)
+ .eh_frame      0x00000000000305d4       0x20 build/cooja/mtype607.a(node-id.o)
+                                         0x38 (size before relaxing)
+ .eh_frame      0x00000000000305f4       0x60 build/cooja/mtype607.a(rtimer.o)
+                                         0x78 (size before relaxing)
+ .eh_frame      0x0000000000030654      0x1c4 build/cooja/mtype607.a(process.o)
+                                        0x1dc (size before relaxing)
+ .eh_frame      0x0000000000030818       0xa4 build/cooja/mtype607.a(timer.o)
+                                         0xbc (size before relaxing)
+ .eh_frame      0x00000000000308bc      0x1a0 build/cooja/mtype607.a(list.o)
+                                        0x1b8 (size before relaxing)
+ .eh_frame      0x0000000000030a5c       0xa0 build/cooja/mtype607.a(memb.o)
+                                         0xb8 (size before relaxing)
+ .eh_frame      0x0000000000030afc      0x164 build/cooja/mtype607.a(button-hal.o)
+                                        0x17c (size before relaxing)
+ .eh_frame      0x0000000000030c60       0x60 build/cooja/mtype607.a(serial-line.o)
+                                         0x78 (size before relaxing)
+ .eh_frame      0x0000000000030cc0       0xe0 build/cooja/mtype607.a(gpio-hal.o)
+                                         0xf8 (size before relaxing)
+ .eh_frame      0x0000000000030da0      0x1a0 build/cooja/mtype607.a(queuebuf.o)
+                                        0x1b8 (size before relaxing)
+ .eh_frame      0x0000000000030f40      0x28c build/cooja/mtype607.a(packetbuf.o)
+                                        0x2a4 (size before relaxing)
+ .eh_frame      0x00000000000311cc       0x80 build/cooja/mtype607.a(netstack.o)
+                                         0x98 (size before relaxing)
+ .eh_frame      0x000000000003124c       0x60 build/cooja/mtype607.a(linkaddr.o)
+                                         0x78 (size before relaxing)
+ .eh_frame      0x00000000000312ac       0xe0 build/cooja/mtype607.a(csma.o)
+                                         0xf8 (size before relaxing)
+ .eh_frame      0x000000000003138c      0x1d0 build/cooja/mtype607.a(csma-output.o)
+                                        0x1e8 (size before relaxing)
+ .eh_frame      0x000000000003155c      0x328 build/cooja/mtype607.a(uip-ds6.o)
+                                        0x340 (size before relaxing)
+ .eh_frame      0x0000000000031884       0x40 build/cooja/mtype607.a(uip-udp-packet.)
+                                         0x58 (size before relaxing)
+ .eh_frame      0x00000000000318c4      0x240 build/cooja/mtype607.a(uip-ds6-route.o)
+                                        0x258 (size before relaxing)
+ .eh_frame      0x0000000000031b04      0x244 build/cooja/mtype607.a(tcpip.o)
+                                        0x25c (size before relaxing)
+ .eh_frame      0x0000000000031d48      0x1e8 build/cooja/mtype607.a(uip6.o)
+                                        0x200 (size before relaxing)
+ .eh_frame      0x0000000000031f30      0x1c0 build/cooja/mtype607.a(uip-ds6-nbr.o)
+                                        0x1d8 (size before relaxing)
+ .eh_frame      0x00000000000320f0       0x84 build/cooja/mtype607.a(uip-nd6.o)
+                                         0x9c (size before relaxing)
+ .eh_frame      0x0000000000032174      0x2f8 build/cooja/mtype607.a(sicslowpan.o)
+                                        0x310 (size before relaxing)
+ .eh_frame      0x000000000003246c       0x88 build/cooja/mtype607.a(uiplib.o)
+                                         0xa0 (size before relaxing)
+ .eh_frame      0x00000000000324f4      0x1e0 build/cooja/mtype607.a(rpl.o)
+                                        0x1f8 (size before relaxing)
+ .eh_frame      0x00000000000326d4      0x1c4 build/cooja/mtype607.a(rpl-icmp6.o)
+                                        0x1dc (size before relaxing)
+ .eh_frame      0x0000000000032898       0xa0 build/cooja/mtype607.a(rpl-dag-root.o)
+                                         0xb8 (size before relaxing)
+ .eh_frame      0x0000000000032938       0xa0 build/cooja/mtype607.a(watchdog.o)
+                                         0xb8 (size before relaxing)
+ .eh_frame      0x00000000000329d8       0x80 build/cooja/mtype607.a(int-master.o)
+                                         0x98 (size before relaxing)
+ .eh_frame      0x0000000000032a58       0xa4 build/cooja/mtype607.a(coap-timer-defa)
+                                         0xbc (size before relaxing)
+ .eh_frame      0x0000000000032afc       0xc4 build/cooja/mtype607.a(stimer.o)
+                                         0xdc (size before relaxing)
+ .eh_frame      0x0000000000032bc0       0xa0 build/cooja/mtype607.a(ringbuf.o)
+                                         0xb8 (size before relaxing)
+ .eh_frame      0x0000000000032c60       0x20 build/cooja/mtype607.a(assert.o)
+                                         0x38 (size before relaxing)
+ .eh_frame      0x0000000000032c80      0x3f0 build/cooja/mtype607.a(nbr-table.o)
+                                        0x408 (size before relaxing)
+ .eh_frame      0x0000000000033070      0x120 build/cooja/mtype607.a(link-stats.o)
+                                        0x138 (size before relaxing)
+ .eh_frame      0x0000000000033190       0x48 build/cooja/mtype607.a(mac-sequence.o)
+                                         0x60 (size before relaxing)
+ .eh_frame      0x00000000000331d8       0x20 build/cooja/mtype607.a(mac.o)
+                                         0x38 (size before relaxing)
+ .eh_frame      0x00000000000331f8       0xa4 build/cooja/mtype607.a(framer-802154.o)
+                                         0xbc (size before relaxing)
+ .eh_frame      0x000000000003329c      0x1a4 build/cooja/mtype607.a(frame802154.o)
+                                        0x1bc (size before relaxing)
+ .eh_frame      0x0000000000033440       0x40 build/cooja/mtype607.a(csma-security.o)
+                                         0x58 (size before relaxing)
+ .eh_frame      0x0000000000033480      0x200 build/cooja/mtype607.a(uipbuf.o)
+                                        0x218 (size before relaxing)
+ .eh_frame      0x0000000000033680      0x150 build/cooja/mtype607.a(uip-icmp6.o)
+                                        0x168 (size before relaxing)
+ .eh_frame      0x00000000000337d0      0x184 build/cooja/mtype607.a(uip-sr.o)
+                                        0x19c (size before relaxing)
+ .eh_frame      0x0000000000033954       0xe0 build/cooja/mtype607.a(uip-packetqueue)
+                                         0xf8 (size before relaxing)
+ .eh_frame      0x0000000000033a34       0x44 build/cooja/mtype607.a(rpl-nbr-policy.)
+                                         0x5c (size before relaxing)
+ .eh_frame      0x0000000000033a78      0x2d4 build/cooja/mtype607.a(rpl-neighbor.o)
+                                        0x2ec (size before relaxing)
+ .eh_frame      0x0000000000033d4c      0x370 build/cooja/mtype607.a(rpl-dag.o)
+                                        0x388 (size before relaxing)
+ .eh_frame      0x00000000000340bc      0x3a8 build/cooja/mtype607.a(rpl-timers.o)
+                                        0x3c0 (size before relaxing)
+ .eh_frame      0x0000000000034464      0x124 build/cooja/mtype607.a(rpl-ext-header.)
+                                        0x13c (size before relaxing)
+ .eh_frame      0x0000000000034588      0x148 build/cooja/mtype607.a(rpl-mrhof.o)
+                                        0x160 (size before relaxing)
+ .eh_frame      0x00000000000346d0       0x84 /usr/lib/gcc/i686-linux-gnu/5/libgcc.a(_udivdi3.o)
+                                         0x9c (size before relaxing)
+ .eh_frame      0x0000000000034754        0x4 /usr/lib/gcc/i686-linux-gnu/5/crtendS.o
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x0000000000035f10                . = DATA_SEGMENT_ALIGN (0x1000, 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array
+ *(.preinit_array)
+
+.init_array     0x0000000000035f10        0x4
+ *(SORT(.init_array.*) SORT(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+ .init_array    0x0000000000035f10        0x4 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+
+.fini_array     0x0000000000035f14        0x4
+ *(SORT(.fini_array.*) SORT(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+ .fini_array    0x0000000000035f14        0x4 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr            0x0000000000035f18        0x4
+ *(.jcr)
+ .jcr           0x0000000000035f18        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ .jcr           0x0000000000035f18        0x4 /usr/lib/gcc/i686-linux-gnu/5/crtendS.o
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x0000000000035f1c       0xd0
+ *(.dynamic)
+ .dynamic       0x0000000000035f1c       0xd0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+                0x0000000000035f1c                _DYNAMIC
+
+.got            0x0000000000035fec       0x14
+ *(.got)
+ .got           0x0000000000035fec       0x14 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.igot)
+                0x0000000000036ff4                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
+
+.got.plt        0x0000000000036000        0xc
+ *(.got.plt)
+ .got.plt       0x0000000000036000        0xc /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+                0x0000000000036000                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+
+.data           0x0000000000036020      0x464
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000000036020        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ .data          0x0000000000036020        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ .data.rel.local
+                0x0000000000036020        0x4 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+                0x0000000000036020                __dso_handle
+ .data          0x0000000000036024       0x14 oxygen_actuator.o
+                0x0000000000036028                oxygen_actuator
+ *fill*         0x0000000000036038        0x8 
+ .data          0x0000000000036040       0x44 build/cooja/mtype607.o
+                0x0000000000036040                simInterfaces
+                0x0000000000036074                sensors
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(simEnvChange.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(cooja_mt.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(cooja_mtarch.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(rtimer-arch.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(beep.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(leds-arch.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(moteid.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(pir-sensor.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(rs232.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(vib-sensor.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(clock.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(cooja-log.o)
+ .data          0x0000000000036084        0x0 build/cooja/mtype607.a(cfs-cooja.o)
+ .data          0x0000000000036084       0x2c build/cooja/mtype607.a(cooja-radio.o)
+                0x0000000000036084                simRadioHWOn
+                0x0000000000036088                simSignalStrength
+                0x000000000003608c                simLastSignalStrength
+                0x0000000000036090                simPower
+                0x0000000000036094                simRadioChannel
+                0x0000000000036098                simLQI
+                0x00000000000360a0                cooja_radio_process
+ .data          0x00000000000360b0        0x0 build/cooja/mtype607.a(eeprom.o)
+ .data          0x00000000000360b0        0x0 build/cooja/mtype607.a(random.o)
+ .data          0x00000000000360b0       0x10 build/cooja/mtype607.a(sensors.o)
+                0x00000000000360b0                sensors_process
+ .data          0x00000000000360c0        0x0 build/cooja/mtype607.a(leds.o)
+ .data          0x00000000000360c0        0x0 build/cooja/mtype607.a(gpio-hal-arch.o)
+ .data          0x00000000000360c0       0x78 build/cooja/mtype607.a(buttons.o)
+                0x00000000000360c0                simButtonIsActive
+                0x0000000000036130                button_hal_buttons
+ *fill*         0x0000000000036138        0x8 
+ .data          0x0000000000036140       0x44 build/cooja/mtype607.a(oxygen_generato)
+                0x0000000000036140                GOOD_OXYGEN_LEVEL
+                0x0000000000036160                oxygen_generator
+ .data          0x0000000000036184       0x10 build/cooja/mtype607.a(coap-observe-cl)
+ .data          0x0000000000036194        0x0 build/cooja/mtype607.a(coap-blocking-a)
+ .data          0x0000000000036194        0x8 build/cooja/mtype607.a(coap-engine.o)
+ *fill*         0x000000000003619c        0x4 
+ .data          0x00000000000361a0       0x24 build/cooja/mtype607.a(coap-res-well-k)
+                0x00000000000361a0                res_well_known_core
+ .data          0x00000000000361c4       0x10 build/cooja/mtype607.a(coap-observe.o)
+ .data          0x00000000000361d4       0x10 build/cooja/mtype607.a(coap-uip.o)
+                0x00000000000361d4                coap_engine
+ .data          0x00000000000361e4        0x4 build/cooja/mtype607.a(coap-timer.o)
+ .data          0x00000000000361e8       0x10 build/cooja/mtype607.a(coap-transactio)
+ .data          0x00000000000361f8        0x4 build/cooja/mtype607.a(coap.o)
+                0x00000000000361f8                coap_error_message
+ .data          0x00000000000361fc        0x0 build/cooja/mtype607.a(contiki-main.o)
+ .data          0x00000000000361fc        0x0 build/cooja/mtype607.a(autostart.o)
+ .data          0x00000000000361fc       0x14 build/cooja/mtype607.a(ctimer.o)
+                0x0000000000036200                ctimer_process
+ *fill*         0x0000000000036210       0x10 
+ .data          0x0000000000036220       0xbc build/cooja/mtype607.a(log.o)
+                0x0000000000036220                curr_log_level_main
+                0x0000000000036240                all_modules
+ .data          0x00000000000362dc        0x0 build/cooja/mtype607.a(energest.o)
+ .data          0x00000000000362dc       0x10 build/cooja/mtype607.a(etimer.o)
+                0x00000000000362dc                etimer_process
+ .data          0x00000000000362ec        0x0 build/cooja/mtype607.a(node-id.o)
+ .data          0x00000000000362ec        0x0 build/cooja/mtype607.a(rtimer.o)
+ .data          0x00000000000362ec        0x0 build/cooja/mtype607.a(process.o)
+ .data          0x00000000000362ec        0x0 build/cooja/mtype607.a(timer.o)
+ .data          0x00000000000362ec        0x0 build/cooja/mtype607.a(list.o)
+ .data          0x00000000000362ec        0x0 build/cooja/mtype607.a(memb.o)
+ .data          0x00000000000362ec       0x10 build/cooja/mtype607.a(button-hal.o)
+                0x00000000000362ec                button_hal_process
+ .data          0x00000000000362fc       0x10 build/cooja/mtype607.a(serial-line.o)
+                0x00000000000362fc                serial_line_process
+ .data          0x000000000003630c        0x4 build/cooja/mtype607.a(gpio-hal.o)
+ .data          0x0000000000036310       0x18 build/cooja/mtype607.a(queuebuf.o)
+ .data          0x0000000000036328        0x4 build/cooja/mtype607.a(packetbuf.o)
+ .data          0x000000000003632c        0x4 build/cooja/mtype607.a(netstack.o)
+ .data          0x0000000000036330        0x0 build/cooja/mtype607.a(linkaddr.o)
+ .data          0x0000000000036330        0x0 build/cooja/mtype607.a(csma.o)
+ .data          0x0000000000036330       0x28 build/cooja/mtype607.a(csma-output.o)
+ .data          0x0000000000036358        0x0 build/cooja/mtype607.a(uip-ds6.o)
+ .data          0x0000000000036358        0x0 build/cooja/mtype607.a(uip-udp-packet.)
+ .data          0x0000000000036358       0x10 build/cooja/mtype607.a(uip-ds6-route.o)
+ .data          0x0000000000036368       0x10 build/cooja/mtype607.a(tcpip.o)
+                0x0000000000036368                tcpip_process
+ .data          0x0000000000036378        0x0 build/cooja/mtype607.a(uip6.o)
+ .data          0x0000000000036378       0x14 build/cooja/mtype607.a(uip-ds6-nbr.o)
+ .data          0x000000000003638c        0xc build/cooja/mtype607.a(uip-nd6.o)
+ .data          0x0000000000036398        0x0 build/cooja/mtype607.a(sicslowpan.o)
+ .data          0x0000000000036398        0x0 build/cooja/mtype607.a(uiplib.o)
+ .data          0x0000000000036398        0x0 build/cooja/mtype607.a(rpl.o)
+ .data          0x0000000000036398       0x30 build/cooja/mtype607.a(rpl-icmp6.o)
+ .data          0x00000000000363c8        0x0 build/cooja/mtype607.a(rpl-dag-root.o)
+ .data          0x00000000000363c8        0x0 build/cooja/mtype607.a(watchdog.o)
+ .data          0x00000000000363c8        0x0 build/cooja/mtype607.a(int-master.o)
+ .data          0x00000000000363c8       0x10 build/cooja/mtype607.a(coap-timer-defa)
+                0x00000000000363c8                coap_timer_process
+ .data          0x00000000000363d8        0x0 build/cooja/mtype607.a(stimer.o)
+ .data          0x00000000000363d8        0x0 build/cooja/mtype607.a(ringbuf.o)
+ .data          0x00000000000363d8        0x0 build/cooja/mtype607.a(assert.o)
+ .data          0x00000000000363d8       0x10 build/cooja/mtype607.a(nbr-table.o)
+ .data          0x00000000000363e8       0x14 build/cooja/mtype607.a(link-stats.o)
+ .data          0x00000000000363fc        0x0 build/cooja/mtype607.a(mac-sequence.o)
+ .data          0x00000000000363fc        0x0 build/cooja/mtype607.a(mac.o)
+ .data          0x00000000000363fc        0x0 build/cooja/mtype607.a(framer-802154.o)
+ .data          0x00000000000363fc        0x2 build/cooja/mtype607.a(frame802154.o)
+ .data          0x00000000000363fe        0x0 build/cooja/mtype607.a(csma-security.o)
+ .data          0x00000000000363fe        0x0 build/cooja/mtype607.a(uipbuf.o)
+ *fill*         0x00000000000363fe        0x2 
+ .data          0x0000000000036400       0x20 build/cooja/mtype607.a(uip-icmp6.o)
+ .data          0x0000000000036420       0x10 build/cooja/mtype607.a(uip-sr.o)
+ .data          0x0000000000036430        0xc build/cooja/mtype607.a(uip-packetqueue)
+ .data          0x000000000003643c        0x0 build/cooja/mtype607.a(rpl-nbr-policy.)
+ .data          0x000000000003643c       0x14 build/cooja/mtype607.a(rpl-neighbor.o)
+                0x000000000003644c                rpl_neighbors
+ .data          0x0000000000036450        0x0 build/cooja/mtype607.a(rpl-dag.o)
+ .data          0x0000000000036450        0x0 build/cooja/mtype607.a(rpl-timers.o)
+ .data          0x0000000000036450        0x0 build/cooja/mtype607.a(rpl-ext-header.)
+ *fill*         0x0000000000036450       0x10 
+ .data          0x0000000000036460       0x24 build/cooja/mtype607.a(rpl-mrhof.o)
+                0x0000000000036460                rpl_mrhof
+ .data          0x0000000000036484        0x0 /usr/lib/gcc/i686-linux-gnu/5/libgcc.a(_udivdi3.o)
+ .data          0x0000000000036484        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtendS.o
+ .data          0x0000000000036484        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crtn.o
+
+.tm_clone_table
+                0x0000000000036484        0x0
+ .tm_clone_table
+                0x0000000000036484        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ .tm_clone_table
+                0x0000000000036484        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtendS.o
+
+.data1
+ *(.data1)
+                0x0000000000036484                _edata = .
+                [!provide]                        PROVIDE (edata, .)
+                0x0000000000036484                . = .
+                0x0000000000036484                __bss_start = .
+
+.bss            0x00000000000364a0    0x14144
+ *(.dynbss)
+ .dynbss        0x00000000000364a0        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000000000364a0        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+ .bss           0x00000000000364a0        0x1 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+ *fill*         0x00000000000364a1       0x1f 
+ .bss           0x00000000000364c0      0x18c oxygen_actuator.o
+                0x00000000000364c0                oxygen_level
+ *fill*         0x000000000003664c       0x14 
+ .bss           0x0000000000036660     0x2030 build/cooja/mtype607.o
+ .bss           0x0000000000038690        0x1 build/cooja/mtype607.a(simEnvChange.o)
+                0x0000000000038690                simDontFallAsleep
+ *fill*         0x0000000000038691        0x3 
+ .bss           0x0000000000038694        0x4 build/cooja/mtype607.a(cooja_mt.o)
+ .bss           0x0000000000038698        0x4 build/cooja/mtype607.a(cooja_mtarch.o)
+ .bss           0x000000000003869c        0x0 build/cooja/mtype607.a(rtimer-arch.o)
+ .bss           0x000000000003869c        0x0 build/cooja/mtype607.a(beep.o)
+ .bss           0x000000000003869c        0x1 build/cooja/mtype607.a(leds-arch.o)
+                0x000000000003869c                simLedsValue
+ .bss           0x000000000003869d        0x0 build/cooja/mtype607.a(moteid.o)
+ .bss           0x000000000003869d        0x1 build/cooja/mtype607.a(pir-sensor.o)
+                0x000000000003869d                simPirValue
+ *fill*         0x000000000003869e        0x2 
+ .bss           0x00000000000386a0        0x4 build/cooja/mtype607.a(rs232.o)
+ .bss           0x00000000000386a4        0x1 build/cooja/mtype607.a(vib-sensor.o)
+                0x00000000000386a4                simVibValue
+ .bss           0x00000000000386a5        0x0 build/cooja/mtype607.a(clock.o)
+ *fill*         0x00000000000386a5       0x1b 
+ .bss           0x00000000000386c0     0x2020 build/cooja/mtype607.a(cooja-log.o)
+ .bss           0x000000000003a6e0      0xfc0 build/cooja/mtype607.a(cfs-cooja.o)
+                0x000000000003a6e0                simCFSData
+                0x000000000003b680                simCFSSize
+                0x000000000003b684                simCFSChanged
+                0x000000000003b688                simCFSRead
+                0x000000000003b68c                simCFSWritten
+ .bss           0x000000000003b6a0       0x24 build/cooja/mtype607.a(cooja-radio.o)
+                0x000000000003b6a0                simReceiving
+                0x000000000003b6a4                simInSize
+                0x000000000003b6a8                simLastPacketTimestamp
+                0x000000000003b6b0                simOutSize
+ .bss           0x000000000003b6c4        0xc build/cooja/mtype607.a(eeprom.o)
+                0x000000000003b6c4                simEEPROMChanged
+                0x000000000003b6c8                simEEPROMRead
+                0x000000000003b6cc                simEEPROMWritten
+ .bss           0x000000000003b6d0        0x0 build/cooja/mtype607.a(random.o)
+ .bss           0x000000000003b6d0        0xc build/cooja/mtype607.a(sensors.o)
+ .bss           0x000000000003b6dc        0x0 build/cooja/mtype607.a(leds.o)
+ .bss           0x000000000003b6dc       0x24 build/cooja/mtype607.a(gpio-hal-arch.o)
+ .bss           0x000000000003b700        0x0 build/cooja/mtype607.a(buttons.o)
+ .bss           0x000000000003b700        0x8 build/cooja/mtype607.a(oxygen_generato)
+                0x000000000003b700                status
+ *fill*         0x000000000003b708       0x18 
+ .bss           0x000000000003b720      0x1b1 build/cooja/mtype607.a(coap-observe-cl)
+ .bss           0x000000000003b8d1        0x0 build/cooja/mtype607.a(coap-blocking-a)
+ *fill*         0x000000000003b8d1        0xf 
+ .bss           0x000000000003b8e0      0x190 build/cooja/mtype607.a(coap-engine.o)
+ .bss           0x000000000003ba70        0x0 build/cooja/mtype607.a(coap-res-well-k)
+ *fill*         0x000000000003ba70       0x10 
+ .bss           0x000000000003ba80      0x120 build/cooja/mtype607.a(coap-observe.o)
+ .bss           0x000000000003bba0       0x18 build/cooja/mtype607.a(coap-uip.o)
+ .bss           0x000000000003bbb8        0x5 build/cooja/mtype607.a(coap-timer.o)
+ *fill*         0x000000000003bbbd        0x3 
+ .bss           0x000000000003bbc0      0x334 build/cooja/mtype607.a(coap-transactio)
+ .bss           0x000000000003bef4        0x6 build/cooja/mtype607.a(coap.o)
+                0x000000000003bef4                coap_status_code
+ .bss           0x000000000003befa        0x0 build/cooja/mtype607.a(contiki-main.o)
+ .bss           0x000000000003befa        0x0 build/cooja/mtype607.a(autostart.o)
+ *fill*         0x000000000003befa        0x2 
+ .bss           0x000000000003befc        0x5 build/cooja/mtype607.a(ctimer.o)
+ *fill*         0x000000000003bf01        0x3 
+ .bss           0x000000000003bf04       0x2c build/cooja/mtype607.a(log.o)
+                0x000000000003bf04                curr_log_level_rpl
+                0x000000000003bf08                curr_log_level_tcpip
+                0x000000000003bf0c                curr_log_level_ipv6
+                0x000000000003bf10                curr_log_level_6lowpan
+                0x000000000003bf14                curr_log_level_nullnet
+                0x000000000003bf18                curr_log_level_mac
+                0x000000000003bf1c                curr_log_level_framer
+                0x000000000003bf20                curr_log_level_6top
+                0x000000000003bf24                curr_log_level_coap
+                0x000000000003bf28                curr_log_level_snmp
+                0x000000000003bf2c                curr_log_level_lwm2m
+ .bss           0x000000000003bf30        0x0 build/cooja/mtype607.a(energest.o)
+ .bss           0x000000000003bf30        0x8 build/cooja/mtype607.a(etimer.o)
+ .bss           0x000000000003bf38        0x2 build/cooja/mtype607.a(node-id.o)
+                0x000000000003bf38                node_id
+ *fill*         0x000000000003bf3a        0x2 
+ .bss           0x000000000003bf3c        0x4 build/cooja/mtype607.a(rtimer.o)
+ .bss           0x000000000003bf40      0x1a1 build/cooja/mtype607.a(process.o)
+                0x000000000003bf40                process_list
+                0x000000000003bf44                process_current
+ .bss           0x000000000003c0e1        0x0 build/cooja/mtype607.a(timer.o)
+ .bss           0x000000000003c0e1        0x0 build/cooja/mtype607.a(list.o)
+ .bss           0x000000000003c0e1        0x0 build/cooja/mtype607.a(memb.o)
+ *fill*         0x000000000003c0e1        0x3 
+ .bss           0x000000000003c0e4       0x10 build/cooja/mtype607.a(button-hal.o)
+ *fill*         0x000000000003c0f4        0xc 
+ .bss           0x000000000003c100      0x140 build/cooja/mtype607.a(serial-line.o)
+ .bss           0x000000000003c240        0x4 build/cooja/mtype607.a(gpio-hal.o)
+ *fill*         0x000000000003c244       0x1c 
+ .bss           0x000000000003c260     0x2c80 build/cooja/mtype607.a(queuebuf.o)
+ .bss           0x000000000003eee0       0xa0 build/cooja/mtype607.a(packetbuf.o)
+ .bss           0x000000000003ef80        0x4 build/cooja/mtype607.a(netstack.o)
+ .bss           0x000000000003ef84        0x0 build/cooja/mtype607.a(linkaddr.o)
+ .bss           0x000000000003ef84        0x0 build/cooja/mtype607.a(csma.o)
+ *fill*         0x000000000003ef84       0x1c 
+ .bss           0x000000000003efa0      0x726 build/cooja/mtype607.a(csma-output.o)
+ *fill*         0x000000000003f6c6        0x2 
+ .bss           0x000000000003f6c8       0x30 build/cooja/mtype607.a(uip-ds6.o)
+ .bss           0x000000000003f6f8        0x0 build/cooja/mtype607.a(uip-udp-packet.)
+ *fill*         0x000000000003f6f8        0x8 
+ .bss           0x000000000003f700       0x60 build/cooja/mtype607.a(uip-ds6-route.o)
+ .bss           0x000000000003f760       0x10 build/cooja/mtype607.a(tcpip.o)
+ .bss           0x000000000003f770        0x8 build/cooja/mtype607.a(uip6.o)
+                0x000000000003f770                uip_ext_bitmap
+                0x000000000003f772                uip_ext_len
+                0x000000000003f774                uip_last_proto
+ *fill*         0x000000000003f778        0x8 
+ .bss           0x000000000003f780     0x1c20 build/cooja/mtype607.a(uip-ds6-nbr.o)
+ .bss           0x00000000000413a0       0x10 build/cooja/mtype607.a(uip-nd6.o)
+ *fill*         0x00000000000413b0       0x10 
+ .bss           0x00000000000413c0      0x724 build/cooja/mtype607.a(sicslowpan.o)
+ .bss           0x0000000000041ae4        0x0 build/cooja/mtype607.a(uiplib.o)
+ .bss           0x0000000000041ae4        0x1 build/cooja/mtype607.a(rpl.o)
+ .bss           0x0000000000041ae5        0x0 build/cooja/mtype607.a(rpl-icmp6.o)
+ *fill*         0x0000000000041ae5        0x3 
+ .bss           0x0000000000041ae8       0x11 build/cooja/mtype607.a(rpl-dag-root.o)
+ .bss           0x0000000000041af9        0x0 build/cooja/mtype607.a(watchdog.o)
+ *fill*         0x0000000000041af9        0x3 
+ .bss           0x0000000000041afc        0x4 build/cooja/mtype607.a(int-master.o)
+ .bss           0x0000000000041b00       0x1c build/cooja/mtype607.a(coap-timer-defa)
+ .bss           0x0000000000041b1c        0x0 build/cooja/mtype607.a(stimer.o)
+ .bss           0x0000000000041b1c        0x0 build/cooja/mtype607.a(ringbuf.o)
+ .bss           0x0000000000041b1c        0x0 build/cooja/mtype607.a(assert.o)
+ *fill*         0x0000000000041b1c        0x4 
+ .bss           0x0000000000041b20     0x1214 build/cooja/mtype607.a(nbr-table.o)
+ *fill*         0x0000000000042d34        0xc 
+ .bss           0x0000000000042d40      0xe10 build/cooja/mtype607.a(link-stats.o)
+ *fill*         0x0000000000043b50       0x10 
+ .bss           0x0000000000043b60      0x100 build/cooja/mtype607.a(mac-sequence.o)
+ .bss           0x0000000000043c60        0x0 build/cooja/mtype607.a(mac.o)
+ .bss           0x0000000000043c60        0x2 build/cooja/mtype607.a(framer-802154.o)
+ .bss           0x0000000000043c62        0x0 build/cooja/mtype607.a(frame802154.o)
+ .bss           0x0000000000043c62        0x0 build/cooja/mtype607.a(csma-security.o)
+ *fill*         0x0000000000043c62        0x2 
+ .bss           0x0000000000043c64       0x20 build/cooja/mtype607.a(uipbuf.o)
+ .bss           0x0000000000043c84       0x18 build/cooja/mtype607.a(uip-icmp6.o)
+ *fill*         0x0000000000043c9c        0x4 
+ .bss           0x0000000000043ca0     0x1d80 build/cooja/mtype607.a(uip-sr.o)
+ .bss           0x0000000000045a20      0xa78 build/cooja/mtype607.a(uip-packetqueue)
+ .bss           0x0000000000046498        0x0 build/cooja/mtype607.a(rpl-nbr-policy.)
+ *fill*         0x0000000000046498        0x8 
+ .bss           0x00000000000464a0      0x960 build/cooja/mtype607.a(rpl-neighbor.o)
+ .bss           0x0000000000046e00        0x0 build/cooja/mtype607.a(rpl-dag.o)
+ .bss           0x0000000000046e00       0x40 build/cooja/mtype607.a(rpl-timers.o)
+ .bss           0x0000000000046e40        0x0 build/cooja/mtype607.a(rpl-ext-header.)
+ .bss           0x0000000000046e40        0x0 build/cooja/mtype607.a(rpl-mrhof.o)
+ .bss           0x0000000000046e40        0x0 /usr/lib/gcc/i686-linux-gnu/5/libgcc.a(_udivdi3.o)
+ .bss           0x0000000000046e40        0x0 /usr/lib/gcc/i686-linux-gnu/5/crtendS.o
+ .bss           0x0000000000046e40        0x0 /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crtn.o
+ *(COMMON)
+ COMMON         0x0000000000046e40        0x8 build/cooja/mtype607.o
+                0x0000000000046e40                referenceVar
+                0x0000000000046e44                sensors_flags
+ COMMON         0x0000000000046e48        0xc build/cooja/mtype607.a(simEnvChange.o)
+                0x0000000000046e48                simEtimerPending
+                0x0000000000046e4c                simProcessRunValue
+                0x0000000000046e50                simEtimerNextExpirationTime
+ *fill*         0x0000000000046e54        0x4 
+ COMMON         0x0000000000046e58       0x18 build/cooja/mtype607.a(rtimer-arch.o)
+                0x0000000000046e58                simRtimerPending
+                0x0000000000046e60                simRtimerCurrentTicks
+                0x0000000000046e68                simRtimerNextExpirationTime
+ COMMON         0x0000000000046e70        0x1 build/cooja/mtype607.a(beep.o)
+                0x0000000000046e70                simBeeped
+ *fill*         0x0000000000046e71        0x3 
+ COMMON         0x0000000000046e74        0xc build/cooja/mtype607.a(moteid.o)
+                0x0000000000046e74                simRandomSeed
+                0x0000000000046e78                simMoteIDChanged
+                0x0000000000046e7c                simMoteID
+ COMMON         0x0000000000046e80        0x2 build/cooja/mtype607.a(pir-sensor.o)
+                0x0000000000046e80                simPirIsActive
+                0x0000000000046e81                simPirChanged
+ *fill*         0x0000000000046e82       0x1e 
+ COMMON         0x0000000000046ea0      0x820 build/cooja/mtype607.a(rs232.o)
+                0x0000000000046ea0                simSerialReceivingFlag
+                0x0000000000046ea4                simSerialReceivingLength
+                0x0000000000046ec0                simSerialReceivingData
+ COMMON         0x00000000000476c0        0x2 build/cooja/mtype607.a(vib-sensor.o)
+                0x00000000000476c0                simVibChanged
+                0x00000000000476c1                simVibIsActive
+ *fill*         0x00000000000476c2        0x2 
+ COMMON         0x00000000000476c4        0x4 build/cooja/mtype607.a(clock.o)
+                0x00000000000476c4                simCurrentTime
+ *fill*         0x00000000000476c8       0x18 
+ COMMON         0x00000000000476e0     0x2020 build/cooja/mtype607.a(cooja-log.o)
+                0x00000000000476e0                simLoggedLength
+                0x00000000000476e4                simLoggedFlag
+                0x0000000000047700                simLoggedData
+ COMMON         0x0000000000049700       0xfd build/cooja/mtype607.a(cooja-radio.o)
+                0x0000000000049700                simOutDataBuffer
+                0x0000000000049780                simInDataBuffer
+ *fill*         0x00000000000497fd        0x3 
+ COMMON         0x0000000000049800      0x400 build/cooja/mtype607.a(eeprom.o)
+                0x0000000000049800                simEEPROMData
+ COMMON         0x0000000000049c00        0x1 build/cooja/mtype607.a(sensors.o)
+                0x0000000000049c00                sensors_event
+ COMMON         0x0000000000049c01        0x2 build/cooja/mtype607.a(buttons.o)
+                0x0000000000049c01                simButtonIsDown
+                0x0000000000049c02                simButtonChanged
+ COMMON         0x0000000000049c03        0x3 build/cooja/mtype607.a(button-hal.o)
+                0x0000000000049c03                button_hal_periodic_event
+                0x0000000000049c04                button_hal_press_event
+                0x0000000000049c05                button_hal_release_event
+ COMMON         0x0000000000049c06        0x1 build/cooja/mtype607.a(serial-line.o)
+                0x0000000000049c06                serial_line_event_message
+ *fill*         0x0000000000049c07        0x1 
+ COMMON         0x0000000000049c08       0x2c build/cooja/mtype607.a(packetbuf.o)
+                0x0000000000049c08                packetbuf_attrs
+                0x0000000000049c24                packetbuf_addrs
+ COMMON         0x0000000000049c34        0x8 build/cooja/mtype607.a(linkaddr.o)
+                0x0000000000049c34                linkaddr_node_addr
+ *fill*         0x0000000000049c3c        0x4 
+ COMMON         0x0000000000049c40      0x1a5 build/cooja/mtype607.a(uip-ds6.o)
+                0x0000000000049c40                uip_ds6_prefix_list
+                0x0000000000049ca0                uip_ds6_timer_periodic
+                0x0000000000049cb0                uip_ds6_netif_addr_list_offset
+                0x0000000000049cc0                uip_ds6_if
+                0x0000000000049ddc                uip_ds6_timer_ra
+                0x0000000000049de4                uip_ds6_addr_size
+ COMMON         0x0000000000049de5        0x1 build/cooja/mtype607.a(tcpip.o)
+                0x0000000000049de5                tcpip_event
+ *fill*         0x0000000000049de6       0x1a 
+ COMMON         0x0000000000049e00      0x648 build/cooja/mtype607.a(uip6.o)
+                0x0000000000049e00                uip_slen
+                0x0000000000049e04                uip_lladdr
+                0x0000000000049e0c                uip_appdata
+                0x0000000000049e10                uip_flags
+                0x0000000000049e20                uip_aligned_buf
+                0x000000000004a320                uip_len
+                0x000000000004a324                uip_sappdata
+                0x000000000004a340                uip_udp_conns
+                0x000000000004a440                uip_udp_conn
+                0x000000000004a444                uip_conn
+ COMMON         0x000000000004a448       0x10 build/cooja/mtype607.a(rpl.o)
+                0x000000000004a448                rpl_multicast_addr
+ *fill*         0x000000000004a458        0x8 
+ COMMON         0x000000000004a460       0x20 build/cooja/mtype607.a(link-stats.o)
+                0x000000000004a460                periodic_timer
+ COMMON         0x000000000004a480      0x164 build/cooja/mtype607.a(rpl-dag.o)
+                0x000000000004a480                curr_instance
+                0x000000000004a5e4                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x000000000004a5e4                . = ALIGN (0x4)
+                0x000000000004a5e4                . = SEGMENT_START ("ldata-segment", .)
+                0x000000000004a5e4                . = ALIGN (0x4)
+                0x000000000004a5e4                _end = .
+                [!provide]                        PROVIDE (end, .)
+                0x000000000004a5e4                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x35
+ *(.comment)
+ .comment       0x0000000000000000       0x35 /usr/lib/gcc/i686-linux-gnu/5/crtbeginS.o
+                                         0x36 (size before relaxing)
+ .comment       0x0000000000000035       0x36 oxygen_actuator.o
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.o
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(simEnvChange.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(cooja_mt.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(cooja_mtarch.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rtimer-arch.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(beep.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(leds-arch.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(moteid.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(pir-sensor.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rs232.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(vib-sensor.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(clock.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(cooja-log.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(cfs-cooja.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(cooja-radio.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(eeprom.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(random.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(sensors.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(leds.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(gpio-hal-arch.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(buttons.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(oxygen_generato)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap-observe-cl)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap-blocking-a)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap-engine.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap-res-well-k)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap-observe.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap-uip.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap-timer.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap-transactio)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(contiki-main.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(autostart.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(ctimer.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(log.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(energest.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(etimer.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(node-id.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rtimer.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(process.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(timer.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(list.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(memb.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(button-hal.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(serial-line.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(gpio-hal.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(queuebuf.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(packetbuf.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(netstack.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(linkaddr.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(csma.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(csma-output.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uip-ds6.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uip-udp-packet.)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uip-ds6-route.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(tcpip.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uip6.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uip-ds6-nbr.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uip-nd6.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(sicslowpan.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uiplib.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rpl.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rpl-icmp6.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rpl-dag-root.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(watchdog.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(int-master.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(coap-timer-defa)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(stimer.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(ringbuf.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(assert.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(nbr-table.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(link-stats.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(mac-sequence.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(mac.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(framer-802154.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(frame802154.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(csma-security.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uipbuf.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uip-icmp6.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uip-sr.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(uip-packetqueue)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rpl-nbr-policy.)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rpl-neighbor.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rpl-dag.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rpl-timers.o)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rpl-ext-header.)
+ .comment       0x0000000000000035       0x36 build/cooja/mtype607.a(rpl-mrhof.o)
+ .comment       0x0000000000000035       0x36 /usr/lib/gcc/i686-linux-gnu/5/crtendS.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0xb00
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 oxygen_actuator.o
+ .debug_aranges
+                0x0000000000000020       0x20 build/cooja/mtype607.o
+ .debug_aranges
+                0x0000000000000040       0x20 build/cooja/mtype607.a(simEnvChange.o)
+ .debug_aranges
+                0x0000000000000060       0x20 build/cooja/mtype607.a(cooja_mt.o)
+ .debug_aranges
+                0x0000000000000080       0x20 build/cooja/mtype607.a(cooja_mtarch.o)
+ .debug_aranges
+                0x00000000000000a0       0x20 build/cooja/mtype607.a(rtimer-arch.o)
+ .debug_aranges
+                0x00000000000000c0       0x20 build/cooja/mtype607.a(beep.o)
+ .debug_aranges
+                0x00000000000000e0       0x20 build/cooja/mtype607.a(leds-arch.o)
+ .debug_aranges
+                0x0000000000000100       0x20 build/cooja/mtype607.a(moteid.o)
+ .debug_aranges
+                0x0000000000000120       0x20 build/cooja/mtype607.a(pir-sensor.o)
+ .debug_aranges
+                0x0000000000000140       0x20 build/cooja/mtype607.a(rs232.o)
+ .debug_aranges
+                0x0000000000000160       0x20 build/cooja/mtype607.a(vib-sensor.o)
+ .debug_aranges
+                0x0000000000000180       0x20 build/cooja/mtype607.a(clock.o)
+ .debug_aranges
+                0x00000000000001a0       0x20 build/cooja/mtype607.a(cooja-log.o)
+ .debug_aranges
+                0x00000000000001c0       0x20 build/cooja/mtype607.a(cfs-cooja.o)
+ .debug_aranges
+                0x00000000000001e0       0x20 build/cooja/mtype607.a(cooja-radio.o)
+ .debug_aranges
+                0x0000000000000200       0x20 build/cooja/mtype607.a(eeprom.o)
+ .debug_aranges
+                0x0000000000000220       0x20 build/cooja/mtype607.a(random.o)
+ .debug_aranges
+                0x0000000000000240       0x20 build/cooja/mtype607.a(sensors.o)
+ .debug_aranges
+                0x0000000000000260       0x20 build/cooja/mtype607.a(leds.o)
+ .debug_aranges
+                0x0000000000000280       0x20 build/cooja/mtype607.a(gpio-hal-arch.o)
+ .debug_aranges
+                0x00000000000002a0       0x20 build/cooja/mtype607.a(buttons.o)
+ .debug_aranges
+                0x00000000000002c0       0x20 build/cooja/mtype607.a(oxygen_generato)
+ .debug_aranges
+                0x00000000000002e0       0x20 build/cooja/mtype607.a(coap-observe-cl)
+ .debug_aranges
+                0x0000000000000300       0x20 build/cooja/mtype607.a(coap-blocking-a)
+ .debug_aranges
+                0x0000000000000320       0x20 build/cooja/mtype607.a(coap-engine.o)
+ .debug_aranges
+                0x0000000000000340       0x20 build/cooja/mtype607.a(coap-res-well-k)
+ .debug_aranges
+                0x0000000000000360       0x20 build/cooja/mtype607.a(coap-observe.o)
+ .debug_aranges
+                0x0000000000000380       0x20 build/cooja/mtype607.a(coap-uip.o)
+ .debug_aranges
+                0x00000000000003a0       0x20 build/cooja/mtype607.a(coap-timer.o)
+ .debug_aranges
+                0x00000000000003c0       0x20 build/cooja/mtype607.a(coap-transactio)
+ .debug_aranges
+                0x00000000000003e0       0x20 build/cooja/mtype607.a(coap.o)
+ .debug_aranges
+                0x0000000000000400       0x20 build/cooja/mtype607.a(contiki-main.o)
+ .debug_aranges
+                0x0000000000000420       0x20 build/cooja/mtype607.a(autostart.o)
+ .debug_aranges
+                0x0000000000000440       0x20 build/cooja/mtype607.a(ctimer.o)
+ .debug_aranges
+                0x0000000000000460       0x20 build/cooja/mtype607.a(log.o)
+ .debug_aranges
+                0x0000000000000480       0x20 build/cooja/mtype607.a(energest.o)
+ .debug_aranges
+                0x00000000000004a0       0x20 build/cooja/mtype607.a(etimer.o)
+ .debug_aranges
+                0x00000000000004c0       0x20 build/cooja/mtype607.a(node-id.o)
+ .debug_aranges
+                0x00000000000004e0       0x20 build/cooja/mtype607.a(rtimer.o)
+ .debug_aranges
+                0x0000000000000500       0x20 build/cooja/mtype607.a(process.o)
+ .debug_aranges
+                0x0000000000000520       0x20 build/cooja/mtype607.a(timer.o)
+ .debug_aranges
+                0x0000000000000540       0x20 build/cooja/mtype607.a(list.o)
+ .debug_aranges
+                0x0000000000000560       0x20 build/cooja/mtype607.a(memb.o)
+ .debug_aranges
+                0x0000000000000580       0x20 build/cooja/mtype607.a(button-hal.o)
+ .debug_aranges
+                0x00000000000005a0       0x20 build/cooja/mtype607.a(serial-line.o)
+ .debug_aranges
+                0x00000000000005c0       0x20 build/cooja/mtype607.a(gpio-hal.o)
+ .debug_aranges
+                0x00000000000005e0       0x20 build/cooja/mtype607.a(queuebuf.o)
+ .debug_aranges
+                0x0000000000000600       0x20 build/cooja/mtype607.a(packetbuf.o)
+ .debug_aranges
+                0x0000000000000620       0x20 build/cooja/mtype607.a(netstack.o)
+ .debug_aranges
+                0x0000000000000640       0x20 build/cooja/mtype607.a(linkaddr.o)
+ .debug_aranges
+                0x0000000000000660       0x20 build/cooja/mtype607.a(csma.o)
+ .debug_aranges
+                0x0000000000000680       0x20 build/cooja/mtype607.a(csma-output.o)
+ .debug_aranges
+                0x00000000000006a0       0x20 build/cooja/mtype607.a(uip-ds6.o)
+ .debug_aranges
+                0x00000000000006c0       0x20 build/cooja/mtype607.a(uip-udp-packet.)
+ .debug_aranges
+                0x00000000000006e0       0x20 build/cooja/mtype607.a(uip-ds6-route.o)
+ .debug_aranges
+                0x0000000000000700       0x20 build/cooja/mtype607.a(tcpip.o)
+ .debug_aranges
+                0x0000000000000720       0x20 build/cooja/mtype607.a(uip6.o)
+ .debug_aranges
+                0x0000000000000740       0x20 build/cooja/mtype607.a(uip-ds6-nbr.o)
+ .debug_aranges
+                0x0000000000000760       0x20 build/cooja/mtype607.a(uip-nd6.o)
+ .debug_aranges
+                0x0000000000000780       0x20 build/cooja/mtype607.a(sicslowpan.o)
+ .debug_aranges
+                0x00000000000007a0       0x20 build/cooja/mtype607.a(uiplib.o)
+ .debug_aranges
+                0x00000000000007c0       0x20 build/cooja/mtype607.a(rpl.o)
+ .debug_aranges
+                0x00000000000007e0       0x20 build/cooja/mtype607.a(rpl-icmp6.o)
+ .debug_aranges
+                0x0000000000000800       0x20 build/cooja/mtype607.a(rpl-dag-root.o)
+ .debug_aranges
+                0x0000000000000820       0x20 build/cooja/mtype607.a(watchdog.o)
+ .debug_aranges
+                0x0000000000000840       0x20 build/cooja/mtype607.a(int-master.o)
+ .debug_aranges
+                0x0000000000000860       0x20 build/cooja/mtype607.a(coap-timer-defa)
+ .debug_aranges
+                0x0000000000000880       0x20 build/cooja/mtype607.a(stimer.o)
+ .debug_aranges
+                0x00000000000008a0       0x20 build/cooja/mtype607.a(ringbuf.o)
+ .debug_aranges
+                0x00000000000008c0       0x20 build/cooja/mtype607.a(assert.o)
+ .debug_aranges
+                0x00000000000008e0       0x20 build/cooja/mtype607.a(nbr-table.o)
+ .debug_aranges
+                0x0000000000000900       0x20 build/cooja/mtype607.a(link-stats.o)
+ .debug_aranges
+                0x0000000000000920       0x20 build/cooja/mtype607.a(mac-sequence.o)
+ .debug_aranges
+                0x0000000000000940       0x20 build/cooja/mtype607.a(mac.o)
+ .debug_aranges
+                0x0000000000000960       0x20 build/cooja/mtype607.a(framer-802154.o)
+ .debug_aranges
+                0x0000000000000980       0x20 build/cooja/mtype607.a(frame802154.o)
+ .debug_aranges
+                0x00000000000009a0       0x20 build/cooja/mtype607.a(csma-security.o)
+ .debug_aranges
+                0x00000000000009c0       0x20 build/cooja/mtype607.a(uipbuf.o)
+ .debug_aranges
+                0x00000000000009e0       0x20 build/cooja/mtype607.a(uip-icmp6.o)
+ .debug_aranges
+                0x0000000000000a00       0x20 build/cooja/mtype607.a(uip-sr.o)
+ .debug_aranges
+                0x0000000000000a20       0x20 build/cooja/mtype607.a(uip-packetqueue)
+ .debug_aranges
+                0x0000000000000a40       0x20 build/cooja/mtype607.a(rpl-nbr-policy.)
+ .debug_aranges
+                0x0000000000000a60       0x20 build/cooja/mtype607.a(rpl-neighbor.o)
+ .debug_aranges
+                0x0000000000000a80       0x20 build/cooja/mtype607.a(rpl-dag.o)
+ .debug_aranges
+                0x0000000000000aa0       0x20 build/cooja/mtype607.a(rpl-timers.o)
+ .debug_aranges
+                0x0000000000000ac0       0x20 build/cooja/mtype607.a(rpl-ext-header.)
+ .debug_aranges
+                0x0000000000000ae0       0x20 build/cooja/mtype607.a(rpl-mrhof.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000    0x27604
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0xdae oxygen_actuator.o
+ .debug_info    0x0000000000000dae     0x325a build/cooja/mtype607.o
+ .debug_info    0x0000000000004008      0x15a build/cooja/mtype607.a(simEnvChange.o)
+ .debug_info    0x0000000000004162      0x1af build/cooja/mtype607.a(cooja_mt.o)
+ .debug_info    0x0000000000004311      0x212 build/cooja/mtype607.a(cooja_mtarch.o)
+ .debug_info    0x0000000000004523      0x181 build/cooja/mtype607.a(rtimer-arch.o)
+ .debug_info    0x00000000000046a4      0x1fa build/cooja/mtype607.a(beep.o)
+ .debug_info    0x000000000000489e      0x194 build/cooja/mtype607.a(leds-arch.o)
+ .debug_info    0x0000000000004a32      0x111 build/cooja/mtype607.a(moteid.o)
+ .debug_info    0x0000000000004b43      0x21d build/cooja/mtype607.a(pir-sensor.o)
+ .debug_info    0x0000000000004d60      0x21e build/cooja/mtype607.a(rs232.o)
+ .debug_info    0x0000000000004f7e      0x21d build/cooja/mtype607.a(vib-sensor.o)
+ .debug_info    0x000000000000519b      0x159 build/cooja/mtype607.a(clock.o)
+ .debug_info    0x00000000000052f4      0x2bb build/cooja/mtype607.a(cooja-log.o)
+ .debug_info    0x00000000000055af      0x3cf build/cooja/mtype607.a(cfs-cooja.o)
+ .debug_info    0x000000000000597e      0xb24 build/cooja/mtype607.a(cooja-radio.o)
+ .debug_info    0x00000000000064a2      0x1d5 build/cooja/mtype607.a(eeprom.o)
+ .debug_info    0x0000000000006677       0xb3 build/cooja/mtype607.a(random.o)
+ .debug_info    0x000000000000672a      0x36d build/cooja/mtype607.a(sensors.o)
+ .debug_info    0x0000000000006a97      0x28a build/cooja/mtype607.a(leds.o)
+ .debug_info    0x0000000000006d21      0x40e build/cooja/mtype607.a(gpio-hal-arch.o)
+ .debug_info    0x000000000000712f      0x4bc build/cooja/mtype607.a(buttons.o)
+ .debug_info    0x00000000000075eb      0x990 build/cooja/mtype607.a(oxygen_generato)
+ .debug_info    0x0000000000007f7b      0xd40 build/cooja/mtype607.a(coap-observe-cl)
+ .debug_info    0x0000000000008cbb      0x836 build/cooja/mtype607.a(coap-blocking-a)
+ .debug_info    0x00000000000094f1      0xe93 build/cooja/mtype607.a(coap-engine.o)
+ .debug_info    0x000000000000a384      0x8a4 build/cooja/mtype607.a(coap-res-well-k)
+ .debug_info    0x000000000000ac28      0xdd0 build/cooja/mtype607.a(coap-observe.o)
+ .debug_info    0x000000000000b9f8      0xe48 build/cooja/mtype607.a(coap-uip.o)
+ .debug_info    0x000000000000c840      0x2f1 build/cooja/mtype607.a(coap-timer.o)
+ .debug_info    0x000000000000cb31      0x862 build/cooja/mtype607.a(coap-transactio)
+ .debug_info    0x000000000000d393     0x14c2 build/cooja/mtype607.a(coap.o)
+ .debug_info    0x000000000000e855      0xc1c build/cooja/mtype607.a(contiki-main.o)
+ .debug_info    0x000000000000f471      0x1ac build/cooja/mtype607.a(autostart.o)
+ .debug_info    0x000000000000f61d      0x473 build/cooja/mtype607.a(ctimer.o)
+ .debug_info    0x000000000000fa90      0x4e1 build/cooja/mtype607.a(log.o)
+ .debug_info    0x000000000000ff71       0xbc build/cooja/mtype607.a(energest.o)
+ .debug_info    0x000000000001002d      0x49f build/cooja/mtype607.a(etimer.o)
+ .debug_info    0x00000000000104cc       0xfb build/cooja/mtype607.a(node-id.o)
+ .debug_info    0x00000000000105c7      0x1c1 build/cooja/mtype607.a(rtimer.o)
+ .debug_info    0x0000000000010788      0x4ab build/cooja/mtype607.a(process.o)
+ .debug_info    0x0000000000010c33      0x17a build/cooja/mtype607.a(timer.o)
+ .debug_info    0x0000000000010dad      0x38b build/cooja/mtype607.a(list.o)
+ .debug_info    0x0000000000011138      0x1e4 build/cooja/mtype607.a(memb.o)
+ .debug_info    0x000000000001131c      0x66d build/cooja/mtype607.a(button-hal.o)
+ .debug_info    0x0000000000011989      0x2de build/cooja/mtype607.a(serial-line.o)
+ .debug_info    0x0000000000011c67      0x25d build/cooja/mtype607.a(gpio-hal.o)
+ .debug_info    0x0000000000011ec4      0x570 build/cooja/mtype607.a(queuebuf.o)
+ .debug_info    0x0000000000012434      0x553 build/cooja/mtype607.a(packetbuf.o)
+ .debug_info    0x0000000000012987      0x56e build/cooja/mtype607.a(netstack.o)
+ .debug_info    0x0000000000012ef5      0x18b build/cooja/mtype607.a(linkaddr.o)
+ .debug_info    0x0000000000013080      0x6a4 build/cooja/mtype607.a(csma.o)
+ .debug_info    0x0000000000013724      0xc88 build/cooja/mtype607.a(csma-output.o)
+ .debug_info    0x00000000000143ac      0xae9 build/cooja/mtype607.a(uip-ds6.o)
+ .debug_info    0x0000000000014e95      0x37a build/cooja/mtype607.a(uip-udp-packet.)
+ .debug_info    0x000000000001520f      0x896 build/cooja/mtype607.a(uip-ds6-route.o)
+ .debug_info    0x0000000000015aa5      0xf3d build/cooja/mtype607.a(tcpip.o)
+ .debug_info    0x00000000000169e2     0x116d build/cooja/mtype607.a(uip6.o)
+ .debug_info    0x0000000000017b4f      0xb97 build/cooja/mtype607.a(uip-ds6-nbr.o)
+ .debug_info    0x00000000000186e6      0x7fb build/cooja/mtype607.a(uip-nd6.o)
+ .debug_info    0x0000000000018ee1     0x176d build/cooja/mtype607.a(sicslowpan.o)
+ .debug_info    0x000000000001a64e      0x30b build/cooja/mtype607.a(uiplib.o)
+ .debug_info    0x000000000001a959     0x10bc build/cooja/mtype607.a(rpl.o)
+ .debug_info    0x000000000001ba15     0x1065 build/cooja/mtype607.a(rpl-icmp6.o)
+ .debug_info    0x000000000001ca7a      0xb34 build/cooja/mtype607.a(rpl-dag-root.o)
+ .debug_info    0x000000000001d5ae       0xda build/cooja/mtype607.a(watchdog.o)
+ .debug_info    0x000000000001d688      0x119 build/cooja/mtype607.a(int-master.o)
+ .debug_info    0x000000000001d7a1      0x330 build/cooja/mtype607.a(coap-timer-defa)
+ .debug_info    0x000000000001dad1      0x187 build/cooja/mtype607.a(stimer.o)
+ .debug_info    0x000000000001dc58      0x1b8 build/cooja/mtype607.a(ringbuf.o)
+ .debug_info    0x000000000001de10       0xb3 build/cooja/mtype607.a(assert.o)
+ .debug_info    0x000000000001dec3      0xbe2 build/cooja/mtype607.a(nbr-table.o)
+ .debug_info    0x000000000001eaa5      0x67c build/cooja/mtype607.a(link-stats.o)
+ .debug_info    0x000000000001f121      0x213 build/cooja/mtype607.a(mac-sequence.o)
+ .debug_info    0x000000000001f334       0xf3 build/cooja/mtype607.a(mac.o)
+ .debug_info    0x000000000001f427      0x512 build/cooja/mtype607.a(framer-802154.o)
+ .debug_info    0x000000000001f939      0x738 build/cooja/mtype607.a(frame802154.o)
+ .debug_info    0x0000000000020071      0x166 build/cooja/mtype607.a(csma-security.o)
+ .debug_info    0x00000000000201d7      0x571 build/cooja/mtype607.a(uipbuf.o)
+ .debug_info    0x0000000000020748      0xd4b build/cooja/mtype607.a(uip-icmp6.o)
+ .debug_info    0x0000000000021493      0xb31 build/cooja/mtype607.a(uip-sr.o)
+ .debug_info    0x0000000000021fc4      0x477 build/cooja/mtype607.a(uip-packetqueue)
+ .debug_info    0x000000000002243b      0x845 build/cooja/mtype607.a(rpl-nbr-policy.)
+ .debug_info    0x0000000000022c80      0xe69 build/cooja/mtype607.a(rpl-neighbor.o)
+ .debug_info    0x0000000000023ae9      0xfe3 build/cooja/mtype607.a(rpl-dag.o)
+ .debug_info    0x0000000000024acc      0xcbb build/cooja/mtype607.a(rpl-timers.o)
+ .debug_info    0x0000000000025787     0x14be build/cooja/mtype607.a(rpl-ext-header.)
+ .debug_info    0x0000000000026c45      0x9bf build/cooja/mtype607.a(rpl-mrhof.o)
+
+.debug_abbrev   0x0000000000000000     0x92ec
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x216 oxygen_actuator.o
+ .debug_abbrev  0x0000000000000216      0x27e build/cooja/mtype607.o
+ .debug_abbrev  0x0000000000000494       0xc3 build/cooja/mtype607.a(simEnvChange.o)
+ .debug_abbrev  0x0000000000000557       0xe6 build/cooja/mtype607.a(cooja_mt.o)
+ .debug_abbrev  0x000000000000063d      0x11e build/cooja/mtype607.a(cooja_mtarch.o)
+ .debug_abbrev  0x000000000000075b       0xeb build/cooja/mtype607.a(rtimer-arch.o)
+ .debug_abbrev  0x0000000000000846       0xe3 build/cooja/mtype607.a(beep.o)
+ .debug_abbrev  0x0000000000000929       0xe0 build/cooja/mtype607.a(leds-arch.o)
+ .debug_abbrev  0x0000000000000a09       0x9c build/cooja/mtype607.a(moteid.o)
+ .debug_abbrev  0x0000000000000aa5       0xe6 build/cooja/mtype607.a(pir-sensor.o)
+ .debug_abbrev  0x0000000000000b8b      0x14a build/cooja/mtype607.a(rs232.o)
+ .debug_abbrev  0x0000000000000cd5       0xe6 build/cooja/mtype607.a(vib-sensor.o)
+ .debug_abbrev  0x0000000000000dbb       0xee build/cooja/mtype607.a(clock.o)
+ .debug_abbrev  0x0000000000000ea9      0x141 build/cooja/mtype607.a(cooja-log.o)
+ .debug_abbrev  0x0000000000000fea      0x139 build/cooja/mtype607.a(cfs-cooja.o)
+ .debug_abbrev  0x0000000000001123      0x302 build/cooja/mtype607.a(cooja-radio.o)
+ .debug_abbrev  0x0000000000001425       0xf5 build/cooja/mtype607.a(eeprom.o)
+ .debug_abbrev  0x000000000000151a       0x6d build/cooja/mtype607.a(random.o)
+ .debug_abbrev  0x0000000000001587      0x1c2 build/cooja/mtype607.a(sensors.o)
+ .debug_abbrev  0x0000000000001749       0xfc build/cooja/mtype607.a(leds.o)
+ .debug_abbrev  0x0000000000001845      0x115 build/cooja/mtype607.a(gpio-hal-arch.o)
+ .debug_abbrev  0x000000000000195a      0x16f build/cooja/mtype607.a(buttons.o)
+ .debug_abbrev  0x0000000000001ac9      0x1a0 build/cooja/mtype607.a(oxygen_generato)
+ .debug_abbrev  0x0000000000001c69      0x231 build/cooja/mtype607.a(coap-observe-cl)
+ .debug_abbrev  0x0000000000001e9a      0x1c3 build/cooja/mtype607.a(coap-blocking-a)
+ .debug_abbrev  0x000000000000205d      0x2d5 build/cooja/mtype607.a(coap-engine.o)
+ .debug_abbrev  0x0000000000002332      0x169 build/cooja/mtype607.a(coap-res-well-k)
+ .debug_abbrev  0x000000000000249b      0x234 build/cooja/mtype607.a(coap-observe.o)
+ .debug_abbrev  0x00000000000026cf      0x378 build/cooja/mtype607.a(coap-uip.o)
+ .debug_abbrev  0x0000000000002a47      0x155 build/cooja/mtype607.a(coap-timer.o)
+ .debug_abbrev  0x0000000000002b9c      0x1c4 build/cooja/mtype607.a(coap-transactio)
+ .debug_abbrev  0x0000000000002d60      0x23c build/cooja/mtype607.a(coap.o)
+ .debug_abbrev  0x0000000000002f9c      0x1cf build/cooja/mtype607.a(contiki-main.o)
+ .debug_abbrev  0x000000000000316b       0xfb build/cooja/mtype607.a(autostart.o)
+ .debug_abbrev  0x0000000000003266      0x1a1 build/cooja/mtype607.a(ctimer.o)
+ .debug_abbrev  0x0000000000003407      0x15e build/cooja/mtype607.a(log.o)
+ .debug_abbrev  0x0000000000003565       0x69 build/cooja/mtype607.a(energest.o)
+ .debug_abbrev  0x00000000000035ce      0x1f8 build/cooja/mtype607.a(etimer.o)
+ .debug_abbrev  0x00000000000037c6       0x9d build/cooja/mtype607.a(node-id.o)
+ .debug_abbrev  0x0000000000003863      0x126 build/cooja/mtype607.a(rtimer.o)
+ .debug_abbrev  0x0000000000003989      0x244 build/cooja/mtype607.a(process.o)
+ .debug_abbrev  0x0000000000003bcd       0xdb build/cooja/mtype607.a(timer.o)
+ .debug_abbrev  0x0000000000003ca8      0x136 build/cooja/mtype607.a(list.o)
+ .debug_abbrev  0x0000000000003dde       0xe4 build/cooja/mtype607.a(memb.o)
+ .debug_abbrev  0x0000000000003ec2      0x24b build/cooja/mtype607.a(button-hal.o)
+ .debug_abbrev  0x000000000000410d      0x190 build/cooja/mtype607.a(serial-line.o)
+ .debug_abbrev  0x000000000000429d       0xd4 build/cooja/mtype607.a(gpio-hal.o)
+ .debug_abbrev  0x0000000000004371      0x1a6 build/cooja/mtype607.a(queuebuf.o)
+ .debug_abbrev  0x0000000000004517      0x1da build/cooja/mtype607.a(packetbuf.o)
+ .debug_abbrev  0x00000000000046f1      0x1d7 build/cooja/mtype607.a(netstack.o)
+ .debug_abbrev  0x00000000000048c8       0xf2 build/cooja/mtype607.a(linkaddr.o)
+ .debug_abbrev  0x00000000000049ba      0x212 build/cooja/mtype607.a(csma.o)
+ .debug_abbrev  0x0000000000004bcc      0x26b build/cooja/mtype607.a(csma-output.o)
+ .debug_abbrev  0x0000000000004e37      0x281 build/cooja/mtype607.a(uip-ds6.o)
+ .debug_abbrev  0x00000000000050b8      0x195 build/cooja/mtype607.a(uip-udp-packet.)
+ .debug_abbrev  0x000000000000524d      0x2b0 build/cooja/mtype607.a(uip-ds6-route.o)
+ .debug_abbrev  0x00000000000054fd      0x3a7 build/cooja/mtype607.a(tcpip.o)
+ .debug_abbrev  0x00000000000058a4      0x2cc build/cooja/mtype607.a(uip6.o)
+ .debug_abbrev  0x0000000000005b70      0x295 build/cooja/mtype607.a(uip-ds6-nbr.o)
+ .debug_abbrev  0x0000000000005e05      0x232 build/cooja/mtype607.a(uip-nd6.o)
+ .debug_abbrev  0x0000000000006037      0x2d9 build/cooja/mtype607.a(sicslowpan.o)
+ .debug_abbrev  0x0000000000006310      0x11d build/cooja/mtype607.a(uiplib.o)
+ .debug_abbrev  0x000000000000642d      0x2d2 build/cooja/mtype607.a(rpl.o)
+ .debug_abbrev  0x00000000000066ff      0x303 build/cooja/mtype607.a(rpl-icmp6.o)
+ .debug_abbrev  0x0000000000006a02      0x21b build/cooja/mtype607.a(rpl-dag-root.o)
+ .debug_abbrev  0x0000000000006c1d       0x6b build/cooja/mtype607.a(watchdog.o)
+ .debug_abbrev  0x0000000000006c88       0xcc build/cooja/mtype607.a(int-master.o)
+ .debug_abbrev  0x0000000000006d54      0x184 build/cooja/mtype607.a(coap-timer-defa)
+ .debug_abbrev  0x0000000000006ed8       0xbf build/cooja/mtype607.a(stimer.o)
+ .debug_abbrev  0x0000000000006f97       0xdb build/cooja/mtype607.a(ringbuf.o)
+ .debug_abbrev  0x0000000000007072       0x61 build/cooja/mtype607.a(assert.o)
+ .debug_abbrev  0x00000000000070d3      0x284 build/cooja/mtype607.a(nbr-table.o)
+ .debug_abbrev  0x0000000000007357      0x22b build/cooja/mtype607.a(link-stats.o)
+ .debug_abbrev  0x0000000000007582       0xed build/cooja/mtype607.a(mac-sequence.o)
+ .debug_abbrev  0x000000000000766f       0x8d build/cooja/mtype607.a(mac.o)
+ .debug_abbrev  0x00000000000076fc      0x16c build/cooja/mtype607.a(framer-802154.o)
+ .debug_abbrev  0x0000000000007868      0x215 build/cooja/mtype607.a(frame802154.o)
+ .debug_abbrev  0x0000000000007a7d       0xa4 build/cooja/mtype607.a(csma-security.o)
+ .debug_abbrev  0x0000000000007b21      0x173 build/cooja/mtype607.a(uipbuf.o)
+ .debug_abbrev  0x0000000000007c94      0x29a build/cooja/mtype607.a(uip-icmp6.o)
+ .debug_abbrev  0x0000000000007f2e      0x24e build/cooja/mtype607.a(uip-sr.o)
+ .debug_abbrev  0x000000000000817c      0x1d4 build/cooja/mtype607.a(uip-packetqueue)
+ .debug_abbrev  0x0000000000008350      0x1be build/cooja/mtype607.a(rpl-nbr-policy.)
+ .debug_abbrev  0x000000000000850e      0x31d build/cooja/mtype607.a(rpl-neighbor.o)
+ .debug_abbrev  0x000000000000882b      0x34c build/cooja/mtype607.a(rpl-dag.o)
+ .debug_abbrev  0x0000000000008b77      0x297 build/cooja/mtype607.a(rpl-timers.o)
+ .debug_abbrev  0x0000000000008e0e      0x2f9 build/cooja/mtype607.a(rpl-ext-header.)
+ .debug_abbrev  0x0000000000009107      0x1e5 build/cooja/mtype607.a(rpl-mrhof.o)
+
+.debug_line     0x0000000000000000     0x9f21
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000      0x2ab oxygen_actuator.o
+ .debug_line    0x00000000000002ab      0x2ed build/cooja/mtype607.o
+ .debug_line    0x0000000000000598       0xe3 build/cooja/mtype607.a(simEnvChange.o)
+ .debug_line    0x000000000000067b       0xc2 build/cooja/mtype607.a(cooja_mt.o)
+ .debug_line    0x000000000000073d       0xbf build/cooja/mtype607.a(cooja_mtarch.o)
+ .debug_line    0x00000000000007fc       0xd1 build/cooja/mtype607.a(rtimer-arch.o)
+ .debug_line    0x00000000000008cd       0xd2 build/cooja/mtype607.a(beep.o)
+ .debug_line    0x000000000000099f       0xd8 build/cooja/mtype607.a(leds-arch.o)
+ .debug_line    0x0000000000000a77       0x8f build/cooja/mtype607.a(moteid.o)
+ .debug_line    0x0000000000000b06       0xc5 build/cooja/mtype607.a(pir-sensor.o)
+ .debug_line    0x0000000000000bcb       0xd0 build/cooja/mtype607.a(rs232.o)
+ .debug_line    0x0000000000000c9b       0xc5 build/cooja/mtype607.a(vib-sensor.o)
+ .debug_line    0x0000000000000d60       0xc3 build/cooja/mtype607.a(clock.o)
+ .debug_line    0x0000000000000e23      0x11f build/cooja/mtype607.a(cooja-log.o)
+ .debug_line    0x0000000000000f42      0x112 build/cooja/mtype607.a(cfs-cooja.o)
+ .debug_line    0x0000000000001054      0x289 build/cooja/mtype607.a(cooja-radio.o)
+ .debug_line    0x00000000000012dd       0xc4 build/cooja/mtype607.a(eeprom.o)
+ .debug_line    0x00000000000013a1       0x4a build/cooja/mtype607.a(random.o)
+ .debug_line    0x00000000000013eb      0x11a build/cooja/mtype607.a(sensors.o)
+ .debug_line    0x0000000000001505      0x122 build/cooja/mtype607.a(leds.o)
+ .debug_line    0x0000000000001627      0x157 build/cooja/mtype607.a(gpio-hal-arch.o)
+ .debug_line    0x000000000000177e      0x17f build/cooja/mtype607.a(buttons.o)
+ .debug_line    0x00000000000018fd      0x168 build/cooja/mtype607.a(oxygen_generato)
+ .debug_line    0x0000000000001a65      0x27a build/cooja/mtype607.a(coap-observe-cl)
+ .debug_line    0x0000000000001cdf      0x1f0 build/cooja/mtype607.a(coap-blocking-a)
+ .debug_line    0x0000000000001ecf      0x34b build/cooja/mtype607.a(coap-engine.o)
+ .debug_line    0x000000000000221a      0x202 build/cooja/mtype607.a(coap-res-well-k)
+ .debug_line    0x000000000000241c      0x2f6 build/cooja/mtype607.a(coap-observe.o)
+ .debug_line    0x0000000000002712      0x364 build/cooja/mtype607.a(coap-uip.o)
+ .debug_line    0x0000000000002a76      0x103 build/cooja/mtype607.a(coap-timer.o)
+ .debug_line    0x0000000000002b79      0x1cc build/cooja/mtype607.a(coap-transactio)
+ .debug_line    0x0000000000002d45      0x55e build/cooja/mtype607.a(coap.o)
+ .debug_line    0x00000000000032a3      0x30a build/cooja/mtype607.a(contiki-main.o)
+ .debug_line    0x00000000000035ad       0x97 build/cooja/mtype607.a(autostart.o)
+ .debug_line    0x0000000000003644      0x16f build/cooja/mtype607.a(ctimer.o)
+ .debug_line    0x00000000000037b3      0x16e build/cooja/mtype607.a(log.o)
+ .debug_line    0x0000000000003921       0x67 build/cooja/mtype607.a(energest.o)
+ .debug_line    0x0000000000003988      0x198 build/cooja/mtype607.a(etimer.o)
+ .debug_line    0x0000000000003b20       0x7e build/cooja/mtype607.a(node-id.o)
+ .debug_line    0x0000000000003b9e       0x89 build/cooja/mtype607.a(rtimer.o)
+ .debug_line    0x0000000000003c27      0x181 build/cooja/mtype607.a(process.o)
+ .debug_line    0x0000000000003da8       0x9b build/cooja/mtype607.a(timer.o)
+ .debug_line    0x0000000000003e43      0x113 build/cooja/mtype607.a(list.o)
+ .debug_line    0x0000000000003f56       0xbc build/cooja/mtype607.a(memb.o)
+ .debug_line    0x0000000000004012      0x21d build/cooja/mtype607.a(button-hal.o)
+ .debug_line    0x000000000000422f      0x11e build/cooja/mtype607.a(serial-line.o)
+ .debug_line    0x000000000000434d       0xb8 build/cooja/mtype607.a(gpio-hal.o)
+ .debug_line    0x0000000000004405       0xee build/cooja/mtype607.a(queuebuf.o)
+ .debug_line    0x00000000000044f3      0x10c build/cooja/mtype607.a(packetbuf.o)
+ .debug_line    0x00000000000045ff      0x11d build/cooja/mtype607.a(netstack.o)
+ .debug_line    0x000000000000471c       0x77 build/cooja/mtype607.a(linkaddr.o)
+ .debug_line    0x0000000000004793      0x199 build/cooja/mtype607.a(csma.o)
+ .debug_line    0x000000000000492c      0x359 build/cooja/mtype607.a(csma-output.o)
+ .debug_line    0x0000000000004c85      0x348 build/cooja/mtype607.a(uip-ds6.o)
+ .debug_line    0x0000000000004fcd       0xd2 build/cooja/mtype607.a(uip-udp-packet.)
+ .debug_line    0x000000000000509f      0x21d build/cooja/mtype607.a(uip-ds6-route.o)
+ .debug_line    0x00000000000052bc      0x322 build/cooja/mtype607.a(tcpip.o)
+ .debug_line    0x00000000000055de      0x574 build/cooja/mtype607.a(uip6.o)
+ .debug_line    0x0000000000005b52      0x27e build/cooja/mtype607.a(uip-ds6-nbr.o)
+ .debug_line    0x0000000000005dd0      0x2af build/cooja/mtype607.a(uip-nd6.o)
+ .debug_line    0x000000000000607f      0xa44 build/cooja/mtype607.a(sicslowpan.o)
+ .debug_line    0x0000000000006ac3      0x1cb build/cooja/mtype607.a(uiplib.o)
+ .debug_line    0x0000000000006c8e      0x2eb build/cooja/mtype607.a(rpl.o)
+ .debug_line    0x0000000000006f79      0x40a build/cooja/mtype607.a(rpl-icmp6.o)
+ .debug_line    0x0000000000007383      0x1d4 build/cooja/mtype607.a(rpl-dag-root.o)
+ .debug_line    0x0000000000007557       0x95 build/cooja/mtype607.a(watchdog.o)
+ .debug_line    0x00000000000075ec       0x9b build/cooja/mtype607.a(int-master.o)
+ .debug_line    0x0000000000007687      0x153 build/cooja/mtype607.a(coap-timer-defa)
+ .debug_line    0x00000000000077da       0x74 build/cooja/mtype607.a(stimer.o)
+ .debug_line    0x000000000000784e       0x97 build/cooja/mtype607.a(ringbuf.o)
+ .debug_line    0x00000000000078e5       0x48 build/cooja/mtype607.a(assert.o)
+ .debug_line    0x000000000000792d      0x2a2 build/cooja/mtype607.a(nbr-table.o)
+ .debug_line    0x0000000000007bcf      0x200 build/cooja/mtype607.a(link-stats.o)
+ .debug_line    0x0000000000007dcf      0x10e build/cooja/mtype607.a(mac-sequence.o)
+ .debug_line    0x0000000000007edd       0x53 build/cooja/mtype607.a(mac.o)
+ .debug_line    0x0000000000007f30      0x17a build/cooja/mtype607.a(framer-802154.o)
+ .debug_line    0x00000000000080aa      0x2bb build/cooja/mtype607.a(frame802154.o)
+ .debug_line    0x0000000000008365       0xaf build/cooja/mtype607.a(csma-security.o)
+ .debug_line    0x0000000000008414      0x14a build/cooja/mtype607.a(uipbuf.o)
+ .debug_line    0x000000000000855e      0x2d7 build/cooja/mtype607.a(uip-icmp6.o)
+ .debug_line    0x0000000000008835      0x2e5 build/cooja/mtype607.a(uip-sr.o)
+ .debug_line    0x0000000000008b1a      0x15e build/cooja/mtype607.a(uip-packetqueue)
+ .debug_line    0x0000000000008c78      0x175 build/cooja/mtype607.a(rpl-nbr-policy.)
+ .debug_line    0x0000000000008ded      0x370 build/cooja/mtype607.a(rpl-neighbor.o)
+ .debug_line    0x000000000000915d      0x40a build/cooja/mtype607.a(rpl-dag.o)
+ .debug_line    0x0000000000009567      0x2f0 build/cooja/mtype607.a(rpl-timers.o)
+ .debug_line    0x0000000000009857      0x471 build/cooja/mtype607.a(rpl-ext-header.)
+ .debug_line    0x0000000000009cc8      0x259 build/cooja/mtype607.a(rpl-mrhof.o)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x0000000000000000     0x9bae
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0xa35 oxygen_actuator.o
+                                        0xc61 (size before relaxing)
+ .debug_str     0x0000000000000a35     0x1769 build/cooja/mtype607.o
+                                       0x1961 (size before relaxing)
+ .debug_str     0x000000000000219e       0x2d build/cooja/mtype607.a(simEnvChange.o)
+                                        0x1f4 (size before relaxing)
+ .debug_str     0x00000000000021cb       0x55 build/cooja/mtype607.a(cooja_mt.o)
+                                        0x1f5 (size before relaxing)
+ .debug_str     0x0000000000002220       0x94 build/cooja/mtype607.a(cooja_mtarch.o)
+                                        0x1fa (size before relaxing)
+ .debug_str     0x00000000000022b4      0x10c build/cooja/mtype607.a(rtimer-arch.o)
+                                        0x247 (size before relaxing)
+ .debug_str     0x00000000000023c0       0xc3 build/cooja/mtype607.a(beep.o)
+                                        0x23e (size before relaxing)
+ .debug_str     0x0000000000002483       0x9b build/cooja/mtype607.a(leds-arch.o)
+                                        0x24b (size before relaxing)
+ .debug_str     0x000000000000251e       0x46 build/cooja/mtype607.a(moteid.o)
+                                        0x1f4 (size before relaxing)
+ .debug_str     0x0000000000002564       0x54 build/cooja/mtype607.a(pir-sensor.o)
+                                        0x22b (size before relaxing)
+ .debug_str     0x00000000000025b8       0xc0 build/cooja/mtype607.a(rs232.o)
+                                        0x27f (size before relaxing)
+ .debug_str     0x0000000000002678       0x54 build/cooja/mtype607.a(vib-sensor.o)
+                                        0x22b (size before relaxing)
+ .debug_str     0x00000000000026cc       0x70 build/cooja/mtype607.a(clock.o)
+                                        0x220 (size before relaxing)
+ .debug_str     0x000000000000273c       0xd6 build/cooja/mtype607.a(cooja-log.o)
+                                        0x2ab (size before relaxing)
+ .debug_str     0x0000000000002812      0x10b build/cooja/mtype607.a(cfs-cooja.o)
+                                        0x2c1 (size before relaxing)
+ .debug_str     0x000000000000291d      0x7a8 build/cooja/mtype607.a(cooja-radio.o)
+                                        0xa96 (size before relaxing)
+ .debug_str     0x00000000000030c5       0x98 build/cooja/mtype607.a(eeprom.o)
+                                        0x241 (size before relaxing)
+ .debug_str     0x000000000000315d       0x33 build/cooja/mtype607.a(random.o)
+                                        0x159 (size before relaxing)
+ .debug_str     0x0000000000003190       0x99 build/cooja/mtype607.a(sensors.o)
+                                        0x289 (size before relaxing)
+ .debug_str     0x0000000000003229       0x8a build/cooja/mtype607.a(leds.o)
+                                        0x214 (size before relaxing)
+ .debug_str     0x00000000000032b3      0x2a5 build/cooja/mtype607.a(gpio-hal-arch.o)
+                                        0x406 (size before relaxing)
+ .debug_str     0x0000000000003558      0x10c build/cooja/mtype607.a(buttons.o)
+                                        0x3c2 (size before relaxing)
+ .debug_str     0x0000000000003664      0x41a build/cooja/mtype607.a(oxygen_generato)
+                                        0xc07 (size before relaxing)
+ .debug_str     0x0000000000003a7e      0x209 build/cooja/mtype607.a(coap-observe-cl)
+                                        0xbe3 (size before relaxing)
+ .debug_str     0x0000000000003c87       0xa0 build/cooja/mtype607.a(coap-blocking-a)
+                                        0x77e (size before relaxing)
+ .debug_str     0x0000000000003d27      0x300 build/cooja/mtype607.a(coap-engine.o)
+                                        0xe03 (size before relaxing)
+ .debug_str     0x0000000000004027       0x68 build/cooja/mtype607.a(coap-res-well-k)
+                                        0xbe0 (size before relaxing)
+ .debug_str     0x000000000000408f      0x1f3 build/cooja/mtype607.a(coap-observe.o)
+                                        0xcf1 (size before relaxing)
+ .debug_str     0x0000000000004282      0x454 build/cooja/mtype607.a(coap-uip.o)
+                                        0x9f4 (size before relaxing)
+ .debug_str     0x00000000000046d6       0xb7 build/cooja/mtype607.a(coap-timer.o)
+                                        0x2ab (size before relaxing)
+ .debug_str     0x000000000000478d      0x11c build/cooja/mtype607.a(coap-transactio)
+                                        0x82e (size before relaxing)
+ .debug_str     0x00000000000048a9      0x5ce build/cooja/mtype607.a(coap.o)
+                                        0xe5d (size before relaxing)
+ .debug_str     0x0000000000004e77      0x24a build/cooja/mtype607.a(contiki-main.o)
+                                        0x8d6 (size before relaxing)
+ .debug_str     0x00000000000050c1       0x38 build/cooja/mtype607.a(autostart.o)
+                                        0x1b5 (size before relaxing)
+ .debug_str     0x00000000000050f9       0xc3 build/cooja/mtype607.a(ctimer.o)
+                                        0x2b6 (size before relaxing)
+ .debug_str     0x00000000000051bc      0x1c2 build/cooja/mtype607.a(log.o)
+                                        0x386 (size before relaxing)
+ .debug_str     0x000000000000537e       0x4d build/cooja/mtype607.a(energest.o)
+                                        0x17c (size before relaxing)
+ .debug_str     0x00000000000053cb      0x136 build/cooja/mtype607.a(etimer.o)
+                                        0x329 (size before relaxing)
+ .debug_str     0x0000000000005501       0x24 build/cooja/mtype607.a(node-id.o)
+                                        0x179 (size before relaxing)
+ .debug_str     0x0000000000005525       0xb0 build/cooja/mtype607.a(rtimer.o)
+                                        0x200 (size before relaxing)
+ .debug_str     0x00000000000055d5      0x154 build/cooja/mtype607.a(process.o)
+                                        0x2eb (size before relaxing)
+ .debug_str     0x0000000000005729       0x15 build/cooja/mtype607.a(timer.o)
+                                        0x1a4 (size before relaxing)
+ .debug_str     0x000000000000573e       0xb4 build/cooja/mtype607.a(list.o)
+                                        0x1fb (size before relaxing)
+ .debug_str     0x00000000000057f2       0x5a build/cooja/mtype607.a(memb.o)
+                                        0x195 (size before relaxing)
+ .debug_str     0x000000000000584c      0x1de build/cooja/mtype607.a(button-hal.o)
+                                        0x4e4 (size before relaxing)
+ .debug_str     0x0000000000005a2a       0xb2 build/cooja/mtype607.a(serial-line.o)
+                                        0x274 (size before relaxing)
+ .debug_str     0x0000000000005adc       0xec build/cooja/mtype607.a(gpio-hal.o)
+                                        0x2ca (size before relaxing)
+ .debug_str     0x0000000000005bc8      0x1d3 build/cooja/mtype607.a(queuebuf.o)
+                                        0x4ea (size before relaxing)
+ .debug_str     0x0000000000005d9b      0x1b4 build/cooja/mtype607.a(packetbuf.o)
+                                        0x527 (size before relaxing)
+ .debug_str     0x0000000000005f4f      0x167 build/cooja/mtype607.a(netstack.o)
+                                        0x464 (size before relaxing)
+ .debug_str     0x00000000000060b6       0x4a build/cooja/mtype607.a(linkaddr.o)
+                                        0x1b6 (size before relaxing)
+ .debug_str     0x0000000000006100       0x9d build/cooja/mtype607.a(csma.o)
+                                        0x7d8 (size before relaxing)
+ .debug_str     0x000000000000619d      0x2a5 build/cooja/mtype607.a(csma-output.o)
+                                        0x867 (size before relaxing)
+ .debug_str     0x0000000000006442      0x3ef build/cooja/mtype607.a(uip-ds6.o)
+                                        0x6e7 (size before relaxing)
+ .debug_str     0x0000000000006831       0x74 build/cooja/mtype607.a(uip-udp-packet.)
+                                        0x287 (size before relaxing)
+ .debug_str     0x00000000000068a5      0x248 build/cooja/mtype607.a(uip-ds6-route.o)
+                                        0x600 (size before relaxing)
+ .debug_str     0x0000000000006aed      0x2af build/cooja/mtype607.a(tcpip.o)
+                                        0x9e9 (size before relaxing)
+ .debug_str     0x0000000000006d9c      0x1f7 build/cooja/mtype607.a(uip6.o)
+                                        0xa27 (size before relaxing)
+ .debug_str     0x0000000000006f93      0x1fc build/cooja/mtype607.a(uip-ds6-nbr.o)
+                                        0x886 (size before relaxing)
+ .debug_str     0x000000000000718f      0x11d build/cooja/mtype607.a(uip-nd6.o)
+                                        0x5f3 (size before relaxing)
+ .debug_str     0x00000000000072ac      0x5bc build/cooja/mtype607.a(sicslowpan.o)
+                                        0xf6c (size before relaxing)
+ .debug_str     0x0000000000007868       0x90 build/cooja/mtype607.a(uiplib.o)
+                                        0x200 (size before relaxing)
+ .debug_str     0x00000000000078f8      0x2b2 build/cooja/mtype607.a(rpl.o)
+                                        0xb9b (size before relaxing)
+ .debug_str     0x0000000000007baa      0x1dd build/cooja/mtype607.a(rpl-icmp6.o)
+                                        0xc5b (size before relaxing)
+ .debug_str     0x0000000000007d87       0xa1 build/cooja/mtype607.a(rpl-dag-root.o)
+                                        0x84c (size before relaxing)
+ .debug_str     0x0000000000007e28       0x76 build/cooja/mtype607.a(watchdog.o)
+                                        0x1af (size before relaxing)
+ .debug_str     0x0000000000007e9e       0x88 build/cooja/mtype607.a(int-master.o)
+                                        0x1d8 (size before relaxing)
+ .debug_str     0x0000000000007f26       0x6d build/cooja/mtype607.a(coap-timer-defa)
+                                        0x298 (size before relaxing)
+ .debug_str     0x0000000000007f93       0x6c build/cooja/mtype607.a(stimer.o)
+                                        0x1a8 (size before relaxing)
+ .debug_str     0x0000000000007fff       0x5a build/cooja/mtype607.a(ringbuf.o)
+                                        0x1b7 (size before relaxing)
+ .debug_str     0x0000000000008059       0x26 build/cooja/mtype607.a(assert.o)
+                                        0x151 (size before relaxing)
+ .debug_str     0x000000000000807f      0x373 build/cooja/mtype607.a(nbr-table.o)
+                                        0x6b0 (size before relaxing)
+ .debug_str     0x00000000000083f2      0x129 build/cooja/mtype607.a(link-stats.o)
+                                        0x6b1 (size before relaxing)
+ .debug_str     0x000000000000851b       0x70 build/cooja/mtype607.a(mac-sequence.o)
+                                        0x377 (size before relaxing)
+ .debug_str     0x000000000000858b       0x35 build/cooja/mtype607.a(mac.o)
+                                        0x182 (size before relaxing)
+ .debug_str     0x00000000000085c0      0x22d build/cooja/mtype607.a(framer-802154.o)
+                                        0x5bf (size before relaxing)
+ .debug_str     0x00000000000087ed      0x1f2 build/cooja/mtype607.a(frame802154.o)
+                                        0x56e (size before relaxing)
+ .debug_str     0x00000000000089df       0x5b build/cooja/mtype607.a(csma-security.o)
+                                        0x34f (size before relaxing)
+ .debug_str     0x0000000000008a3a      0x1aa build/cooja/mtype607.a(uipbuf.o)
+                                        0x477 (size before relaxing)
+ .debug_str     0x0000000000008be4      0x1ed build/cooja/mtype607.a(uip-icmp6.o)
+                                        0x91a (size before relaxing)
+ .debug_str     0x0000000000008dd1      0x17b build/cooja/mtype607.a(uip-sr.o)
+                                        0x70f (size before relaxing)
+ .debug_str     0x0000000000008f4c       0xf3 build/cooja/mtype607.a(uip-packetqueue)
+                                        0x339 (size before relaxing)
+ .debug_str     0x000000000000903f       0x51 build/cooja/mtype607.a(rpl-nbr-policy.)
+                                        0x68a (size before relaxing)
+ .debug_str     0x0000000000009090      0x28e build/cooja/mtype607.a(rpl-neighbor.o)
+                                        0xa23 (size before relaxing)
+ .debug_str     0x000000000000931e      0x2d0 build/cooja/mtype607.a(rpl-dag.o)
+                                        0xb4b (size before relaxing)
+ .debug_str     0x00000000000095ee      0x32a build/cooja/mtype607.a(rpl-timers.o)
+                                        0xa17 (size before relaxing)
+ .debug_str     0x0000000000009918      0x1d2 build/cooja/mtype607.a(rpl-ext-header.)
+                                        0xf7c (size before relaxing)
+ .debug_str     0x0000000000009aea       0xc4 build/cooja/mtype607.a(rpl-mrhof.o)
+                                        0x714 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000       0x88
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0x18 build/cooja/mtype607.a(etimer.o)
+ .debug_ranges  0x0000000000000018       0x30 build/cooja/mtype607.a(csma-output.o)
+ .debug_ranges  0x0000000000000048       0x18 build/cooja/mtype607.a(tcpip.o)
+ .debug_ranges  0x0000000000000060       0x28 build/cooja/mtype607.a(uip-nd6.o)
+
+.debug_macro
+ *(.debug_macro)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(build/cooja/mtype607.cooja elf32-i386)

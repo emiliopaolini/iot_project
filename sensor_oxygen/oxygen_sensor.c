@@ -27,7 +27,6 @@ static char registered = '0';
 
 // sensor
 extern coap_resource_t oxygen_measuring_device; // sensor for oxygen measurement
-extern 
 
 
 void wait_for_ack(coap_message_t *response) {

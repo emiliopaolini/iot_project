@@ -52,6 +52,11 @@ public class ResourceRegistration extends CoapResource {
 				System.out.println("threshold: "+nodeThreshold);
 				thresholds.put("oxygen_threshold",nodeThreshold);
 			}
+			if(nodeResource.equalsIgnoreCase("light")) {
+				String nodeThreshold = ""+(Integer)contentJson.get("threshold");
+				System.out.println("threshold: "+nodeThreshold);
+				thresholds.put("light_threshold",nodeThreshold);
+			}
 			if(nodeResource.equalsIgnoreCase("water")) {
 				String ph_threshold = ""+(Integer)contentJson.get("ph");
 				String minerals_threshold = ""+(Integer)contentJson.get("minerals");

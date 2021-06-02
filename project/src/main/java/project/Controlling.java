@@ -184,6 +184,9 @@ public class Controlling {
 	    		if(n.getNodeResource().equalsIgnoreCase("oxygen")) {
 	    			jo.put("oxygen_threshold", thresholds.get("oxygen_threshold"));
 	    		}
+	    		if(n.getNodeResource().equalsIgnoreCase("light")) {
+	    			jo.put("light_threshold", thresholds.get("light_threshold"));
+	    		}
 	    		if(n.getNodeResource().equalsIgnoreCase("water")) {
 	    			jo.put("ph_threshold", thresholds.get("ph_threshold"));
 	    			jo.put("minerals_threshold", thresholds.get("minerals_threshold"));
