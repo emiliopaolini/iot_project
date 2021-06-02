@@ -207,15 +207,7 @@ PROCESS_THREAD(light_actuator, ev, data) {
     printf("registering to light sensor...\n");
     obs = coap_obs_request_registration(&sensor_ep, "/light", light_update_callback, NULL);
 
-    while(1){
-	
-	PROCESS_WAIT_EVENT();
-	if(ev== button_hal_press_event){
-		//force the resource to trigger
-		light_generator.trigger();
-	    	update_leds();
-	}
-    }
+  
 	
     PROCESS_END();
 }

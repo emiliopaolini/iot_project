@@ -207,15 +207,6 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
     printf("registering to oxygen sensor...\n");
     obs = coap_obs_request_registration(&sensor_ep, "/oxygen", oxygen_update_callback, NULL);
 
-    while(1){
-	
-	PROCESS_WAIT_EVENT();
-	if(ev== button_hal_press_event){
-		//force the resource to trigger
-		oxygen_generator.trigger();
-	    	update_leds();
-	}
-    }
-	
+   
     PROCESS_END();
 }

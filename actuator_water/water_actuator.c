@@ -310,15 +310,6 @@ PROCESS_THREAD(water_actuator, ev, data) {
     minerals_obs = coap_obs_request_registration(&minerals_sensor_ep, "/minerals", minerals_update_callback, NULL);
     ph_obs = coap_obs_request_registration(&ph_sensor_ep, "/ph", ph_update_callback, NULL);
 	
-    while(1){
-	
-	PROCESS_WAIT_EVENT();
-	if(ev== button_hal_press_event){
-		// force the resource to trigger
-		water_generator.trigger();
-	    	update_leds();
-	}
-    }
 
 
     PROCESS_END();
