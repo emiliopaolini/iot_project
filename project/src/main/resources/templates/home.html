@@ -169,14 +169,14 @@
 									if(nodeResource=="oxygen"){
 										var oxygen_threshold = obj["oxygen_threshold"];
 										append = "<td style=text-align:center;><div class='input-group'><span class='input-group-text' style=width:80px;>Oxygen:</span>";
-										append +="<input class='form-control' type=number style=width:40px; id="+nodeIP+"_oxygen_threshold value="+oxygen_threshold+">";
+										append +="<input class='form-control' type=number min=1 max=100 style=width:40px; id="+nodeIP+"_oxygen_threshold value="+oxygen_threshold+">";
 										append += "<input type=button class='btn-dark' value=Change onclick=changeThreshold("+"\'oxygen\'"+","+"\'"+nodeIP+"\'"+")>";
 										append += "</div></td>";
 									}
 									if(nodeResource=="light"){
 										var light_threshold = obj["light_threshold"];
 										append = "<td style=text-align:center;><div class='input-group'><span class='input-group-text' style=width:80px;>Light:</span>";
-										append +="<input class='form-control' type=number style=width:40px; id="+nodeIP+"_light_threshold value="+light_threshold+">";
+										append +="<input class='form-control' type=number min=1 max=100 style=width:40px; id="+nodeIP+"_light_threshold value="+light_threshold+">";
 										append += "<input type=button class='btn-dark' value=Change onclick=changeThreshold("+"\'light\'"+","+"\'"+nodeIP+"\'"+")>";
 										append += "</div></td>";
 									}
@@ -184,10 +184,10 @@
 										var ph_threshold = obj["ph_threshold"];
 										var minerals_threshold = obj["minerals_threshold"];
 										append = "<td><div class='input-group' style='margin:2px auto;'><span class=input-group-text style=width:80px;>PH:</span>";
-										append += "<input class='form-control' type=number style='width:40px' id="+nodeIP+"_ph_threshold value="+ph_threshold+">";
+										append += "<input class='form-control' type=number min=1 max=14 style='width:40px' id="+nodeIP+"_ph_threshold value="+ph_threshold+">";
 										append += "<input type=button class='btn-dark' value=Change onclick=changeThreshold("+"\'ph\'"+","+"\'"+nodeIP+"\'"+")>";
 										append += "</div><div class='input-group' style='margin:2px auto;' ><span style=width:80px; class='input-group-text'>Minerals:</span>";
-										append += "<input class='form-control' type=number style='width:40px' id="+nodeIP+"_minerals_threshold value="+minerals_threshold+">";
+										append += "<input class='form-control' type=number min=1 max=100 style='width:40px' id="+nodeIP+"_minerals_threshold value="+minerals_threshold+">";
 										append += "<input class='btn-dark' type=button value=Change onclick=changeThreshold("+"\'minerals\'"+","+"\'"+nodeIP+"\'"+")>";
 										append += "</div></td>";
 									}
