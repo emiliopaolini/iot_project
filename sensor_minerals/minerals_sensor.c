@@ -18,8 +18,8 @@
 //utility
 #define SERVER_EP "coap://[fd00::1]:5683"
 
-#define TIMER_PERIOD 20
-#define REGISTRATION_PERIOD 10
+#define TIMER_PERIOD 10
+
 
 
 static char registered = '0';

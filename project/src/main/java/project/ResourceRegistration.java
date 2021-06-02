@@ -96,23 +96,27 @@ public class ResourceRegistration extends CoapResource {
 								if(a.getNodeType().equalsIgnoreCase("sensor")){
 									valueReceived = ""+contentJ.get("value");
 								}
+								
+								boolean actuatorStatusChanged = true;
 								if(a.getNodeType().equalsIgnoreCase("actuator")){
 									valueReceived = ""+contentJ.get("status");
+									if(valueReceived.equals(a.getCurrentValue())) {
+										actuatorStatusChanged = false;
+									}
 								}
+								
 								a.setCurrentValue(valueReceived);
 								
-								
+								if(a.getNodeType().equalsIgnoreCase("actuator") && actuatorStatusChanged==true) {
 								//  update the corresponding sensor in order to make the simulation consistent
-								if(a.getNodeType().equalsIgnoreCase("actuator")) {
 									Thread t = new Thread() {				
 										public void run() {
 											updateSensorOnActuatorStatus(a,a.getCurrentValue());
 										}
 									};
 									t.start();
-									
+									// insert a new row inside the db for the new measurement
 								}
-								// insert a new row inside the db for the new measurement
 								insertInDB(a);
 							}
 							public void onError() {

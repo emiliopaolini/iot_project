@@ -13,7 +13,7 @@
 //utility
 #define SERVER_EP "coap://[fd00::1]:5683"
 
-#define TIMER_PERIOD 20 //period before acquiring a new measurement
+#define TIMER_PERIOD 10 //period before acquiring a new measurement
 
 
 static char registered = '0';
