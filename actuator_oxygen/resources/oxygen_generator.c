@@ -1,7 +1,7 @@
 #include "contiki.h"
 #include "coap-engine.h"
 
-#include "coap-engine.h"
+#include "sys/log.h"
 
 
 
@@ -38,7 +38,7 @@ static void checkAlertLevel(){
 }
 
 EVENT_RESOURCE(oxygen_generator,
-        "title=\"oxygen_actuator\";rt=\"Text\";obs",
+        "title=\"oxygen_actuator\";GET;rt=\"Text\";obs",
         res_get_handler, res_post_put_handler, res_post_put_handler, NULL, res_event_handler);
 
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset){

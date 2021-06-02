@@ -12,7 +12,13 @@ build/cooja/obj/uip-icmp6.o: ../../os/net/ipv6/uip-icmp6.c \
  ../../arch/platform/cooja/./sys/cooja_mt.h \
  ../../arch/platform/cooja/./sys/cooja_mtarch.h ../../os/sys/pt.h \
  ../../os/sys/clock.h ../../os/net/ipv6/uipbuf.h ../../os/net/linkaddr.h \
- ../../os/net/ipv6/tcpip.h ../../os/sys/stimer.h \
+ ../../os/net/ipv6/tcpip.h ../../os/net/ipv6/multicast/uip-mcast6.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h \
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h \
+ ../../os/net/ipv6/multicast/roll-tm.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h \
+ ../../os/net/ipv6/multicast/mpl.h ../../os/sys/stimer.h \
  ../../os/net/ipv6/uip-nd6.h ../../os/net/ipv6/uip-ds6-nbr.h \
  ../../os/net/nbr-table.h ../../os/net/netstack.h ../../os/net/mac/mac.h \
  ../../os/dev/radio.h ../../os/net/mac/framer/framer.h \
@@ -35,7 +41,13 @@ build/cooja/obj/uip-icmp6.o: ../../os/net/ipv6/uip-icmp6.c \
  ../../arch/platform/cooja/./sys/cooja_mt.h :
  ../../arch/platform/cooja/./sys/cooja_mtarch.h ../../os/sys/pt.h :
  ../../os/sys/clock.h ../../os/net/ipv6/uipbuf.h ../../os/net/linkaddr.h :
- ../../os/net/ipv6/tcpip.h ../../os/sys/stimer.h :
+ ../../os/net/ipv6/tcpip.h ../../os/net/ipv6/multicast/uip-mcast6.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h :
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h :
+ ../../os/net/ipv6/multicast/roll-tm.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h :
+ ../../os/net/ipv6/multicast/mpl.h ../../os/sys/stimer.h :
  ../../os/net/ipv6/uip-nd6.h ../../os/net/ipv6/uip-ds6-nbr.h :
  ../../os/net/nbr-table.h ../../os/net/netstack.h ../../os/net/mac/mac.h :
  ../../os/dev/radio.h ../../os/net/mac/framer/framer.h :

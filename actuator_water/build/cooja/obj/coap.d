@@ -10,7 +10,7 @@ build/cooja/obj/coap.o: ../../os/net/app-layer/coap/coap.c \
  ../../arch/platform/cooja/./lib/simEnvChange.h \
  ../../arch/platform/cooja/./sys/cooja_mt.h \
  ../../arch/platform/cooja/./sys/cooja_mtarch.h ../../os/sys/pt.h \
- ../../os/sys/clock.h ../../os/sys/cc-gcc.h \
+ ../../os/sys/clock.h ../../os/sys/cc-gcc.h ../../os/lib/random.h \
  ../../os/net/app-layer/coap/coap.h \
  ../../os/net/app-layer/coap/coap-constants.h \
  ../../os/net/app-layer/coap/coap-conf.h \
@@ -38,7 +38,7 @@ build/cooja/obj/coap.o: ../../os/net/app-layer/coap/coap.c \
  ../../arch/platform/cooja/./lib/simEnvChange.h :
  ../../arch/platform/cooja/./sys/cooja_mt.h :
  ../../arch/platform/cooja/./sys/cooja_mtarch.h ../../os/sys/pt.h :
- ../../os/sys/clock.h ../../os/sys/cc-gcc.h :
+ ../../os/sys/clock.h ../../os/sys/cc-gcc.h ../../os/lib/random.h :
  ../../os/net/app-layer/coap/coap.h :
  ../../os/net/app-layer/coap/coap-constants.h :
  ../../os/net/app-layer/coap/coap-conf.h :

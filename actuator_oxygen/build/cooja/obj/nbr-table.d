@@ -13,7 +13,10 @@ build/cooja/obj/nbr-table.o: ../../os/net/nbr-table.c \
  ../../os/sys/clock.h ../../os/lib/memb.h ../../os/lib/list.h \
  ../../os/net/nbr-table.h ../../os/net/linkaddr.h ../../os/net/netstack.h \
  ../../os/net/mac/mac.h ../../os/dev/radio.h \
- ../../os/net/mac/framer/framer.h
+ ../../os/net/mac/framer/framer.h ../../os/net/ipv6/uip-debug.h \
+ ../../os/net/net-debug.h ../../os/net/ipv6/uip.h \
+ ../../os/net/ipv6/uipopt.h ../../os/net/ipv6/uipbuf.h \
+ ../../os/net/ipv6/tcpip.h ../../os/net/ipv6/uiplib.h
 ../../os/net/nbr-table.c :
  ../../os/net/app-layer/coap/module-macros.h ../../os/contiki.h :
  ../../arch/platform/cooja/./contiki-conf.h project-conf.h :
@@ -29,4 +32,7 @@ build/cooja/obj/nbr-table.o: ../../os/net/nbr-table.c \
  ../../os/sys/clock.h ../../os/lib/memb.h ../../os/lib/list.h :
  ../../os/net/nbr-table.h ../../os/net/linkaddr.h ../../os/net/netstack.h :
  ../../os/net/mac/mac.h ../../os/dev/radio.h :
- ../../os/net/mac/framer/framer.h :
+ ../../os/net/mac/framer/framer.h ../../os/net/ipv6/uip-debug.h :
+ ../../os/net/net-debug.h ../../os/net/ipv6/uip.h :
+ ../../os/net/ipv6/uipopt.h ../../os/net/ipv6/uipbuf.h :
+ ../../os/net/ipv6/tcpip.h ../../os/net/ipv6/uiplib.h :

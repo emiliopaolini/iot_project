@@ -5,12 +5,14 @@
 #include "contiki.h"
 #include "dev/button-hal.h"
 #include "dev/leds.h"
-
+#include "sys/log.h"
+#include "coap-log.h"
 
 
 //utility
 #define SERVER_EP "coap://[fd00::1]:5683"
 #define DISCOVERY_PERIOD 30
+#define COAP_OBSERVE_CLIENT 1
 
 static char registered = '0';
 static char sensor_discovered = '0';
@@ -66,16 +68,17 @@ void wait_for_ack(coap_message_t *response) {
 
 // callback function for discovery
 void wait_for_discovery(coap_message_t *response) {
-   
+   	
+
 	if(response == NULL) { 
-		printf("No response to discovery..."); 
+		printf("No response to discovery...\n"); 
 		return;
 	}
-
-	if(strcmp((const char *)response->payload, "NONE") == 0){
-        printf("No available sensors from the server..");
-        return;
-    }
+	
+	if(strcmp((const char *)response->payload, "none") == 0){
+        	printf("No available sensors from the server..\n");
+        	return;
+    	}
     // parsing payload 
 	strcpy(sensor_address, "coap://[");
 	strcat(sensor_address, (const char *)response->payload);

@@ -1,6 +1,6 @@
 build/cooja/obj/ph_measuring_device.o: resources/ph_measuring_device.c \
  ../../os/net/app-layer/coap/module-macros.h ../../os/contiki.h \
- ../../arch/platform/cooja/./contiki-conf.h project-conf.h \
+ ../../arch/platform/cooja/./contiki-conf.h \
  ../../os/contiki-default-conf.h ../../os/sys/process.h ../../os/sys/pt.h \
  ../../os/sys/lc.h ../../os/sys/lc-switch.h ../../os/sys/cc.h \
  ../../os/sys/cc-gcc.h ../../os/sys/autostart.h ../../os/sys/process.h \
@@ -27,7 +27,7 @@ build/cooja/obj/ph_measuring_device.o: resources/ph_measuring_device.c \
  ../../os/sys/log-conf.h
 resources/ph_measuring_device.c :
  ../../os/net/app-layer/coap/module-macros.h ../../os/contiki.h :
- ../../arch/platform/cooja/./contiki-conf.h project-conf.h :
+ ../../arch/platform/cooja/./contiki-conf.h :
  ../../os/contiki-default-conf.h ../../os/sys/process.h ../../os/sys/pt.h :
  ../../os/sys/lc.h ../../os/sys/lc-switch.h ../../os/sys/cc.h :
  ../../os/sys/cc-gcc.h ../../os/sys/autostart.h ../../os/sys/process.h :

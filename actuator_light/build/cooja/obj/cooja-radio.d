@@ -19,7 +19,7 @@ build/cooja/obj/cooja-radio.o: \
  ../../os/net/ipv6/tcpip.h ../../os/net/mac/csma/csma-security.h \
  ../../os/net/mac/tsch/tsch-conf.h ../../os/net/netstack.h \
  ../../os/net/mac/mac.h ../../os/dev/radio.h \
- ../../os/net/mac/framer/framer.h \
+ ../../os/net/mac/framer/framer.h ../../os/sys/energest.h \
  ../../arch/platform/cooja/./dev/cooja-radio.h
  ../../arch/platform/cooja/dev/cooja-radio.c :
  ../../os/net/app-layer/coap/module-macros.h ../../os/contiki.h :
@@ -41,5 +41,5 @@ build/cooja/obj/cooja-radio.o: \
  ../../os/net/ipv6/tcpip.h ../../os/net/mac/csma/csma-security.h :
  ../../os/net/mac/tsch/tsch-conf.h ../../os/net/netstack.h :
  ../../os/net/mac/mac.h ../../os/dev/radio.h :
- ../../os/net/mac/framer/framer.h :
+ ../../os/net/mac/framer/framer.h ../../os/sys/energest.h :
  ../../arch/platform/cooja/./dev/cooja-radio.h :

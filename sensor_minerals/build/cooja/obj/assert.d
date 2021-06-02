@@ -1,7 +1,7 @@
 build/cooja/obj/assert.o: ../../os/lib/assert.c \
  ../../os/net/app-layer/coap/module-macros.h ../../os/lib/assert.h \
  ../../os/sys/cc.h ../../os/contiki.h \
- ../../arch/platform/cooja/./contiki-conf.h project-conf.h \
+ ../../arch/platform/cooja/./contiki-conf.h \
  ../../os/contiki-default-conf.h ../../os/sys/process.h ../../os/sys/pt.h \
  ../../os/sys/lc.h ../../os/sys/lc-switch.h ../../os/sys/autostart.h \
  ../../os/sys/process.h ../../os/sys/timer.h ../../os/sys/clock.h \
@@ -15,7 +15,7 @@ build/cooja/obj/assert.o: ../../os/lib/assert.c \
 ../../os/lib/assert.c :
  ../../os/net/app-layer/coap/module-macros.h ../../os/lib/assert.h :
  ../../os/sys/cc.h ../../os/contiki.h :
- ../../arch/platform/cooja/./contiki-conf.h project-conf.h :
+ ../../arch/platform/cooja/./contiki-conf.h :
  ../../os/contiki-default-conf.h ../../os/sys/process.h ../../os/sys/pt.h :
  ../../os/sys/lc.h ../../os/sys/lc-switch.h ../../os/sys/autostart.h :
  ../../os/sys/process.h ../../os/sys/timer.h ../../os/sys/clock.h :

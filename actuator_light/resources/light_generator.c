@@ -20,7 +20,7 @@ extern float light_level;
 
 
 int status = 0;
-int GOOD_LIGHT_LEVEL = 80;
+int GOOD_LIGHT_LEVEL = 30;
 int manualMode = 0;
 
 

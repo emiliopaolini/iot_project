@@ -39,8 +39,9 @@ public class ResourceDiscovery extends CoapResource {
 
 		}
 		// if no sensors have been found sending NONE as payload
-		if (!found) {
-			response.setPayload("NONE");
+		if (found==false) {
+			System.out.println("No sensor found for this request!");
+			response.setPayload("none");
 		}
 
 		exchange.respond(response);

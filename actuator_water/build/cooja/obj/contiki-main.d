@@ -24,7 +24,13 @@ build/cooja/obj/contiki-main.o: ../../os/contiki-main.c \
  ../../os/net/ipv6/uip-packetqueue.h ../../os/sys/ctimer.h \
  ../../os/net/ipv6/uip-ds6-route.h ../../os/lib/list.h \
  ../../os/net/ipv6/uip-sr.h ../../os/net/ipv6/uip-icmp6.h \
- ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/psock.h \
+ ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/multicast/uip-mcast6.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h \
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h \
+ ../../os/net/ipv6/multicast/roll-tm.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h \
+ ../../os/net/ipv6/multicast/mpl.h ../../os/net/ipv6/psock.h \
  ../../os/contiki-lib.h ../../os/lib/list.h ../../os/lib/memb.h \
  ../../os/lib/random.h ../../os/contiki-net.h \
  ../../os/net/ipv6/udp-socket.h ../../os/net/ipv6/tcp-socket.h \
@@ -60,8 +66,8 @@ build/cooja/obj/contiki-main.o: ../../os/contiki-main.c \
  ../../os/net/mac/framer/frame802154e-ie.h \
  ../../os/net/mac/tsch/tsch-security.h \
  ../../os/net/mac/tsch/tsch-schedule.h ../../os/net/mac/tsch/tsch-stats.h \
- ../../os/net/mac/tsch/tsch-rpl.h ../../os/net/routing/routing.h \
- ../../os/net/routing/rpl-lite/rpl.h \
+ ../../os/net/mac/tsch/tsch-roots.h ../../os/net/mac/tsch/tsch-rpl.h \
+ ../../os/net/routing/routing.h ../../os/net/routing/rpl-lite/rpl.h \
  ../../os/net/routing/rpl-lite/rpl-const.h \
  ../../os/net/routing/rpl-lite/rpl-conf.h \
  ../../os/net/routing/rpl-lite/rpl-types.h \
@@ -102,7 +108,13 @@ build/cooja/obj/contiki-main.o: ../../os/contiki-main.c \
  ../../os/net/ipv6/uip-packetqueue.h ../../os/sys/ctimer.h :
  ../../os/net/ipv6/uip-ds6-route.h ../../os/lib/list.h :
  ../../os/net/ipv6/uip-sr.h ../../os/net/ipv6/uip-icmp6.h :
- ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/psock.h :
+ ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/multicast/uip-mcast6.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h :
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h :
+ ../../os/net/ipv6/multicast/roll-tm.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h :
+ ../../os/net/ipv6/multicast/mpl.h ../../os/net/ipv6/psock.h :
  ../../os/contiki-lib.h ../../os/lib/list.h ../../os/lib/memb.h :
  ../../os/lib/random.h ../../os/contiki-net.h :
  ../../os/net/ipv6/udp-socket.h ../../os/net/ipv6/tcp-socket.h :
@@ -138,8 +150,8 @@ build/cooja/obj/contiki-main.o: ../../os/contiki-main.c \
  ../../os/net/mac/framer/frame802154e-ie.h :
  ../../os/net/mac/tsch/tsch-security.h :
  ../../os/net/mac/tsch/tsch-schedule.h ../../os/net/mac/tsch/tsch-stats.h :
- ../../os/net/mac/tsch/tsch-rpl.h ../../os/net/routing/routing.h :
- ../../os/net/routing/rpl-lite/rpl.h :
+ ../../os/net/mac/tsch/tsch-roots.h ../../os/net/mac/tsch/tsch-rpl.h :
+ ../../os/net/routing/routing.h ../../os/net/routing/rpl-lite/rpl.h :
  ../../os/net/routing/rpl-lite/rpl-const.h :
  ../../os/net/routing/rpl-lite/rpl-conf.h :
  ../../os/net/routing/rpl-lite/rpl-types.h :

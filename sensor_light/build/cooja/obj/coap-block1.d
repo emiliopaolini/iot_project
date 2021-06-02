@@ -3,7 +3,7 @@ build/cooja/obj/coap-block1.o: ../../os/net/app-layer/coap/coap-block1.c \
  ../../os/net/app-layer/coap/coap.h \
  ../../os/net/app-layer/coap/coap-constants.h \
  ../../os/net/app-layer/coap/coap-conf.h ../../os/contiki.h \
- ../../arch/platform/cooja/./contiki-conf.h project-conf.h \
+ ../../arch/platform/cooja/./contiki-conf.h \
  ../../os/contiki-default-conf.h ../../os/sys/process.h ../../os/sys/pt.h \
  ../../os/sys/lc.h ../../os/sys/lc-switch.h ../../os/sys/cc.h \
  ../../os/sys/cc-gcc.h ../../os/sys/autostart.h ../../os/sys/process.h \
@@ -25,7 +25,7 @@ build/cooja/obj/coap-block1.o: ../../os/net/app-layer/coap/coap-block1.c \
  ../../os/net/app-layer/coap/coap.h :
  ../../os/net/app-layer/coap/coap-constants.h :
  ../../os/net/app-layer/coap/coap-conf.h ../../os/contiki.h :
- ../../arch/platform/cooja/./contiki-conf.h project-conf.h :
+ ../../arch/platform/cooja/./contiki-conf.h :
  ../../os/contiki-default-conf.h ../../os/sys/process.h ../../os/sys/pt.h :
  ../../os/sys/lc.h ../../os/sys/lc-switch.h ../../os/sys/cc.h :
  ../../os/sys/cc-gcc.h ../../os/sys/autostart.h ../../os/sys/process.h :

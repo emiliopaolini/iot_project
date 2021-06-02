@@ -1,8 +1,10 @@
 #include "contiki.h"
 #include "coap-engine.h"
 #include "sys/log.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-#include "coap-engine.h"
 
 
 

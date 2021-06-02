@@ -1,6 +1,6 @@
 build/cooja/obj/tcpip.o: ../../os/net/ipv6/tcpip.c \
  ../../os/net/app-layer/coap/module-macros.h ../../os/contiki.h \
- ../../arch/platform/cooja/./contiki-conf.h project-conf.h \
+ ../../arch/platform/cooja/./contiki-conf.h \
  ../../os/contiki-default-conf.h ../../os/sys/process.h ../../os/sys/pt.h \
  ../../os/sys/lc.h ../../os/sys/lc-switch.h ../../os/sys/cc.h \
  ../../os/sys/cc-gcc.h ../../os/sys/autostart.h ../../os/sys/process.h \
@@ -24,15 +24,22 @@ build/cooja/obj/tcpip.o: ../../os/net/ipv6/tcpip.c \
  ../../os/sys/ctimer.h ../../os/net/ipv6/uip-ds6-route.h \
  ../../os/lib/list.h ../../os/net/ipv6/uip-sr.h \
  ../../os/net/ipv6/uip-icmp6.h ../../os/net/ipv6/uip-ds6.h \
- ../../os/net/ipv6/psock.h ../../os/contiki-lib.h ../../os/lib/list.h \
- ../../os/lib/memb.h ../../os/lib/random.h ../../os/net/ipv6/udp-socket.h \
+ ../../os/net/ipv6/multicast/uip-mcast6.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h \
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h \
+ ../../os/net/ipv6/multicast/roll-tm.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h \
+ ../../os/net/ipv6/multicast/mpl.h ../../os/net/ipv6/psock.h \
+ ../../os/contiki-lib.h ../../os/lib/list.h ../../os/lib/memb.h \
+ ../../os/lib/random.h ../../os/net/ipv6/udp-socket.h \
  ../../os/net/ipv6/tcp-socket.h ../../os/net/ipv6/uip.h \
  ../../os/net/netstack.h ../../os/net/ipv6/uip-ds6.h \
  ../../os/net/routing/routing.h ../../os/sys/log.h \
  ../../os/sys/log-conf.h
 ../../os/net/ipv6/tcpip.c :
  ../../os/net/app-layer/coap/module-macros.h ../../os/contiki.h :
- ../../arch/platform/cooja/./contiki-conf.h project-conf.h :
+ ../../arch/platform/cooja/./contiki-conf.h :
  ../../os/contiki-default-conf.h ../../os/sys/process.h ../../os/sys/pt.h :
  ../../os/sys/lc.h ../../os/sys/lc-switch.h ../../os/sys/cc.h :
  ../../os/sys/cc-gcc.h ../../os/sys/autostart.h ../../os/sys/process.h :
@@ -56,8 +63,15 @@ build/cooja/obj/tcpip.o: ../../os/net/ipv6/tcpip.c \
  ../../os/sys/ctimer.h ../../os/net/ipv6/uip-ds6-route.h :
  ../../os/lib/list.h ../../os/net/ipv6/uip-sr.h :
  ../../os/net/ipv6/uip-icmp6.h ../../os/net/ipv6/uip-ds6.h :
- ../../os/net/ipv6/psock.h ../../os/contiki-lib.h ../../os/lib/list.h :
- ../../os/lib/memb.h ../../os/lib/random.h ../../os/net/ipv6/udp-socket.h :
+ ../../os/net/ipv6/multicast/uip-mcast6.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h :
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h :
+ ../../os/net/ipv6/multicast/roll-tm.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h :
+ ../../os/net/ipv6/multicast/mpl.h ../../os/net/ipv6/psock.h :
+ ../../os/contiki-lib.h ../../os/lib/list.h ../../os/lib/memb.h :
+ ../../os/lib/random.h ../../os/net/ipv6/udp-socket.h :
  ../../os/net/ipv6/tcp-socket.h ../../os/net/ipv6/uip.h :
  ../../os/net/netstack.h ../../os/net/ipv6/uip-ds6.h :
  ../../os/net/routing/routing.h ../../os/sys/log.h :

@@ -20,10 +20,18 @@ build/cooja/obj/border-router-embedded.o: \
  ../../os/dev/radio.h ../../os/net/mac/framer/framer.h \
  ../../os/net/ipv6/uip-packetqueue.h ../../os/sys/ctimer.h \
  ../../os/net/ipv6/uip-ds6-route.h ../../os/lib/list.h \
- ../../os/net/ipv6/uip-sr.h ../../os/dev/button-sensor.h \
- ../../os/lib/sensors.h ../../os/dev/slip.h \
+ ../../os/net/ipv6/uip-sr.h ../../os/dev/button-hal.h \
+ ../../os/dev/gpio-hal.h ../../arch/platform/cooja/./dev/gpio-hal-arch.h \
+ ../../os/dev/slip.h \
  ../../os/services/rpl-border-router/rpl-border-router.h \
- ../../os/net/ipv6/uip-ds6.h ../../os/sys/log.h ../../os/sys/log-conf.h
+ ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/multicast/uip-mcast6.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h \
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h \
+ ../../os/net/ipv6/multicast/roll-tm.h \
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h \
+ ../../os/net/ipv6/multicast/mpl.h ../../os/sys/log.h \
+ ../../os/sys/log-conf.h
  ../../os/services/rpl-border-router/embedded/border-router-embedded.c :
  ../../os/services/rpl-border-router/module-macros.h ../../os/contiki.h :
  ../../arch/platform/cooja/./contiki-conf.h project-conf.h :
@@ -45,7 +53,15 @@ build/cooja/obj/border-router-embedded.o: \
  ../../os/dev/radio.h ../../os/net/mac/framer/framer.h :
  ../../os/net/ipv6/uip-packetqueue.h ../../os/sys/ctimer.h :
  ../../os/net/ipv6/uip-ds6-route.h ../../os/lib/list.h :
- ../../os/net/ipv6/uip-sr.h ../../os/dev/button-sensor.h :
- ../../os/lib/sensors.h ../../os/dev/slip.h :
+ ../../os/net/ipv6/uip-sr.h ../../os/dev/button-hal.h :
+ ../../os/dev/gpio-hal.h ../../arch/platform/cooja/./dev/gpio-hal-arch.h :
+ ../../os/dev/slip.h :
  ../../os/services/rpl-border-router/rpl-border-router.h :
- ../../os/net/ipv6/uip-ds6.h ../../os/sys/log.h ../../os/sys/log-conf.h :
+ ../../os/net/ipv6/uip-ds6.h ../../os/net/ipv6/multicast/uip-mcast6.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-engines.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-route.h :
+ ../../os/net/ipv6/multicast/smrf.h ../../os/net/ipv6/multicast/esmrf.h :
+ ../../os/net/ipv6/multicast/roll-tm.h :
+ ../../os/net/ipv6/multicast/uip-mcast6-stats.h :
+ ../../os/net/ipv6/multicast/mpl.h ../../os/sys/log.h :
+ ../../os/sys/log-conf.h :

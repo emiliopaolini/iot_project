@@ -12,7 +12,7 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 static void res_event_handler();
 
 
-float light_level = 60; // normally should be between 19 and 22
+float light_level = 40; 
 #define MAXIMUM_LIGHT_LEVEL 100
 #define MINIMUM_LIGHT_LEVEL 1
 #define MAX_AGE 60
