@@ -27,7 +27,7 @@ float randInRange(float min, float max){
 
 EVENT_RESOURCE(
    ph_measuring_device,
-    "title=\"Ph sensor\"; GET; rt=\"sensor\"; obs\n",
+   "title=\"ph_sensor\";rt=\"Text\";obs",
     res_get_handler, res_post_put_handler, res_post_put_handler, NULL, res_event_handler);
 
 

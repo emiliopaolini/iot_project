@@ -27,13 +27,14 @@ public class Server extends CoapServer  {
 		SpringApplication.run(Server.class, args);
 		
 		Server server = new Server(); 
+
+		//coap resources
 		server.add(new ResourceRegistration("registration"));
 		server.add(new ResourceDiscovery("discovery"));
 		server.start();
 		
 		
 		System.out.println("Running it!");
-//		
 		try{  
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iot_project","root","root");  
 			System.out.println("Connection to mysql done!");

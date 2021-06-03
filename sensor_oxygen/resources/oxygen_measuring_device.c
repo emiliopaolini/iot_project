@@ -25,7 +25,7 @@ float randInRange(float min, float max){
 
 EVENT_RESOURCE(
     oxygen_measuring_device,
-    "title=\"Oxygen sensor\"; GET; rt=\"sensor\"; obs\n",
+   "title=\"oxygen_sensor\";rt=\"Text\";obs",
     res_get_handler, res_post_put_handler, res_post_put_handler, NULL, res_event_handler);
 
 

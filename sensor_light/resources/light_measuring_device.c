@@ -29,7 +29,7 @@ float randInRange(float min, float max){
 
 EVENT_RESOURCE(
     light_measuring_device,
-    "title=\"Light sensor\"; GET; rt=\"sensor\"; obs\n",
+    "title=\"light_sensor\";rt=\"Text\";obs",
     res_get_handler, res_post_put_handler, res_post_put_handler, NULL, res_event_handler);
 
 

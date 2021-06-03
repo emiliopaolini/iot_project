@@ -33,19 +33,20 @@ public class ResourceRegistration extends CoapResource {
 	 */
 	public void handlePOST(CoapExchange exchange) {
 		System.out.println("Request of a new registration received...");
-		// parsing data from the sensor
+		// parsing data from the node
 		JSONObject contentJson = new JSONObject(new String(exchange.getRequestPayload()));
 		String nodeIP = exchange.getSourceAddress().getHostAddress();
 		System.out.println("Node ["+nodeIP+"] registration...");
 		
+
 		String nodeType = (String) contentJson.get("Type");
 		String nodeResource = (String) contentJson.get("Resource");
-		
 		
 		System.out.println("NodeType: "+nodeType);
 		System.out.println("NodeResource: "+nodeResource);
 		
 		Map<String,String> thresholds = new HashMap<String,String>();
+		//check if the node is an actuator or a sensor
 		if(nodeType.equalsIgnoreCase("actuator")) {
 			if(nodeResource.equalsIgnoreCase("oxygen")) {
 				String nodeThreshold = ""+(Integer)contentJson.get("threshold");

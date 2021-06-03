@@ -41,7 +41,7 @@ static void checkAlertLevel(){
 
 
 EVENT_RESOURCE(water_generator,
-        "title=\"Water actuator\"; rt=\"actuator\";obs\n",
+        "title=\"water_actuator\";rt=\"Text\";obs",
         res_get_handler, res_post_put_handler, res_post_put_handler, NULL, res_event_handler);
 
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset){
