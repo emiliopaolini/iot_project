@@ -1,13 +1,10 @@
 #include "contiki.h"
 #include "coap-engine.h"
-#include "sys/log.h"
 
 #include "coap-engine.h"
 
 
-
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
-// this is for making the simulation consistent
 static void res_post_put_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_event_handler();
 
@@ -21,7 +18,6 @@ float oxygen_level = 22; // normally should be between 19 and 22
 int actuatorStatus = 0;
 
 float randInRange(float min, float max){
-  
   return (max-min) * ((float)rand()/RAND_MAX)+min;
 }
 
@@ -33,6 +29,7 @@ EVENT_RESOURCE(
     res_get_handler, res_post_put_handler, res_post_put_handler, NULL, res_event_handler);
 
 
+// this is for making the simulation consistent -> the cloud application will notify the sensor of the new status of the actuator
 static void res_post_put_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset){
 	printf("Receive an update from the actuator\n");
 	const char *value = NULL;
@@ -48,7 +45,7 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 		memcpy(string_received,value,len);
 		string_received[len+1] = '\0';	
 		int newStatus = atoi(string_received);
-		printf("new status received is %d\n",newStatus);
+		printf("new status of the actuator received is %d\n",newStatus);
 		if(newStatus != actuatorStatus){
 			actuatorStatus = newStatus;
 		}
@@ -78,24 +75,18 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
 }
 
 static void res_event_handler(){
-    // Notify all the observers
-    // Before sending the notification the handler
-    // associated with the GET method is called
-    // 
 
     // make simulation consistent
     if(actuatorStatus==0){
-	printf("actuator is off.. oxygen is decreasing\n");
+	    printf("actuator is off.. oxygen is decreasing\n");
     	oxygen_level += randInRange(-2,0);
     }
     else{
-	printf("actuator is on.. oxygen is increasing\n");
-	oxygen_level += randInRange(2,4.5);
+        printf("actuator is on.. oxygen is increasing\n");
+        oxygen_level += randInRange(2,4.5);
     }
     
     //make sure that the changes will be between MINIMUM_OXYGEN_LEVEL and MAXIMUM_OXYGEN_LEVEL
-    
-
     if(oxygen_level>=MAXIMUM_OXYGEN_LEVEL)
 	    oxygen_level = MAXIMUM_OXYGEN_LEVEL;
 

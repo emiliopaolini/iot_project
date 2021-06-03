@@ -5,12 +5,8 @@
 #include "contiki.h"
 #include "dev/button-hal.h"
 #include "dev/leds.h"
-#include "sys/log.h"
-#include "coap-log.h"
 
-// log 
-#define LOG_MODULE "Oxygen_node"
-#define LOG_LEVEL LOG_LEVEL_APP
+
 
 //utility
 #define SERVER_EP "coap://[fd00::1]:5683"
@@ -20,14 +16,15 @@ static char registered = '0';
 static char sensor_discovered = '0';
 static char sensor_address[29];
 
+
 static coap_endpoint_t sensor_ep;
 static coap_message_t request[1];
 static coap_endpoint_t server_ep;
-
+// observer for sensor resource
 static coap_observee_t *obs;
 
 
-
+// variable that represents leds status. Updated inside the resource
 extern enum leds {GREEN,YELLOW,RED} alert_level;
 // sensor
 extern coap_resource_t oxygen_generator; // resource for generating oxygen
@@ -35,7 +32,7 @@ extern int GOOD_OXYGEN_LEVEL;
 
 float oxygen_level = 0;
 
-
+// function that updates leds according to alert_level
 void update_leds(){
 	printf("updating leds\n");
 	if(alert_level==RED){
@@ -52,12 +49,11 @@ void update_leds(){
 	}
 }
 
-
+// callback function for registration
 void wait_for_ack(coap_message_t *response) {
    
     if(response == NULL) {
 	    printf("no response to registration\n"); 
-        //LOG_DBG("No response to registration..."); 
         return;
     }
     
@@ -68,7 +64,7 @@ void wait_for_ack(coap_message_t *response) {
 }
 
 
-
+// callback function for discovery
 void wait_for_discovery(coap_message_t *response) {
    
 	if(response == NULL) { 
@@ -76,12 +72,11 @@ void wait_for_discovery(coap_message_t *response) {
 		return;
 	}
 
-	//LOG_DBG("Sensor IP: %s\n", response->payload);
 	if(strcmp((const char *)response->payload, "NONE") == 0){
         printf("No available sensors from the server..");
         return;
     }
-
+    // parsing payload 
 	strcpy(sensor_address, "coap://[");
 	strcat(sensor_address, (const char *)response->payload);
 
@@ -92,15 +87,14 @@ void wait_for_discovery(coap_message_t *response) {
 	printf("address received: %s\n",sensor_address);
 	printf("len address received: %d\n",strlen(sensor_address));
 	coap_endpoint_parse(sensor_address, strlen(sensor_address), &sensor_ep); //initialize sensor endpoint
-	LOG_INFO_COAP_EP(&sensor_ep);
-	LOG_INFO("\n");
+
 }
 
 
 PROCESS(oxygen_actuator, "Oxygen actuator");
 AUTOSTART_PROCESSES(&oxygen_actuator);
 
-
+// callback function for observing sensor updates
 static void oxygen_update_callback(coap_observee_t *obs, void *notification, coap_notification_flag_t flag){
     int len = 0;
     const uint8_t *payload = NULL;
@@ -114,15 +108,16 @@ static void oxygen_update_callback(coap_observee_t *obs, void *notification, coa
         case NOTIFICATION_OK:
             printf("NOTIFICATION OK: %*s\n", len, (char *)payload);
             //handle value
-	    char * ptr = strtok((char*) payload,delim);
+            char * ptr = strtok((char*) payload,delim);
 
-	    ptr = strtok(NULL," ");	
+            ptr = strtok(NULL," ");	
 
-	    ptr = strtok(ptr,"}");
+            ptr = strtok(ptr,"}");
 
-	    oxygen_level = atof(ptr);
-	    oxygen_generator.trigger();
-	    update_leds();
+            oxygen_level = atof(ptr);
+            // trigger the resource to see if its status should change
+            oxygen_generator.trigger();
+            update_leds();
             break;
         case OBSERVE_OK:  //server accepted observation request 
             printf("OBSERVE_OK: %*s\n", len, (char *)payload);
@@ -149,7 +144,7 @@ PROCESS_THREAD(oxygen_actuator, ev, data) {
     
     PROCESS_BEGIN();
     
-    LOG_INFO("Oxygen actuator: starting.... \n");
+    printf("Oxygen actuator: starting.... \n");
     
     coap_activate_resource(&oxygen_generator, "oxygen");
     

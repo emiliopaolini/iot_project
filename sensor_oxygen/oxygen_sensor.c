@@ -1,6 +1,5 @@
 #include "dev/button-hal.h"
 #include "dev/leds.h"
-#include "sys/log.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,32 +7,25 @@
 #include "contiki-net.h"
 #include "coap-engine.h"
 #include "coap-blocking-api.h"
-#include "coap-log.h"
 #include <time.h>
 
-// log 
-#define LOG_MODULE "Oxygen_node"
-#define LOG_LEVEL LOG_LEVEL_DBG
 
 //utility
 #define SERVER_EP "coap://[fd00::1]:5683"
 
-#define TIMER_PERIOD 20
-#define REGISTRATION_PERIOD 10
+#define TIMER_PERIOD 20 //period before acquiring a new measurement
 
 
 static char registered = '0';
 
-
 // sensor
 extern coap_resource_t oxygen_measuring_device; // sensor for oxygen measurement
 
-
+// callback function for registration
 void wait_for_ack(coap_message_t *response) {
    
     if(response == NULL) {
 	printf("no response to registration\n"); 
-        //LOG_DBG("No response to registration..."); 
         return;
     }
     
@@ -54,23 +46,19 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
 	//static coap_endpoint_t actuator_ep;
 	static coap_message_t request[1];
 	static coap_endpoint_t server_ep;
-    	//initialize the timer
-	static struct etimer timer; //timer to randomly change the oxygen
+    //initialize the timer
+	static struct etimer timer; //timer to acquire a new measurement of the oxygen
 
-    	//static struct etimer registration_timer; //timer for CoAP registration
 	srand(time(0));
-    	PROCESS_BEGIN();
+	PROCESS_BEGIN();
 
 
-    
-    	LOG_INFO("Oxygen sensor: starting.... \n");
-    
-    	coap_activate_resource(&oxygen_measuring_device, "oxygen");
-    
+	coap_activate_resource(&oxygen_measuring_device, "oxygen");
+
 	coap_endpoint_parse(SERVER_EP, strlen(SERVER_EP), &server_ep); //initialize server endpoint
     	
 	
-	
+	// Server registration
 	do{
 		char *service_url = "/registration";
 		// Prepare the message
@@ -91,16 +79,12 @@ PROCESS_THREAD(oxygen_sensor, ev, data) {
 	
 	while (1) {
 		PROCESS_YIELD();
-
 		
-			
 		if(ev == PROCESS_EVENT_TIMER)
 			if (etimer_expired(&timer)){
 				printf("device is triggered...\n");
-	    			oxygen_measuring_device.trigger(); //this will call the res_event_handler of the resource that will 							randomly change the oxygen level
-		
-	    			etimer_reset(&timer);//reset timer
-	    		
+	    		oxygen_measuring_device.trigger(); //this will call the res_event_handler of the resource
+	    		etimer_reset(&timer);//reset timer
 			}	    
 		if(ev == button_hal_press_event){
 			//button is used to force the sensor to send the oxygen level
