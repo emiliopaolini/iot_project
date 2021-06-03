@@ -69,8 +69,8 @@ public class ResourceRegistration extends CoapResource {
 		
 		
 		System.out.println("======================================================");
+		// sending the responde to the node
 		Response response = new Response(ResponseCode.CONTENT);
-		
 		response.setPayload("registered");
 		exchange.respond(response);
 
@@ -79,10 +79,11 @@ public class ResourceRegistration extends CoapResource {
 		CoapClient client = new CoapClient("coap://[" + nodeIP + "]/"+nodeResource);
 		final Node a = new Node(nodeIP,nodeType,nodeResource,thresholds);
 		Server.nodes.add(a);
-		
+		//registering the node inside the db
 		insertInDB(a);
 		
 		CoapObserveRelation relation = client.observe(new CoapHandler() {
+							// function called when the node sends an update
 							public void onLoad(CoapResponse response) {
 								
 								String content = response.getResponseText(); 
@@ -90,16 +91,18 @@ public class ResourceRegistration extends CoapResource {
 								if(content == null || content.equals(""))
 									return;
 								JSONObject contentJ = new JSONObject(content);
-								//here we retrieve the data
+								//retrieve the data
 								String valueReceived = ""; 
 								if(a.getNodeType().equalsIgnoreCase("sensor")){
 									valueReceived = ""+contentJ.get("value");
 								}
 								if(a.getNodeType().equalsIgnoreCase("actuator")){
 									valueReceived = ""+contentJ.get("status");
-									//  update the corresponding sensor in order to make the simulation consistent
 								}
 								a.setCurrentValue(valueReceived);
+								
+								
+								//  update the corresponding sensor in order to make the simulation consistent
 								if(a.getNodeType().equalsIgnoreCase("actuator")) {
 									Thread t = new Thread() {				
 										public void run() {
@@ -109,8 +112,8 @@ public class ResourceRegistration extends CoapResource {
 									t.start();
 									
 								}
+								// insert a new row inside the db for the new measurement
 								insertInDB(a);
-								//printStatus();
 							}
 							public void onError() {
 								System.err.println("-Failed--------"); }
@@ -123,7 +126,7 @@ public class ResourceRegistration extends CoapResource {
 			if(n.getNodeType().equalsIgnoreCase("sensor")) {
 				if(n.hasActuator()) {
 					if(n.getActuator().equals(a)) {
-						// send a post request to the sensor
+						// send a post request to the sensor with the new actuator status(valueReceived)
 						CoapClient client2 = new CoapClient("coap://[" + n.getNodeIP() + "]/" + n.getNodeResource());
 						System.out.println("new status of actuator is sent: " + valueReceived);
 						System.out.println("COAP ENDPOINT: coap://[" + n.getNodeIP() + "]/" + n.getNodeResource());
@@ -159,7 +162,7 @@ public class ResourceRegistration extends CoapResource {
 			
 			if(a.getCurrentValue().equals("")) return;
 			
-			
+			System.out.println("Inserting a new measurement inside the db!");
 			//inserting the new value 
 			sql = "INSERT INTO measurement(date,ip,value) VALUES(?,?,?);";
 		    ps = Server.con.prepareStatement(sql);
@@ -178,9 +181,4 @@ public class ResourceRegistration extends CoapResource {
 		}
 	}
 
-	public static void printStatus(){
-		for (Node temp : Server.nodes) {
-			System.out.println(temp.toString());
-        }
-	}
 }

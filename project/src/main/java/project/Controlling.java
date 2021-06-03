@@ -38,6 +38,7 @@ public class Controlling {
 
 	@RequestMapping("/home")
 	public String home(Model model) {
+		/*
 		ArrayList<Node> sensors = new ArrayList<>();
 		ArrayList<Node> actuators = new ArrayList<>();
 		JSONObject mainObj = new JSONObject();
@@ -58,7 +59,7 @@ public class Controlling {
 				actuators.add(n);
 			}
 		}
-		mainObj.put("jsonarray", ja);
+		mainObj.put("jsonarray", ja);*/
         return "home";
         /*
 		model.addAttribute("sensors", sensors);
@@ -68,26 +69,33 @@ public class Controlling {
 		*/
 	}
 
+	// function called to set a new status for the actuator
 	@RequestMapping(value = "/setActuator")
 	public String setActuator(@RequestParam(required = true) String nodeIP,
 			@RequestParam(required = true) String currentValue, Model model) {
+		// retrieve the actuator from the registered nodes 
 		Node node = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
+		// updating its status
 		node.setCurrentValue(currentValue);
+		// sending to the node the new status
 		CoapClient client = new CoapClient("coap://[" + node.getNodeIP() + "]/" + node.getNodeResource());
-		System.out.println("new status is sent: " + node.getCurrentValue());
 		client.post("status=" + node.getCurrentValue(), MediaTypeRegistry.TEXT_PLAIN);
-
+		System.out.println("Sent a new status to the actuator!");
 		return "home";
 	}
 	
+	// function called to change manual mode for the actuator
 	@RequestMapping(value = "/setManual")
 	public String setManual(@RequestParam(required = true) String nodeIP,
 			@RequestParam(required = true) String currentValue, Model model) {
+		// retrieve the actuator from the registered nodes 
 		Node node = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
+		// updating its manual mode
 		if(currentValue.equalsIgnoreCase("0"))
 			node.setManualMode(0);
 		else
 			node.setManualMode(1);
+		// sending to the node the new manual mode
 		CoapClient client = new CoapClient("coap://[" + node.getNodeIP() + "]/" + node.getNodeResource());
 		System.out.println("new manual mode is sent: " + currentValue);
 		client.post("manualMode=" + currentValue, MediaTypeRegistry.TEXT_PLAIN);
@@ -95,46 +103,36 @@ public class Controlling {
 		return "home";
 	}
 
-	@RequestMapping("/updatePage")
-	public String updatePage(Model model) {
-		ArrayList<Node> sensors = new ArrayList<>();
-		ArrayList<Node> actuators = new ArrayList<>();
-		for (Node n : project.Server.nodes) {
-			if (n.getNodeType().equalsIgnoreCase("sensor")) {
-				sensors.add(n);
-			} else {
-				actuators.add(n);
-			}
-		}
-		model.addAttribute("sensors", sensors);
-		model.addAttribute("actuators", actuators);
-		return "home";
-	}
 	
+
 	
+	// function called to change threshold for the actuator
 	@RequestMapping("/changeThreshold")
 	public String changeThreshold(@RequestParam(required = true) String nodeIP,@RequestParam(required = true) String thresholdName,@RequestParam(required = true) String thresholdValue) {
+		// retrieve the actuator from the registered nodes
 		Node node = Server.nodes.stream().filter(n -> n.getNodeIP().equals(nodeIP)).findAny().get();
-	
+		// updating its threshold
 		node.addThreshold(thresholdName+"_threshold", thresholdValue);
+		// sending to the node the new threshold 
 		CoapClient client = new CoapClient("coap://[" + node.getNodeIP() + "]/" + node.getNodeResource());
-		System.out.println("Threshold name: "+thresholdName);
-		System.out.println("Threshold value: "+thresholdValue);
 		client.post(thresholdName+"_threshold=" + thresholdValue, MediaTypeRegistry.TEXT_PLAIN);
+		System.out.println("Sent a new threshold to the actuator!");
 		return "home";
 	}
 	
+
+	// function called to retrieve the data that will be shown inside the log chart
 	@ResponseBody
 	@RequestMapping(value = "/getData")
 	public String getData(@RequestParam(required = true) String nodeIP,@RequestParam(required = true) String date) {
 		System.out.println("Ip received: "+nodeIP+"\n Retrieving all its data for "+date+"\n");
-		//2021-04-25 
 		
-		System.out.println("data arrivata: "+date);
 		String sql = "SELECT value,EXTRACT(HOUR from  date) as hour,EXTRACT(MINUTE from  date) as minute FROM measurement WHERE ip=? AND DATE(date)=?";  
 		Map<String, Object> hm = new HashMap<>();
 		JSONObject mainObj = new JSONObject();
 		JSONArray ja = new JSONArray();
+
+		// prepare the response 
 		try {
 		    PreparedStatement ps = Server.con.prepareStatement(sql);
 		    ps.setString(1,nodeIP);
@@ -161,14 +159,14 @@ public class Controlling {
 	    } catch (SQLException e) {
 	      System.out.println(e);
 	    }
+		// sending the response
 		mainObj.put("jsonarray", ja);
         return mainObj.toString();
-		//return "home";
 	}
 	
 	
 	
-	
+	// function called every second from the javascript to update the web interface
 	@ResponseBody
 	@RequestMapping(value = "/getSensors")
 	public String getSensors() {
@@ -205,21 +203,7 @@ public class Controlling {
 		}
 		mainObj.put("jsonarray", ja);
         return mainObj.toString();
-		//return "home";
 	}
 
-//	private final List<SseEmitter> sseEmitter = new LinkedList<>();
-//
-//	@RequestMapping (path = "/home", method = RequestMethod.GET)
-//	public SseEmitter update() throws IOException {
-//
-//	    SseEmitter emitter = new SseEmitter();
-//	    synchronized (sseEmitter) {
-//	        sseEmitter.add(emitter);
-//	    }
-//	    emitter.onCompletion(() -> sseEmitter.remove(emitter));
-//
-//	    return emitter;
-//	}
 
 }
